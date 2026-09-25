@@ -1,1 +1,7 @@
 .venv
+.runtime/
+.env
+.env.local
+__pycache__/
+*.py[cod]
+.DS_Store

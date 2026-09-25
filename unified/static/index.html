@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123c31">
+    <meta name="description" content="Garden State helps you investigate, compare and shortlist New Jersey company records using traceable public evidence.">
+    <title>Garden State · Startup intelligence</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="module" src="/static/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to company directory</a>
+
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-mark" viewBox="0 0 32 32">
+        <path d="M25.8 4.8C17 5.1 10.7 8.3 8 14.2c-1.7 3.6-.9 7.8 1.8 10.6 2.6-7.5 7-11.4 13.1-14.7-5.2 4-8.5 8.3-10.2 13.4 3.1.7 6.4-.3 8.7-2.8 3.5-3.8 4.4-9.6 4.4-15.9Z" fill="currentColor"/>
+        <path d="M7.8 25.5c3-6.8 7.5-11.4 14.4-15.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.6 15.6 4.1 4.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="icon-directory" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-bookmark" viewBox="0 0 24 24"><path d="M6.2 4.2c0-1 .8-1.7 1.7-1.7h8.2c.9 0 1.7.7 1.7 1.7v17.1L12 17.7l-5.8 3.6V4.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-compare" viewBox="0 0 24 24"><path d="M8 4 4 8l4 4M4.5 8H20M16 20l4-4-4-4m3.5 4H4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 2 1.5 5.1L18 9l-4.5 1.9L12 16l-1.5-5.1L6 9l4.5-1.9L12 2Zm6.5 12 .8 2.7 2.2.8-2.2.8-.8 2.7-.8-2.7-2.2-.8 2.2-.8.8-2.7ZM5 13l.8 2.4 2.2.8-2.2.8L5 19.5 4.2 17 2 16.2l2.2-.8L5 13Z" fill="currentColor"/></symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 10.7v6M12 7.2h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19.5h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="icon-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10m-7 6h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-external" viewBox="0 0 24 24"><path d="M13 5h6v6M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-note" viewBox="0 0 24 24"><path d="M5 3.5h14v17H5zM8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-warning" viewBox="0 0 24 24"><path d="M11.1 3.8 2.8 18.2c-.4.8.1 1.8 1 1.8h16.4c.9 0 1.5-1 1-1.8L12.9 3.8a1 1 0 0 0-1.8 0Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 9v4.3M12 16.8h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+      <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5m9.1-3A7.4 7.4 0 0 0 5.4 7M5.9 15a7.4 7.4 0 0 0 12.7 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <div class="sidebar-scrim" id="sidebar-scrim" data-action="close-sidebar" hidden></div>
+      <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+        <div class="sidebar-head">
+          <button class="brand" type="button" data-action="show-directory" aria-label="Garden State directory home">
+            <span class="brand-mark"><svg aria-hidden="true"><use href="#icon-mark"></use></svg></span>
+            <span class="brand-type"><strong>Garden State</strong><small>Startup intelligence</small></span>
+          </button>
+          <button class="icon-button sidebar-close" type="button" data-action="close-sidebar" aria-label="Close navigation"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button>
+        </div>
+
+        <p class="nav-label">Workspace</p>
+        <nav class="primary-nav">
+          <button class="nav-item is-active" type="button" data-view="directory" aria-current="page">
+            <svg aria-hidden="true"><use href="#icon-directory"></use></svg>
+            <span>Directory</span>
+            <span class="nav-count" id="directory-count">—</span>
+          </button>
+          <button class="nav-item" type="button" data-view="shortlist">
+            <svg aria-hidden="true"><use href="#icon-bookmark"></use></svg>
+            <span>Shortlist</span>
+            <span class="nav-count" id="shortlist-count">0</span>
+          </button>
+          <button class="nav-item" type="button" data-action="open-compare">
+            <svg aria-hidden="true"><use href="#icon-compare"></use></svg>
+            <span>Compare</span>
+            <span class="nav-count" id="compare-count">0</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-brief">
+          <span class="brief-icon"><svg aria-hidden="true"><use href="#icon-spark"></use></svg></span>
+          <p class="brief-kicker">Fresh research</p>
+          <h2>Check a live signal.</h2>
+          <p>Run a small, sourced company search or open the saved public sample.</p>
+          <button class="sidebar-research" type="button" data-action="open-research">Start research <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+        </div>
+
+        <div class="sidebar-foot">
+          <button class="method-button" type="button" data-action="open-methodology"><svg aria-hidden="true"><use href="#icon-info"></use></svg> Data &amp; methodology</button>
+          <p id="sidebar-snapshot">Loading catalog snapshot…</p>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="mobile-header">
+          <button class="icon-button" type="button" data-action="open-sidebar" aria-label="Open navigation"><svg aria-hidden="true"><use href="#icon-menu"></use></svg></button>
+          <button class="mobile-brand" type="button" data-action="show-directory"><svg aria-hidden="true"><use href="#icon-mark"></use></svg><span>Garden State</span></button>
+          <button class="icon-button mobile-spark" type="button" data-action="open-research" aria-label="Start research"><svg aria-hidden="true"><use href="#icon-spark"></use></svg></button>
+        </header>
+
+        <header class="topbar">
+          <div class="breadcrumb"><span>Garden State</span><b>/</b><strong id="breadcrumb-current">Company directory</strong></div>
+          <div class="top-actions">
+            <button class="health-pill" id="health-pill" type="button" data-action="open-methodology"><span class="status-dot is-loading"></span><span id="health-label">Connecting</span></button>
+            <details class="export-menu" id="export-menu">
+              <summary class="button button-quiet"><svg aria-hidden="true"><use href="#icon-download"></use></svg> Export <svg class="chevron" aria-hidden="true"><use href="#icon-chevron"></use></svg></summary>
+              <div class="export-popover">
+                <button type="button" data-export="json"><strong>JSON evidence</strong><span>Full profiles, pillars and sources</span></button>
+                <button type="button" data-export="csv"><strong>CSV evidence</strong><span>One safe row per source</span></button>
+              </div>
+            </details>
+            <button class="button button-accent" type="button" data-action="open-research"><svg aria-hidden="true"><use href="#icon-spark"></use></svg> Research</button>
+          </div>
+        </header>
+
+        <main id="main-content" tabindex="-1">
+          <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+              <p class="eyebrow" id="view-eyebrow"><span></span> New Jersey company records</p>
+              <h1 id="page-title">Company intelligence,<br><em>with the receipts.</em></h1>
+              <p class="hero-description" id="page-description">Discover companies, inspect the public evidence and keep the unknowns in view. Coverage shows what we can document. It is not a prediction of success.</p>
+            </div>
+            <div class="snapshot-card">
+              <div class="snapshot-top"><span>Catalog snapshot</span><svg aria-hidden="true"><use href="#icon-directory"></use></svg></div>
+              <strong id="snapshot-date">—</strong>
+              <p>Publication dates and observation dates stay separate.</p>
+            </div>
+          </section>
+
+          <section class="stat-grid" id="stat-grid" aria-label="Catalog summary">
+            <div class="stat-card is-loading"><span>Catalog records</span><strong>—</strong><small>Research, filings and leads</small></div>
+            <div class="stat-card is-loading"><span>NJ supported</span><strong>—</strong><small>Location evidence attached</small></div>
+            <div class="stat-card is-loading"><span>Linked sources</span><strong>—</strong><small>Unique public URLs</small></div>
+            <div class="stat-card is-loading"><span>Team reviewed</span><strong>—</strong><small>Leadership research</small></div>
+          </section>
+
+          <section class="catalog-notices" id="catalog-notices" aria-label="Catalog notices" hidden></section>
+
+          <section class="access-gate" id="access-gate" hidden aria-labelledby="access-title">
+            <div class="access-illustration"><svg aria-hidden="true"><use href="#icon-lock"></use></svg></div>
+            <div>
+              <p class="eyebrow">Private workspace</p>
+              <h2 id="access-title">Unlock this catalog</h2>
+              <p>The server requires an access token. It stays in this browser tab and is never saved to local storage.</p>
+              <form class="unlock-form" id="unlock-form">
+                <label><span>Access token</span><input id="access-token" type="password" autocomplete="off" required placeholder="Paste token"></label>
+                <button class="button button-dark" type="submit">Unlock workspace <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+              </form>
+              <p class="form-message" id="unlock-message" role="alert"></p>
+            </div>
+          </section>
+
+          <section class="directory" id="directory-section" aria-labelledby="directory-title">
+            <div class="directory-heading">
+              <div>
+                <p class="section-number">01 / Investigate</p>
+                <h2 id="directory-title">Company directory</h2>
+              </div>
+              <button class="button button-quiet filter-toggle" type="button" data-action="toggle-filters" aria-expanded="false" aria-controls="filter-panel"><svg aria-hidden="true"><use href="#icon-filter"></use></svg> Filters</button>
+            </div>
+
+            <div class="directory-tools">
+              <label class="search-field" for="catalog-search">
+                <svg aria-hidden="true"><use href="#icon-search"></use></svg>
+                <input id="catalog-search" type="search" autocomplete="off" placeholder="Search company, sector or location" aria-describedby="search-hint">
+                <kbd>⌘ K</kbd>
+              </label>
+              <span class="sr-only" id="search-hint">Search updates the company directory as you type.</span>
+
+              <div class="filter-panel" id="filter-panel">
+                <label class="toggle-field" for="startup-filter"><input id="startup-filter" type="checkbox" checked><span class="toggle-control" aria-hidden="true"></span><span><strong>Hide likely non-startups</strong><small id="nonstartup-filter-note">Classification tags remain available</small></span></label>
+                <label class="select-field"><span>NJ evidence</span><select id="nj-filter"><option value="all">All statuses</option><option value="supported">Supported</option><option value="unverified">Needs review</option></select></label>
+                <label class="select-field"><span>Sector</span><select id="sector-filter"><option value="all">All sectors</option></select></label>
+                <label class="select-field"><span>Record</span><select id="record-filter"><option value="all">All record types</option><option value="research">Research profiles</option><option value="filing">Filing records</option><option value="lead">Team leads</option></select></label>
+                <label class="select-field"><span>Sort</span><select id="sort-filter"><option value="research">Research first</option><option value="name">Name A–Z</option><option value="coverage">Most evidence coverage</option><option value="sources">Most linked sources</option><option value="updated">Recently updated</option></select></label>
+              </div>
+            </div>
+
+            <div class="results-bar">
+              <p id="results-summary" aria-live="polite">Loading company records…</p>
+              <div class="results-controls">
+                <button class="text-button" id="clear-filters" type="button" data-action="clear-filters" hidden>Clear filters</button>
+                <label class="per-page"><span>Show</span><select id="per-page"><option value="12">12</option><option value="24" selected>24</option><option value="48">48</option></select></label>
+              </div>
+            </div>
+
+            <div class="catalog-error" id="catalog-error" hidden role="alert">
+              <span><svg aria-hidden="true"><use href="#icon-warning"></use></svg></span>
+              <div><h3>We couldn’t load the catalog.</h3><p id="catalog-error-message">Check the connection and try again.</p><button class="button button-outline" type="button" data-action="retry-catalog"><svg aria-hidden="true"><use href="#icon-refresh"></use></svg> Try again</button></div>
+            </div>
+
+            <div class="company-grid skeleton-grid" id="catalog-loading" aria-label="Loading companies" aria-busy="true">
+              <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>
+            </div>
+            <div class="company-grid" id="company-grid"></div>
+            <div class="empty-state" id="empty-state" hidden>
+              <span class="empty-mark"><svg aria-hidden="true"><use href="#icon-search"></use></svg></span>
+              <h3 id="empty-title">No records match these filters.</h3>
+              <p id="empty-copy">Try a broader search or clear one of the filters.</p>
+              <button class="button button-outline" type="button" data-action="clear-filters">Clear filters</button>
+            </div>
+            <nav class="pagination" id="pagination" aria-label="Directory pages"></nav>
+          </section>
+
+          <footer class="site-footer">
+            <div><svg aria-hidden="true"><use href="#icon-mark"></use></svg><strong>Garden State</strong></div>
+            <p>Evidence first. Unknowns stay visible. Sources stay attached.</p>
+            <button type="button" data-action="open-methodology">How the data works <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <div class="compare-tray" id="compare-tray" hidden aria-live="polite">
+      <div class="compare-tray-copy"><span class="compare-tray-icon"><svg aria-hidden="true"><use href="#icon-compare"></use></svg></span><div><strong>Compare companies</strong><small id="compare-tray-help">Choose up to three records</small></div></div>
+      <div class="compare-chips" id="compare-chips"></div>
+      <div class="compare-tray-actions"><button class="text-button" type="button" data-action="clear-compare">Clear</button><button class="button button-accent" id="open-comparison" type="button" data-action="open-compare">Compare <span id="compare-button-count">0</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button></div>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button class="is-active" type="button" data-view="directory"><svg aria-hidden="true"><use href="#icon-directory"></use></svg><span>Directory</span></button>
+      <button type="button" data-view="shortlist"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg><span>Shortlist</span></button>
+      <button type="button" data-action="open-compare"><svg aria-hidden="true"><use href="#icon-compare"></use></svg><span>Compare</span><b id="mobile-compare-count" hidden>0</b></button>
+      <button type="button" data-action="open-research"><svg aria-hidden="true"><use href="#icon-spark"></use></svg><span>Research</span></button>
+    </nav>
+
+    <div class="layer drawer-layer" id="company-layer" hidden>
+      <button class="layer-scrim" type="button" data-close-layer aria-label="Close company profile"></button>
+      <aside class="drawer" id="company-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+        <div class="drawer-toolbar"><span>Company profile</span><button class="icon-button" type="button" data-close-layer aria-label="Close profile"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+        <div class="drawer-content" id="company-drawer-content"></div>
+      </aside>
+    </div>
+
+    <div class="layer modal-layer" id="research-layer" hidden>
+      <button class="layer-scrim" type="button" data-close-layer aria-label="Close research"></button>
+      <section class="modal research-modal" role="dialog" aria-modal="true" aria-labelledby="research-title" tabindex="-1">
+        <header class="modal-head"><div><p class="eyebrow"><span></span> Public-source research</p><h2 id="research-title">Find a fresh company signal</h2></div><button class="icon-button" type="button" data-close-layer aria-label="Close research"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></header>
+        <p class="modal-intro">Run a bounded search across configured public sources, or open the saved public sample. Live and saved results are always labeled.</p>
+
+        <div class="research-status" id="research-status"><span class="status-dot is-loading"></span><div><strong>Checking research service…</strong><p>One moment.</p></div></div>
+
+        <form id="research-form" class="research-form">
+          <fieldset class="mode-options">
+            <legend>Research mode</legend>
+            <label class="mode-card" id="live-mode-card"><input type="radio" name="research-mode" value="live" checked><span class="mode-radio"></span><span><strong>Live research</strong><small>Search configured public sources now</small></span><span class="mode-state" id="live-mode-state">Checking</span></label>
+            <label class="mode-card"><input type="radio" name="research-mode" value="sample"><span class="mode-radio"></span><span><strong>Saved public research</strong><small>Open a dated, previously saved result</small></span><span class="mode-state">Available</span></label>
+          </fieldset>
+          <div class="research-fields">
+            <label class="select-field"><span>Sector</span><select id="research-sector"><option value="All sectors">All sectors</option></select></label>
+            <label class="select-field"><span>Companies</span><select id="research-count"><option value="1">1 company</option><option value="2">2 companies</option><option value="3" selected>3 companies</option><option value="4">4 companies</option><option value="5">5 companies</option></select></label>
+          </div>
+          <button class="button button-dark research-submit" id="research-submit" type="submit"><svg aria-hidden="true"><use href="#icon-spark"></use></svg><span>Start research</span><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+          <p class="form-message" id="research-form-message" role="alert"></p>
+        </form>
+
+        <section class="research-progress" id="research-progress" hidden aria-live="polite">
+          <div class="progress-head"><div><p class="eyebrow" id="research-mode-label">Live research</p><h3 id="research-stage">Preparing research</h3></div><span class="run-status" id="research-run-status">Queued</span></div>
+          <div class="stage-track" id="stage-track" aria-label="Research progress"><span class="is-current">Discover</span><span>Verify</span><span>Connect</span><span>Complete</span></div>
+          <p id="research-progress-detail">The research job is starting.</p>
+          <div class="research-outcome" id="research-outcome"></div>
+          <details class="activity-log"><summary>Research activity <svg aria-hidden="true"><use href="#icon-chevron"></use></svg></summary><ol id="research-events"></ol></details>
+          <div class="research-warnings" id="research-warnings"></div>
+        </section>
+
+        <section class="research-history" id="research-history" hidden><div class="subsection-title"><h3>Recent research</h3><button class="text-button" type="button" data-action="refresh-research-history">Refresh</button></div><div id="research-history-list"></div></section>
+      </section>
+    </div>
+
+    <div class="layer modal-layer" id="compare-layer" hidden>
+      <button class="layer-scrim" type="button" data-close-layer aria-label="Close comparison"></button>
+      <section class="modal compare-modal" role="dialog" aria-modal="true" aria-labelledby="compare-title" tabindex="-1">
+        <header class="modal-head"><div><p class="eyebrow"><span></span> Side-by-side evidence</p><h2 id="compare-title">Compare company records</h2></div><button class="icon-button" type="button" data-close-layer aria-label="Close comparison"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></header>
+        <p class="modal-intro">Compare documentation coverage and source-backed findings. Missing evidence stays missing; it does not count against or for a company.</p>
+        <div class="comparison" id="comparison-content"></div>
+      </section>
+    </div>
+
+    <div class="layer modal-layer" id="methodology-layer" hidden>
+      <button class="layer-scrim" type="button" data-close-layer aria-label="Close methodology"></button>
+      <section class="modal methodology-modal" role="dialog" aria-modal="true" aria-labelledby="methodology-title" tabindex="-1">
+        <header class="modal-head"><div><p class="eyebrow"><span></span> Data notes</p><h2 id="methodology-title">What this catalog can tell you</h2></div><button class="icon-button" type="button" data-close-layer aria-label="Close methodology"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></header>
+        <p class="method-lead">Garden State joins four lines of public evidence without turning them into an investment rating. Each profile keeps the source, quote and date close to the claim.</p>
+
+        <div class="method-grid">
+          <article><span>01</span><h3>Coverage, not quality</h3><p>A filled pillar means we found something supportable. It does not mean the company is strong, weak or likely to succeed.</p></article>
+          <article><span>02</span><h3>NJ status needs proof</h3><p>“Supported” means a source backs the New Jersey connection. A filing address alone does not prove current operations or startup status.</p></article>
+          <article><span>03</span><h3>Roles stay distinct</h3><p>Founders, CEOs, advisors and SEC-related people are shown as reported. We do not quietly turn one role into another.</p></article>
+          <article><span>04</span><h3>Dates mean different things</h3><p>Published is when a source appeared. Observed is when the research process retrieved it. Both remain visible.</p></article>
+        </div>
+
+        <section class="method-section"><h3>Four evidence pillars</h3><div class="pillar-key"><span><i class="pillar-dot founders"></i><b>Founders &amp; leadership</b> People, roles and documented background</span><span><i class="pillar-dot business"></i><b>Business &amp; market</b> Model, timing and operating signals</span><span><i class="pillar-dot funding"></i><b>Funding &amp; financial</b> Disclosed fundraising and financial evidence</span><span><i class="pillar-dot reputation"></i><b>Reputation &amp; interest</b> Public relationships and outside attention</span></div></section>
+
+        <section class="method-section connection-section">
+          <div class="subsection-title"><div><p class="section-number">Connections</p><h3>Data modules</h3></div><button class="button button-outline" id="refresh-founder-data" type="button" data-action="sync-founders" hidden><svg aria-hidden="true"><use href="#icon-refresh"></use></svg> Refresh founder data</button></div>
+          <div class="integration-list" id="integration-list"><div class="integration-skeleton"></div><div class="integration-skeleton"></div></div>
+          <p class="sync-note" id="founder-sync-note"></p>
+        </section>
+
+        <section class="method-section session-access" id="session-access">
+          <div><p class="section-number">Session access</p><h3 id="session-access-title">Server connection</h3><p id="session-access-copy">Checking whether this workspace requires a token…</p></div>
+          <form class="settings-unlock-form" id="settings-unlock-form" hidden><label><span class="sr-only">Access token</span><input id="settings-access-token" type="password" autocomplete="off" required placeholder="Access token"></label><button class="button button-dark" type="submit">Unlock</button></form>
+        </section>
+
+        <div class="method-caution"><svg aria-hidden="true"><use href="#icon-info"></use></svg><p><strong>Keep the limits in frame.</strong> Fundraising is not revenue, runway or profitability. Team size divided by company age is not observed hiring growth. Similar company names are not merged without a conservative identifier match.</p></div>
+      </section>
+    </div>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
