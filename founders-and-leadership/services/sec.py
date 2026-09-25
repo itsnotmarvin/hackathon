@@ -19,6 +19,7 @@ load_dotenv()
 
 FULL_TEXT_SEARCH_URL = "https://efts.sec.gov/LATEST/search-index"
 COMPANY_SEARCH_URL = "https://www.sec.gov/cgi-bin/browse-edgar"
+SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik10}.json"
 
 
 def _headers() -> dict:
@@ -60,6 +61,52 @@ def to_evidence_claims(hits: list[dict]) -> list[dict]:
             }
         )
     return claims
+
+
+def search_ciks_by_state(state: str, start: int = 0, count: int = 100) -> list[str]:
+    """List CIKs of companies whose registered address is in `state` (a
+    2-letter code, e.g. "NJ"). This is EDGAR's company-search endpoint, not
+    full-text search - it's paginated via `start`.
+
+    Known bug in this endpoint (confirmed 2026-09-25, not something we can
+    fix): the atom feed's company name fields come back as a literal
+    "ARRAY(0x...)" placeholder instead of the real name - a long-standing
+    SEC-side quirk. Use get_company_name(cik) for the real name per CIK.
+    """
+    response = requests.get(
+        COMPANY_SEARCH_URL,
+        params={"action": "getcompany", "State": state, "SIC": "", "start": start, "count": count, "output": "atom"},
+        headers=_headers(),
+        timeout=30,
+    )
+    response.raise_for_status()
+
+    import re
+
+    return re.findall(r"<cik>(\d+)</cik>", response.text)
+
+
+def get_company_name(cik: str) -> dict | None:
+    """Fetch a company's real name/details by CIK, working around the
+    company-search endpoint's broken name field."""
+    cik10 = str(cik).zfill(10)
+    response = requests.get(
+        SUBMISSIONS_URL.format(cik10=cik10),
+        headers=_headers(),
+        timeout=15,
+    )
+    if response.status_code == 404:
+        return None
+    response.raise_for_status()
+
+    data = response.json()
+    return {
+        "cik": cik,
+        "name": data.get("name"),
+        "state": data.get("stateOfIncorporation"),
+        "sic_description": data.get("sicDescription"),
+        "url": f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}",
+    }
 
 
 def to_achievement_rows(hits: list[dict]) -> list[dict]:
