@@ -2,14 +2,17 @@ from fastapi import APIRouter, HTTPException
 
 from app.database import record_evidence, supabase
 from services import college_scorecard as college_scorecard_service
+from services import gdelt as gdelt_service
 from services import github as github_service
 from services import grants as grants_service
 from services import nih as nih_service
 from services import nsf as nsf_service
-from services import opencorporates as opencorporates_service
+from services import orcid as orcid_service
 from services import pdl as pdl_service
 from services import scholar as scholar_service
+from services import sec as sec_service
 from services import wikidata as wikidata_service
+from services import wikipedia as wikipedia_service
 
 router = APIRouter()
 
@@ -40,14 +43,20 @@ def get_founder(founder_id: str):
 @router.post("/founders/{founder_id}/enrich")
 def enrich_founder(founder_id: str, company: str | None = None, location: str | None = None):
     """Pull identity/education/employment from People Data Labs and attach
-    it to this founder, with an evidence row per fact."""
+    it to this founder, with an evidence row per fact. This is the only
+    source of `education` rows - if PDL_API_KEY isn't set, education stays
+    empty everywhere in the app, by design (see services/pdl.py)."""
     founder = _get_founder(founder_id)
 
-    person = pdl_service.enrich_person(
-        name=founder["name"],
-        company=company,
-        location=location or founder.get("location"),
-    )
+    try:
+        person = pdl_service.enrich_person(
+            name=founder["name"],
+            company=company,
+            location=location or founder.get("location"),
+        )
+    except pdl_service.PDLError as exc:
+        raise HTTPException(status_code=424, detail=str(exc)) from exc
+
     if person is None:
         return {"matched": False, "founder": founder}
 
@@ -113,33 +122,44 @@ def enrich_founder(founder_id: str, company: str | None = None, location: str | 
 
 
 @router.post("/founders/{founder_id}/research")
-def research_founder(founder_id: str, jurisdiction_code: str | None = "us_nj"):
+def research_founder(founder_id: str):
     """Pull every public signal we have for this founder's name/company and
     save each hit with an evidence row:
 
-      - OpenCorporates   -> previous/current officer roles (companies)
-                            [requires OPENCORPORATES_API_KEY - paid, 401s without it]
       - Wikidata         -> notable-person awards (achievements)
+      - Wikipedia        -> bio summary, if notable enough to have a page (achievements)
       - Semantic Scholar -> publication/citation record (achievements)
+      - ORCID            -> registered researcher identity (achievements)
+      - GDELT            -> news/press mentions, high-recall (achievements)
       - GitHub           -> public repo/star track record (achievements)
+      - SEC EDGAR        -> full-text filing mentions, e.g. Form D (achievements)
+      - USAspending      -> company-level federal grants (grants)
       - NSF Award Search -> person-level NSF grants as PI (grants)
       - NIH RePORTER     -> person-level NIH grants as PI (grants)
 
+    Removed: OpenCorporates (officer/company-history search) — its API
+    requires a paid token with no usable free tier, confirmed 401
+    Unauthorized on every request without one. No free public API currently
+    fills the "previous business ownership" gap this left; SEC EDGAR's
+    Form D search is the closest available substitute.
+
     Deliberately NOT called here: SBIR.gov's award API (returns 403
     Forbidden for every request as of 2026-09-25, not just unkeyed ones —
-    see services/grants.py) and any patent/inventor search (the endpoint
-    this used to call, search.patentsview.org, does not exist — see
-    services/uspto.py). Both are documented in their modules rather than
-    silently wired in here to fail every time.
+    see services/grants.py), arXiv (its API is real but returns 406 to
+    every `requests` call regardless of headers, confirmed against the
+    live endpoint — works via curl, not from this stack), and USPTO's
+    Assignment API (assignment-api.uspto.gov does not resolve, publicly or
+    locally — likely retired/moved). All three are documented in their
+    modules rather than silently wired in here to fail every time.
 
     Every remaining source here is best-effort and independent: one failing
     (rate limit, no match, missing key, network hiccup) is recorded as a
     warning rather than failing the whole request.
 
-    Name-based lookups (Wikidata, Semantic Scholar, NSF, NIH) match on name
-    alone and can be ambiguous for common names — treat hits as leads to
-    confirm, not settled fact, the same way the `evidence` table is meant
-    to be read for every signal here.
+    Name-based lookups (Wikidata, Wikipedia, Semantic Scholar, ORCID, GDELT,
+    NSF, NIH, SEC) match on name alone and can be ambiguous for common
+    names — treat hits as leads to confirm, not settled fact, the same way
+    the `evidence` table is meant to be read for every signal here.
     """
     founder = _get_founder(founder_id)
     name = founder["name"]
@@ -159,8 +179,30 @@ def research_founder(founder_id: str, jurisdiction_code: str | None = "us_nj"):
 
     entity_types = {"companies": "company", "achievements": "achievement", "grants": "grant"}
 
+    def _natural_key(table: str, row: dict):
+        """What makes two rows in this table 'the same fact' — used so
+        re-running /research doesn't pile up duplicates every time."""
+        if table == "companies":
+            return (row.get("company_name"), row.get("role"))
+        if table == "achievements":
+            return row.get("achievement")
+        if table == "grants":
+            return (row.get("program"), row.get("agency"), row.get("amount"))
+        return None
+
+    # Load what's already stored for this founder once, so repeated
+    # /research calls are idempotent instead of accumulating duplicates.
+    seen_keys: dict[str, set] = {}
+    for table in entity_types:
+        rows = supabase.table(table).select("*").eq("founder_id", founder_id).execute().data
+        seen_keys[table] = {_natural_key(table, r) for r in rows}
+
     def _save(table: str, rows: list[dict], bucket: list[dict], claim_fn, source_name: str):
         for row in rows:
+            key = _natural_key(table, row)
+            if key in seen_keys[table]:
+                continue
+            seen_keys[table].add(key)
             row["founder_id"] = founder_id
             saved = supabase.table(table).insert(row).execute().data[0]
             bucket.append(saved)
@@ -171,19 +213,6 @@ def research_founder(founder_id: str, jurisdiction_code: str | None = "us_nj"):
                 source_name=source_name,
                 source_url=saved.get("source_url"),
             )
-
-    # --- Previous companies / officer roles ---
-    try:
-        officers = opencorporates_service.search_officers(name, jurisdiction_code=jurisdiction_code)
-        _save(
-            "companies",
-            opencorporates_service.to_company_rows(officers),
-            company_rows,
-            lambda r: f"{name} is listed as {r.get('role') or 'an officer'} of {r.get('company_name')}",
-            "OpenCorporates",
-        )
-    except Exception as exc:  # noqa: BLE001 - one flaky public API shouldn't fail the request
-        warnings.append(f"OpenCorporates: {exc}")
 
     # --- Wikidata notable-person awards ---
     try:
@@ -222,6 +251,50 @@ def research_founder(founder_id: str, jurisdiction_code: str | None = "us_nj"):
     except Exception as exc:  # noqa: BLE001
         warnings.append(f"GitHub: {exc}")
 
+    # --- Wikipedia bio summary (only if notable enough to have a page) ---
+    try:
+        summary = wikipedia_service.get_summary(name)
+        row = wikipedia_service.to_achievement_row(summary) if summary else None
+        if row:
+            _save("achievements", [row], achievement_rows, lambda r: r["achievement"], "Wikipedia")
+    except Exception as exc:  # noqa: BLE001
+        warnings.append(f"Wikipedia: {exc}")
+
+    # --- ORCID registered-researcher identity ---
+    if first_name:
+        try:
+            orcid_matches = orcid_service.search_person(first_name, last_name)
+            rows = [orcid_service.to_achievement_row(m) for m in orcid_matches[:3]]
+            _save("achievements", rows, achievement_rows, lambda r: r["achievement"], "ORCID")
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"ORCID: {exc}")
+
+    # --- GDELT news/press mentions (noisy, high-recall) ---
+    try:
+        articles = gdelt_service.search_articles(f'"{name}"', max_records=5)
+        _save(
+            "achievements",
+            gdelt_service.to_achievement_rows(articles),
+            achievement_rows,
+            lambda r: r["achievement"],
+            "GDELT",
+        )
+    except Exception as exc:  # noqa: BLE001
+        warnings.append(f"GDELT: {exc}")
+
+    # --- SEC EDGAR full-text filing mentions (e.g. Form D private offerings) ---
+    try:
+        hits = sec_service.search_filings(f'"{name}"', forms="D")
+        _save(
+            "achievements",
+            sec_service.to_achievement_rows(hits),
+            achievement_rows,
+            lambda r: r["achievement"],
+            "SEC EDGAR",
+        )
+    except Exception as exc:  # noqa: BLE001
+        warnings.append(f"SEC EDGAR: {exc}")
+
     # --- Company-level federal grants (USAspending; broad catch-all) ---
     if startup_name:
         try:
@@ -233,7 +306,9 @@ def research_founder(founder_id: str, jurisdiction_code: str | None = "us_nj"):
                 "grants",
                 rows,
                 grant_rows,
-                lambda r: f"{startup_name} received a federal award from {r.get('agency')}",
+                lambda r: f"{startup_name} received a ${r.get('amount'):,.0f} award from {r.get('agency')}"
+                if r.get("amount")
+                else f"{startup_name} received an award from {r.get('agency')}",
                 "USAspending.gov",
             )
         except Exception as exc:  # noqa: BLE001
