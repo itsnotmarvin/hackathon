@@ -1,0 +1,5 @@
+fastapi>=0.141
+uvicorn>=0.54
+supabase>=2.31
+python-dotenv>=1.2
+requests>=2.34
