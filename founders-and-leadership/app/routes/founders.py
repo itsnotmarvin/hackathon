@@ -43,14 +43,20 @@ def get_founder(founder_id: str):
 @router.post("/founders/{founder_id}/enrich")
 def enrich_founder(founder_id: str, company: str | None = None, location: str | None = None):
     """Pull identity/education/employment from People Data Labs and attach
-    it to this founder, with an evidence row per fact."""
+    it to this founder, with an evidence row per fact. This is the only
+    source of `education` rows - if PDL_API_KEY isn't set, education stays
+    empty everywhere in the app, by design (see services/pdl.py)."""
     founder = _get_founder(founder_id)
 
-    person = pdl_service.enrich_person(
-        name=founder["name"],
-        company=company,
-        location=location or founder.get("location"),
-    )
+    try:
+        person = pdl_service.enrich_person(
+            name=founder["name"],
+            company=company,
+            location=location or founder.get("location"),
+        )
+    except pdl_service.PDLError as exc:
+        raise HTTPException(status_code=424, detail=str(exc)) from exc
+
     if person is None:
         return {"matched": False, "founder": founder}
 
