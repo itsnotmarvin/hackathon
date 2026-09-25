@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from app.database import record_evidence, supabase
+from services import college_scorecard as college_scorecard_service
 from services import github as github_service
 from services import grants as grants_service
 from services import nih as nih_service
@@ -67,6 +68,28 @@ def enrich_founder(founder_id: str, company: str | None = None, location: str | 
                 claim=f"{founder['name']} attended {saved['institution']}",
                 source_name="People Data Labs",
             )
+            # Descriptive school context (size, admit rate) — not a prestige
+            # score, just facts to show alongside the claim above.
+            try:
+                school = college_scorecard_service.lookup_school(saved["institution"])
+            except Exception:  # noqa: BLE001 - best-effort enrichment, never blocks the enrich flow
+                school = None
+            if school:
+                size = school.get("latest.student.size")
+                admit_rate = school.get("latest.admissions.admission_rate.overall")
+                parts = []
+                if size:
+                    parts.append(f"{size} students")
+                if admit_rate is not None:
+                    parts.append(f"{admit_rate:.1%} admit rate")
+                if parts:
+                    record_evidence(
+                        entity_type="education",
+                        entity_id=saved["id"],
+                        claim=f"{saved['institution']}: {', '.join(parts)}",
+                        source_name="College Scorecard",
+                        source_url=school.get("school.school_url"),
+                    )
 
     company_rows = []
     for row in pdl_service.to_company_rows(person):
@@ -285,6 +308,19 @@ def founder_profile(founder_id: str):
         except Exception as exc:  # noqa: BLE001 - don't let a missing/misconfigured evidence table 500 the whole profile
             evidence_error = str(exc)
 
+    # Observable business-experience signals, per-fact counts only — no age
+    # or personal-wealth inference, and no single blended "score": see
+    # services/pdl.py and the earlier design note on why those two aren't
+    # derivable from public data.
+    signals = {
+        "previous_company_count": len(companies),
+        "grant_count": len(grants_rows),
+        "total_grant_amount": sum(g["amount"] for g in grants_rows if g.get("amount")) or None,
+        "achievement_count": len(achievements),
+        "education_count": len(education),
+        "birth_year": founder.get("birth_year"),
+    }
+
     result = {
         "founder": founder,
         "education": education,
@@ -292,6 +328,7 @@ def founder_profile(founder_id: str):
         "achievements": achievements,
         "grants": grants_rows,
         "evidence": evidence,
+        "signals": signals,
     }
     if evidence_error:
         result["evidence_error"] = evidence_error
