@@ -1,0 +1,369 @@
+{
+  "evaluation": "Unblinded development set; supplied identity pairs, all snapshots searched. Not discovery recall or held-out accuracy.",
+  "supported_pairs": 8,
+  "abstained_pairs": 2,
+  "total_pairs": 10,
+  "results": [
+    {
+      "case_id": "P01",
+      "reference_relationship": "led_or_coled_investment",
+      "person": "Dan Borok",
+      "company": "BigCommerce",
+      "status": "supported",
+      "roles": [
+        "led_or_coled_investment"
+      ],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [
+        {
+          "relationship": "led_or_coled_investment",
+          "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify.",
+          "start_offset": 1782,
+          "end_offset": 2189,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S03",
+          "url": "https://nvpcap.com/nvp-capital-team/",
+          "snapshot_sha256": "4138914529fdf7474ae0f1d45fc2b7076774b27c83afcb24e3e26c8270d9c4f5",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        },
+        {
+          "relationship": "led_or_coled_investment",
+          "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify.",
+          "start_offset": 5933,
+          "end_offset": 6340,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S03",
+          "url": "https://nvpcap.com/nvp-capital-team/",
+          "snapshot_sha256": "4138914529fdf7474ae0f1d45fc2b7076774b27c83afcb24e3e26c8270d9c4f5",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        }
+      ],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P02",
+      "reference_relationship": "led_or_coled_investment",
+      "person": "Dan Borok",
+      "company": "Janrain",
+      "status": "supported",
+      "roles": [
+        "led_or_coled_investment"
+      ],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [
+        {
+          "relationship": "led_or_coled_investment",
+          "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify.",
+          "start_offset": 1782,
+          "end_offset": 2189,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S03",
+          "url": "https://nvpcap.com/nvp-capital-team/",
+          "snapshot_sha256": "4138914529fdf7474ae0f1d45fc2b7076774b27c83afcb24e3e26c8270d9c4f5",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        },
+        {
+          "relationship": "led_or_coled_investment",
+          "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify.",
+          "start_offset": 5933,
+          "end_offset": 6340,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S03",
+          "url": "https://nvpcap.com/nvp-capital-team/",
+          "snapshot_sha256": "4138914529fdf7474ae0f1d45fc2b7076774b27c83afcb24e3e26c8270d9c4f5",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        }
+      ],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P03",
+      "reference_relationship": "led_or_coled_investment",
+      "person": "Dan Borok",
+      "company": "Yodle",
+      "status": "supported",
+      "roles": [
+        "led_or_coled_investment"
+      ],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [
+        {
+          "relationship": "led_or_coled_investment",
+          "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify.",
+          "start_offset": 1782,
+          "end_offset": 2189,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S03",
+          "url": "https://nvpcap.com/nvp-capital-team/",
+          "snapshot_sha256": "4138914529fdf7474ae0f1d45fc2b7076774b27c83afcb24e3e26c8270d9c4f5",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        },
+        {
+          "relationship": "led_or_coled_investment",
+          "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify.",
+          "start_offset": 5933,
+          "end_offset": 6340,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S03",
+          "url": "https://nvpcap.com/nvp-capital-team/",
+          "snapshot_sha256": "4138914529fdf7474ae0f1d45fc2b7076774b27c83afcb24e3e26c8270d9c4f5",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        }
+      ],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P04",
+      "reference_relationship": "historical_director",
+      "person": "Jim Gunton",
+      "company": "InstaMed",
+      "status": "supported",
+      "roles": [
+        "historical_board_member"
+      ],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [
+        {
+          "relationship": "historical_board_member",
+          "quote": "He has served on the board of numerous private and public companies, including Achieve3000, Amber Road (NYSE: AMBR), CytoSorbents (NASDAQ: CTSO), InstaMed, and IntegriChain.",
+          "start_offset": 1331,
+          "end_offset": 1504,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S01",
+          "url": "https://techcouncilventures.com/team-members/jim-gunton/",
+          "snapshot_sha256": "2b82e1bd0c40c3f3749a498cbe6bb5f7a7d1cfc3978ac92dfaeb21407b202c4a",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        }
+      ],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P05",
+      "reference_relationship": "historical_director",
+      "person": "Jim Gunton",
+      "company": "CytoSorbents",
+      "status": "supported",
+      "roles": [
+        "historical_board_member"
+      ],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [
+        {
+          "relationship": "historical_board_member",
+          "quote": "He has served on the board of numerous private and public companies, including Achieve3000, Amber Road (NYSE: AMBR), CytoSorbents (NASDAQ: CTSO), InstaMed, and IntegriChain.",
+          "start_offset": 1331,
+          "end_offset": 1504,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S01",
+          "url": "https://techcouncilventures.com/team-members/jim-gunton/",
+          "snapshot_sha256": "2b82e1bd0c40c3f3749a498cbe6bb5f7a7d1cfc3978ac92dfaeb21407b202c4a",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        }
+      ],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P06",
+      "reference_relationship": "director",
+      "person": "Stephen Socolof",
+      "company": "SunRay Scientific",
+      "status": "supported",
+      "roles": [
+        "board_member",
+        "director"
+      ],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [
+        {
+          "relationship": "board_member",
+          "quote": "Steve Socolof has been a technology investor for over twenty years. Steve’s interests are in enterprise software (particularly applications of AI/ML), data center to edge, internet of things, wireless, and energy, environmental, and materials technologies. He is currently on the board of Adrich, Kintra Fibers, and SunRay Scientific.",
+          "start_offset": 105,
+          "end_offset": 439,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S02",
+          "url": "https://techcouncilventures.com/team-members/steve-socolof/",
+          "snapshot_sha256": "bb227ca4af7d56dfa7871c668f52a26c1f39dd51243fbf9535212f6230cc2286",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        },
+        {
+          "relationship": "director",
+          "quote": "Steve loves focusing his investment activity on the local Mid-Atlantic region.  He looks for deals in cleantech and enterprise, including hardware and software across cloud/data center, IoT, and mobility.  He is currently a director of SunRay Scientific and board observer for Adrich, Kintra Fibers, and Regenosine.  He was on the board of Data Inventions (sold to ECi Software Solutions), Stratis IoT (sold to RealPage), and Vydia (sold to Gamma).  Steve is currently on the board of the National Venture Capital Association.",
+          "start_offset": 68,
+          "end_offset": 594,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S04",
+          "url": "https://transcendap.com/stephen-socolof/",
+          "snapshot_sha256": "cfd70b7b01b2ca1f39dff01d83e41a2020bf84d545239e657478b9e44a6a5df1",
+          "first_observed_at": "2026-09-25T14:58:12.208Z"
+        }
+      ],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P07",
+      "reference_relationship": "historical_director",
+      "person": "Stephen Socolof",
+      "company": "Everspin Technologies",
+      "status": "supported",
+      "roles": [
+        "historical_director"
+      ],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [
+        {
+          "relationship": "historical_director",
+          "quote": "He was recently a director of Everspin (NASDAQ: MRAM), Stratis IoT (sold to RealPage), and Vydia (sold to Gamma). He sold Airclic to Descartes Systems, Alverix to BD, Data Inventions to ECi Software, Flarion to Qualcomm, Neohapsis to Cisco, Silicon Hive to Intel, and Sychip to Murata. Steve has also been a leader in the corporate venture community and was Chair of the Corporate Venture Group within the National Venture Capital Association and on the Advisory Board of Global Corporate Venturing.",
+          "start_offset": 441,
+          "end_offset": 940,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S02",
+          "url": "https://techcouncilventures.com/team-members/steve-socolof/",
+          "snapshot_sha256": "bb227ca4af7d56dfa7871c668f52a26c1f39dd51243fbf9535212f6230cc2286",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        }
+      ],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P08",
+      "reference_relationship": "director",
+      "person": "Stephen Socolof",
+      "company": "Energy Focus",
+      "status": "abstain",
+      "roles": [],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P09",
+      "reference_relationship": "board_member",
+      "person": "Vaughn Crowe",
+      "company": "Toothio",
+      "status": "supported",
+      "roles": [
+        "board_member"
+      ],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [
+        {
+          "relationship": "board_member",
+          "quote": "Vaughn serves as Vice Chair of Newark Beth Israel Medical Center, part of RWJBarnabas Health, and sits on several boards, including, Toothio, Handspring Health, Ryse Marketplace, and Workgrounds. He holds a BA in Political Science from Colgate University, where he played football (Go ‘Gate!) and attended Harvard Business School.",
+          "start_offset": 3260,
+          "end_offset": 3590,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S03",
+          "url": "https://nvpcap.com/nvp-capital-team/",
+          "snapshot_sha256": "4138914529fdf7474ae0f1d45fc2b7076774b27c83afcb24e3e26c8270d9c4f5",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        },
+        {
+          "relationship": "board_member",
+          "quote": "Vaughn serves as Vice Chair of Newark Beth Israel Medical Center, part of RWJBarnabas Health, and sits on several boards, including, Toothio, Handspring Health, Ryse Marketplace, and Workgrounds. He holds a BA in Political Science from Colgate University, where he played football (Go ‘Gate!) and attended Harvard Business School.",
+          "start_offset": 7411,
+          "end_offset": 7741,
+          "relationship_start": null,
+          "relationship_end": null,
+          "source_id": "S03",
+          "url": "https://nvpcap.com/nvp-capital-team/",
+          "snapshot_sha256": "4138914529fdf7474ae0f1d45fc2b7076774b27c83afcb24e3e26c8270d9c4f5",
+          "first_observed_at": "2026-09-25T14:55:44.408Z"
+        }
+      ],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    },
+    {
+      "case_id": "P10",
+      "reference_relationship": "founder_investor",
+      "person": "Jeremy Sohn",
+      "company": "TriNetX",
+      "status": "abstain",
+      "roles": [],
+      "relationship_start": null,
+      "relationship_end": null,
+      "first_public_date": null,
+      "early_stage_verified": false,
+      "evidence": [],
+      "limitations": [
+        "Rule baseline: supplied identities are not independently verified.",
+        "Dates and stage are not extracted; metadata never supplies relationship dates.",
+        "Source count does not establish independent corroboration."
+      ]
+    }
+  ]
+}

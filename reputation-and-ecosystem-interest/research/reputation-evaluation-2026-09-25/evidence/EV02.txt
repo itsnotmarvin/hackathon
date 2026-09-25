@@ -1,0 +1,91 @@
+# Company
+
+Portfolio Data
+
+Back to Company Search
+
+## CANYON MAGNET ENERGY INC
+
+### Address
+
+2 Cedar Street  
+Newark, NJ, 07102  
+USA 
+
+View website
+
+**UEI:** PAKXDAHPZ9C7
+
+**Number of Employees:** 12
+
+**HUBZone Owned:** No
+
+**Woman Owned:** No
+
+**Socially and Economically Disadvantaged:** Yes
+
+#### SBIR/STTR Involvement
+
+Year of first award: 2025
+
+2
+
+Phase I Awards
+
+0
+
+Phase II Awards
+
+N/A
+
+Conversion Rate
+
+$339,885
+
+Phase I Dollars
+
+$0
+
+Phase II Dollars
+
+$339,885
+
+Total Awarded
+
+## Awards
+
+**Up to 10 of the most recent awards are being displayed.** To view all of this company's awards, visit the Award Data search page.
+
+***Amount:** $139,887  
+
+**Topic:** N25A-T028*
+
+Canyon Magnet Energy (CME) in collaboration with Tulane University proposes a hybrid N2/Ne thermosiphon system for rapid cooldown of a 2000 lb HTS magnet. The system uses liquid nitrogen for initial cooling to 80 K, followed by liquid neon for final cooling to below 40 K. The novel design will be compared to traditional cold helium gas circulators, with a focus on efficiency, cost, and heat transfer rates. For this phase I STTR project, a thermal and stress analysis will be conducted to determine the safe cooling rate and max tolerable temperature gradient for a 2000 lb HTS magnet, focusing on minimizing thermal stress during the initial stage from 300 K to 80 K. The analysis involves modeling thermal simulation, stress analysis, temperature distribution, and analyzing thermal strain within the coil.  The design of LN2 and LNe thermosiphons, as well as a helium gas refrigerator option, is also explored to achieve the desired cooldown rate from 80 K to 40 K. A miniature prototype may also be built to demonstrate the engineering feasibility and prepare a solid foundation for Phase II, which aims to experiment with the rapid cooldown of large-scale HTS magnet systems and optimize the fast cooling method.
+
+Tagged as:
+
+STTR
+
+Phase I
+
+2025
+
+DOW
+
+NAVY
+
+***Amount:** $199,998  
+
+**Topic:** C59-18b*
+
+The advancement of fusion energy technology relies on the development of high-temperature superconducting (HTS) cables capable of withstanding extreme operational conditions. A critical challenge in this area is quench protection - ensuring these cables’ integrity during quench, which can cause overheating and magnet failure. To address this issue, the project focuses on improving quench detection in HTS cables by including low-temperature-superconductors for quench detection, advanced quench modeling to optimize cable design, and comprehensive experimental testing. Specifically, the project will simulate and optimize the quench behavior of three existing HTS cables, design and fabricate cables incorporating a low-temperature superconducting (LTS) to assist in quench detection. By integrating experimental data with simulation insights, the project aims to significantly enhance the quench detection technique in HTS cables for fusion magnets. Successful development of these enhanced HTS cables will have broad commercial applications, particularly in the field of fusion energy, where reliable superconducting magnets are essential for reactor performance. Beyond fusion, this technology has potential applications in high-field magnet systems for medical imaging, particle accelerators, etc. offering widespread public benefits in clean energy, healthcare, and advanced scientific research.
+
+Tagged as:
+
+SBIR
+
+Phase I
+
+2025
+
+DOE

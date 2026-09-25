@@ -1,0 +1,301 @@
+[
+  {
+    "id": "P01",
+    "person": "Dan Borok",
+    "person_aliases": [],
+    "company": "BigCommerce",
+    "company_aliases": [],
+    "relationship": "led_or_coled_investment",
+    "sector": "commerce software",
+    "firm_context": "Millennium Technology Value Partners (retrospective attribution)",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": null,
+    "relationship_end": null,
+    "source_as_of": "2016-05-24",
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:55:44.408Z",
+    "early_stage_verified": false,
+    "outcome_claim": "NVP biography reports IPO; outcome not independently audited here.",
+    "evidence": [
+      {
+        "source_id": "S07",
+        "quote": "***Dan Borok**, Managing Partner, who**has more than 15 years of venture capital and technology experience, having worked at DoubleClick, Google and Millennium Technology Value Partners. He has led or co-led investments in BigCommerce, Envivio (IPO), Glamsquad, Janrain, MarkLogic, SugarCRM, and Watchdox (Acquired by BlackBerry), Yodle (Acquired by Web.com), as well as working on many other investments. Dan has an MBA from Columbia Business School and a BA from University of Vermont.*"
+      },
+      {
+        "source_id": "S03",
+        "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify."
+      }
+    ],
+    "limitations": "2016 interview says led or co-led; newer biography says led. Round, first investment date and ownership are unverified. The interview is attributed to a colleague, not independent transaction documentation."
+  },
+  {
+    "id": "P02",
+    "person": "Dan Borok",
+    "person_aliases": [],
+    "company": "Janrain",
+    "company_aliases": [],
+    "relationship": "led_or_coled_investment",
+    "sector": "identity software",
+    "firm_context": "Millennium Technology Value Partners (retrospective attribution)",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": null,
+    "relationship_end": null,
+    "source_as_of": "2016-05-24",
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:55:44.408Z",
+    "early_stage_verified": false,
+    "outcome_claim": "NVP biography reports acquisition by Akamai; returns not established.",
+    "evidence": [
+      {
+        "source_id": "S07",
+        "quote": "***Dan Borok**, Managing Partner, who**has more than 15 years of venture capital and technology experience, having worked at DoubleClick, Google and Millennium Technology Value Partners. He has led or co-led investments in BigCommerce, Envivio (IPO), Glamsquad, Janrain, MarkLogic, SugarCRM, and Watchdox (Acquired by BlackBerry), Yodle (Acquired by Web.com), as well as working on many other investments. Dan has an MBA from Columbia Business School and a BA from University of Vermont.*"
+      },
+      {
+        "source_id": "S03",
+        "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify."
+      }
+    ],
+    "limitations": "2016 interview says led or co-led; newer biography says led. Round, first investment date and ownership are unverified. The interview is attributed to a colleague, not independent transaction documentation."
+  },
+  {
+    "id": "P03",
+    "person": "Dan Borok",
+    "person_aliases": [],
+    "company": "Yodle",
+    "company_aliases": [],
+    "relationship": "led_or_coled_investment",
+    "sector": "marketing software",
+    "firm_context": "Millennium Technology Value Partners (retrospective attribution)",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": null,
+    "relationship_end": null,
+    "source_as_of": "2016-05-24",
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:55:44.408Z",
+    "early_stage_verified": false,
+    "outcome_claim": "NVP biography reports acquisition by Web.com; returns not established.",
+    "evidence": [
+      {
+        "source_id": "S07",
+        "quote": "***Dan Borok**, Managing Partner, who**has more than 15 years of venture capital and technology experience, having worked at DoubleClick, Google and Millennium Technology Value Partners. He has led or co-led investments in BigCommerce, Envivio (IPO), Glamsquad, Janrain, MarkLogic, SugarCRM, and Watchdox (Acquired by BlackBerry), Yodle (Acquired by Web.com), as well as working on many other investments. Dan has an MBA from Columbia Business School and a BA from University of Vermont.*"
+      },
+      {
+        "source_id": "S03",
+        "quote": "Before founding nvp capital, Dan was a Partner at Millennium Technology Value Partners, a multi-stage venture firm where he led investments in BigCommerce (IPO), Magnite (IPO), Envivio (IPO), Yodle (Acquired by Web.com) and Janrain (Acquired by Akamai). At nvp capital, Dan works with companies including Vulcan Elements, HomeVision, Compyl, and Upscale.ai, and previously on Podsights, acquired by Spotify."
+      }
+    ],
+    "limitations": "2016 interview says led or co-led; newer biography says led. Round, first investment date and ownership are unverified. The interview is attributed to a colleague, not independent transaction documentation."
+  },
+  {
+    "id": "P04",
+    "person": "Jim Gunton",
+    "person_aliases": [],
+    "company": "InstaMed",
+    "company_aliases": [],
+    "relationship": "historical_director",
+    "sector": "healthcare payments",
+    "firm_context": "Prior fund affiliation not resolved for this board service",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": null,
+    "relationship_end": null,
+    "source_as_of": null,
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:55:44.408Z",
+    "early_stage_verified": false,
+    "outcome_claim": null,
+    "evidence": [
+      {
+        "source_id": "S01",
+        "quote": "He has served on the board of numerous private and public companies, including Achieve3000, Amber Road (NYSE: AMBR), CytoSorbents (NASDAQ: CTSO), InstaMed, and IntegriChain."
+      },
+      {
+        "source_id": "S10",
+        "quote": "Mr. Gunton has served or is currently a Director of InstaMed, a health payments provider; IntegriChain, a data analytics vendor to the drug industry;  Achieve3000, a provider of differentiated instruction to the education sector; Amber Road (NYSE: AMBR), a global trade management software developer; and CytoSorbents (NASDAQ: CTSO), a developer of blood perfusion immunotherapies."
+      }
+    ],
+    "limitations": "Sources use served or currently / has served. Do not infer a current seat or a board start date from webpage metadata."
+  },
+  {
+    "id": "P05",
+    "person": "Jim Gunton",
+    "person_aliases": [],
+    "company": "CytoSorbents",
+    "company_aliases": [
+      "Cytosorbents"
+    ],
+    "relationship": "historical_director",
+    "sector": "medical devices",
+    "firm_context": "Prior fund affiliation not resolved for this board service",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": null,
+    "relationship_end": null,
+    "source_as_of": null,
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:55:44.408Z",
+    "early_stage_verified": false,
+    "outcome_claim": null,
+    "evidence": [
+      {
+        "source_id": "S01",
+        "quote": "He has served on the board of numerous private and public companies, including Achieve3000, Amber Road (NYSE: AMBR), CytoSorbents (NASDAQ: CTSO), InstaMed, and IntegriChain."
+      },
+      {
+        "source_id": "S10",
+        "quote": "Mr. Gunton has served or is currently a Director of InstaMed, a health payments provider; IntegriChain, a data analytics vendor to the drug industry;  Achieve3000, a provider of differentiated instruction to the education sector; Amber Road (NYSE: AMBR), a global trade management software developer; and CytoSorbents (NASDAQ: CTSO), a developer of blood perfusion immunotherapies."
+      }
+    ],
+    "limitations": "Sources use served or currently / has served. Do not infer a current seat or a board start date from webpage metadata."
+  },
+  {
+    "id": "P06",
+    "person": "Stephen Socolof",
+    "person_aliases": [
+      "Steve Socolof",
+      "Stephen J. Socolof"
+    ],
+    "company": "SunRay Scientific",
+    "company_aliases": [],
+    "relationship": "director",
+    "sector": "advanced materials",
+    "firm_context": "Tech Council Ventures / New Venture Partners; exact investing vehicle unresolved",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": null,
+    "relationship_end": null,
+    "source_as_of": "2023-05-01",
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:58:12.208Z",
+    "early_stage_verified": false,
+    "outcome_claim": null,
+    "evidence": [
+      {
+        "source_id": "S05",
+        "quote": "Mr. Socolof has served as a member of our Board since May 2019 and as Chairman or Lead Independent Director since September 2019. From January 2022 to September 2022, he also served as Interim Chief Executive Officer of the Company. Mr. Socolof has been Managing Partner of Tech Council Ventures, an early-stage venture capital firm, since 2018 and remains a Managing Partner of New Venture Partners, a venture capital firm that he co-founded in 2001. Previously, Mr. Socolof worked at Lucent Technologies, Inc. from 1996 to 2001 where he established Lucent’s New Ventures Group. Before joining Lucent, Mr. Socolof spent eight years with Booz, Allen & Hamilton Inc., where he was a leader of the firm’s innovation consulting practice. From 2008 to 2021, Mr. Socolof was a director of Everspin Technologies Inc., which is a semiconductor and electronics technology company listed on the Nasdaq Global Market. He is also currently a director on the board of SunRay Scientific and an observer on the boards of Adrich, Kintra Fibers, and Vydia Inc. He was a director of Gainspan Corporation before its acquisition by Telit Communications"
+      },
+      {
+        "source_id": "S04",
+        "quote": "He is currently a director of SunRay Scientific and board observer for Adrich, Kintra Fibers, and Regenosine.  He was on the board of Data Inventions (sold to ECi Software Solutions), Stratis IoT (sold to RealPage), and Vydia (sold to Gamma).  Steve is currently on the board of the National Venture Capital Association."
+      }
+    ],
+    "limitations": "SEC statement establishes role as of the document date. Later company biography repeats it; publication metadata is not an appointment date."
+  },
+  {
+    "id": "P07",
+    "person": "Stephen Socolof",
+    "person_aliases": [
+      "Steve Socolof",
+      "Stephen J. Socolof"
+    ],
+    "company": "Everspin Technologies",
+    "company_aliases": [
+      "Everspin"
+    ],
+    "relationship": "historical_director",
+    "sector": "semiconductors",
+    "firm_context": "New Venture Partners (biographical context)",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": "2008",
+    "relationship_end": "2021",
+    "source_as_of": "2023-05-01",
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:58:12.208Z",
+    "early_stage_verified": false,
+    "outcome_claim": "IPO stated in company biography; fund return unknown.",
+    "evidence": [
+      {
+        "source_id": "S05",
+        "quote": "Mr. Socolof has served as a member of our Board since May 2019 and as Chairman or Lead Independent Director since September 2019. From January 2022 to September 2022, he also served as Interim Chief Executive Officer of the Company. Mr. Socolof has been Managing Partner of Tech Council Ventures, an early-stage venture capital firm, since 2018 and remains a Managing Partner of New Venture Partners, a venture capital firm that he co-founded in 2001. Previously, Mr. Socolof worked at Lucent Technologies, Inc. from 1996 to 2001 where he established Lucent’s New Ventures Group. Before joining Lucent, Mr. Socolof spent eight years with Booz, Allen & Hamilton Inc., where he was a leader of the firm’s innovation consulting practice. From 2008 to 2021, Mr. Socolof was a director of Everspin Technologies Inc., which is a semiconductor and electronics technology company listed on the Nasdaq Global Market. He is also currently a director on the board of SunRay Scientific and an observer on the boards of Adrich, Kintra Fibers, and Vydia Inc. He was a director of Gainspan Corporation before its acquisition by Telit Communications"
+      },
+      {
+        "source_id": "S04",
+        "quote": "In those days, he was a director of Alverix (sold to BD), Everspin Technologies (IPO); Neohapsis (sold to Cisco), Gainspan (sold to Telit Communications), Silicon Hive (sold to Intel); Sychip (sold to Murata); and an observer of Flarion Technologies (sold to Qualcomm)."
+      }
+    ],
+    "limitations": "Dates have year precision. Board service is not automatically proof of an investment at that date."
+  },
+  {
+    "id": "P08",
+    "person": "Stephen Socolof",
+    "person_aliases": [
+      "Steve Socolof",
+      "Stephen J. Socolof"
+    ],
+    "company": "Energy Focus",
+    "company_aliases": [],
+    "relationship": "director",
+    "sector": "lighting technology",
+    "firm_context": "Public-company board service; no startup investment inferred",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": "2019-05",
+    "relationship_end": null,
+    "source_as_of": "2023-05-01",
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:58:12.208Z",
+    "early_stage_verified": false,
+    "outcome_claim": null,
+    "evidence": [
+      {
+        "source_id": "S05",
+        "quote": "Mr. Socolof has served as a member of our Board since May 2019 and as Chairman or Lead Independent Director since September 2019. From January 2022 to September 2022, he also served as Interim Chief Executive Officer of the Company. Mr. Socolof has been Managing Partner of Tech Council Ventures, an early-stage venture capital firm, since 2018 and remains a Managing Partner of New Venture Partners, a venture capital firm that he co-founded in 2001. Previously, Mr. Socolof worked at Lucent Technologies, Inc. from 1996 to 2001 where he established Lucent’s New Ventures Group. Before joining Lucent, Mr. Socolof spent eight years with Booz, Allen & Hamilton Inc., where he was a leader of the firm’s innovation consulting practice. From 2008 to 2021, Mr. Socolof was a director of Everspin Technologies Inc., which is a semiconductor and electronics technology company listed on the Nasdaq Global Market. He is also currently a director on the board of SunRay Scientific and an observer on the boards of Adrich, Kintra Fibers, and Vydia Inc. He was a director of Gainspan Corporation before its acquisition by Telit Communications"
+      }
+    ],
+    "limitations": "Boundary case: already a public-company director, not an early startup backing event. Helps prevent treating all reputable-person relationships as early-stage momentum."
+  },
+  {
+    "id": "P09",
+    "person": "Vaughn Crowe",
+    "person_aliases": [],
+    "company": "Toothio",
+    "company_aliases": [],
+    "relationship": "board_member",
+    "sector": "dental staffing",
+    "firm_context": "NVP Capital",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": null,
+    "relationship_end": null,
+    "source_as_of": null,
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:55:44.408Z",
+    "early_stage_verified": false,
+    "outcome_claim": null,
+    "evidence": [
+      {
+        "source_id": "S03",
+        "quote": "Vaughn serves as Vice Chair of Newark Beth Israel Medical Center, part of RWJBarnabas Health, and sits on several boards, including, Toothio, Handspring Health, Ryse Marketplace, and Workgrounds."
+      },
+      {
+        "source_id": "S09",
+        "quote": "Vaughn serves as Vice Chair of Newark Beth Israel Medical Center, part of RWJBarnabas Health, and sits on several boards, including, Toothio, Handspring Health, Ryse Marketplace, and Workgrounds."
+      }
+    ],
+    "limitations": "Two sites repeat nearly identical biography wording; one evidence family, not independent confirmation. No start date or investment stage established."
+  },
+  {
+    "id": "P10",
+    "person": "Jeremy Sohn",
+    "person_aliases": [],
+    "company": "TriNetX",
+    "company_aliases": [],
+    "relationship": "founder_investor",
+    "sector": "clinical research software",
+    "firm_context": "MPM Capital",
+    "label_scope": "Documented professional relationship; not proof of a personal check, early entry, returns, or predictive skill.",
+    "relationship_start": null,
+    "relationship_end": null,
+    "source_as_of": "2015-10-15",
+    "first_public_date": null,
+    "first_observed_at": "2026-09-25T14:58:12.208Z",
+    "early_stage_verified": false,
+    "outcome_claim": null,
+    "evidence": [
+      {
+        "source_id": "S08",
+        "quote": "Jeremy Sohn brings a deep level of technical sophistication and healthcare investing experience to our team. Jeremy’s prior experience includes a Managing Director role at MPM Capital where he was responsible for a number of investments, including TrinetX, a clinical trial design and recruitment company, where he was a founder, and Clinical Ink which was acquired by CentrosHealth, which makes configurable mobile apps for clinical trial patient engagement."
+      },
+      {
+        "source_id": "S08",
+        "quote": "At MPM, Jeremy personally founded two companies: CentrosHealth (acquired by Clinical Ink in March 2015), a mobile, patient-engagement platform designed to improve the patient experience during clinical trials, and TriNetX, a federated network of clinical data warehouses that optimizes clinical trial protocol design and patient recruitment."
+      }
+    ],
+    "limitations": "Role documented in a partner-firm announcement; no transaction date established. Body date is October 15; provider metadata says December 14. Those must not be conflated."
+  }
+]

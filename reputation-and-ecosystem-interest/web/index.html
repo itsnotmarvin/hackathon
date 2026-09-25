@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garden State Radar · Startup discovery</title>
+  <link rel="stylesheet" href="/reputation/style.css">
+  <script src="/reputation/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to research</a>
+  <aside class="rail">
+    <a class="brand" href="/reputation/" aria-label="Garden State Radar home"><span class="brand-icon" aria-hidden="true">↗</span><span>GARDEN STATE<span class="brand-light">RADAR</span></span></a>
+    <div class="rail-label">STARTUP INTELLIGENCE</div>
+    <a class="nav-active" href="#main"><span aria-hidden="true">◉</span> Ecosystem discovery</a>
+    <div class="rail-note"><span class="green-dot"></span> NEW JERSEY<br><p>Follow the evidence.<br>Find the next connection.</p></div>
+    <div class="rail-bottom">Reputation &amp;<br>Ecosystem Interest<span>RESEARCH PREVIEW · 01</span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>Explore <span class="slash">/</span> Reputation &amp; ecosystem</span><span class="pill quiet">PUBLIC-SOURCE RESEARCH</span></header>
+    <main id="main">
+      <section class="hero">
+        <div class="eyebrow"><span class="green-dot"></span> EARLY SIGNALS. REAL SOURCES.</div>
+        <h1>See who's gaining<br><em>ground in New Jersey.</em></h1>
+        <p>Find emerging companies through the organizations backing their work: universities, accelerators, industry partners and public programs.</p>
+      </section>
+      <section class="search-panel" aria-labelledby="search-title">
+        <div class="panel-heading"><div><h2 id="search-title">Build your shortlist</h2><p>We connect the signals. You get the evidence.</p></div><span class="tiny-label">01 / DISCOVER</span></div>
+        <form id="search-form">
+          <label class="sector-control">Sector<select id="sector"><option>All sectors</option><option>Climate &amp; materials</option><option>Life sciences</option><option>Software &amp; AI</option><option>Hardware &amp; energy</option><option>Other</option></select></label>
+          <label>Shortlist size<select id="count"><option value="2">2 companies</option><option value="3" selected>3 companies</option><option value="5">5 companies</option></select></label>
+          <button type="submit" class="primary" id="find-button">Find NJ startups <span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="search-foot"><span id="connection">Checking research connection…</span><button class="text-button" id="sample-button">View saved research <span aria-hidden="true">→</span></button></div>
+        <label class="demo-control"><input id="demo-protection" type="checkbox" checked><span>Demo protection <small>Keep dated, saved research visible while live results refresh.</small></span></label>
+        <form id="access-form" hidden><label>Server access token<input id="access-token" type="password" autocomplete="off"></label><button type="submit" class="secondary">Connect</button></form>
+      </section>
+      <div id="notice" role="alert" hidden></div>
+      <section id="progress" class="progress-panel" aria-labelledby="progress-title" hidden>
+        <div class="progress-top"><span id="progress-indicator" class="activity-dot" aria-hidden="true"></span><h2 id="progress-title">Preparing research</h2><span id="run-mode" class="pill"></span></div>
+        <p id="progress-detail" aria-live="polite" role="status"></p>
+        <div class="pipeline" aria-label="Research process"><span>Discover</span><b>→</b><span>Verify</span><b>→</b><span>Connect signals</span><b>→</b><span>Compare</span></div>
+        <details class="activity"><summary>Research activity</summary><ol id="activity-list"></ol></details>
+      </section>
+      <section id="empty-state" class="empty-state">
+        <div class="eyebrow">WHAT MAKES A COMPANY STAND OUT?</div>
+        <div class="signal-guide"><article><span class="guide-number">01</span><h3>Meaningful relationships</h3><p>Technology licenses, research collaborations and industry partnerships.</p></article><article><span class="guide-number">02</span><h3>Ecosystem recognition</h3><p>Accelerator selection, credible awards and public-program participation.</p></article><article><span class="guide-number">03</span><h3>Evidence that connects</h3><p>A supported NJ presence, distinct sources and recent documented activity.</p></article></div>
+      </section>
+      <section id="results" hidden aria-labelledby="results-title">
+        <div class="results-heading"><div><div class="eyebrow" id="results-kicker">YOUR RESEARCH</div><h2 id="results-title">Companies to look closer at</h2></div><button id="download-button" class="secondary">Export evidence ↓</button></div>
+        <div id="summary" class="summary-grid"></div>
+        <div id="clusters" class="clusters" aria-label="Sectors in this shortlist"></div>
+        <p class="results-note">Ordered by the strength of documented ecosystem involvement. This is a research shortlist, not a prediction of company success. Public-interest trends are not yet measured.</p>
+        <div id="cards" class="cards"></div>
+        <section id="review-section" hidden><div class="review-heading"><h2>Needs a closer look</h2><p>These companies have evidence gaps or an unconfirmed NJ connection.</p></div><div id="review-cards" class="cards"></div></section>
+        <div id="warnings" class="warnings"></div>
+      </section>
+      <section class="history" id="history-section" hidden><h2>Recent research</h2><div id="history-list"></div></section>
+      <footer><span>Garden State Radar</span><p>Evidence first. Unknowns stay visible. Sources stay attached.</p><a href="#main">Back to top ↑</a></footer>
+    </main>
+  </div>
+</body>
+</html>

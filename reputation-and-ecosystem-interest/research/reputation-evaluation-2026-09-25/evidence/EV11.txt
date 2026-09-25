@@ -1,0 +1,91 @@
+# Company
+
+Portfolio Data
+
+Back to Company Search
+
+## CECILIA MATERIALS INC.
+
+### Address
+
+211 WARREN ST STE 516  
+NEWARK, NJ, 07103-3568  
+USA 
+
+View website
+
+**UEI:** M2MBR7W67KZ8
+
+**Number of Employees:** 7
+
+**HUBZone Owned:** Yes
+
+**Woman Owned:** Yes
+
+**Socially and Economically Disadvantaged:** No
+
+#### SBIR/STTR Involvement
+
+Year of first award: 2023
+
+1
+
+Phase I Awards
+
+1
+
+Phase II Awards
+
+100%
+
+Conversion Rate
+
+$156,487
+
+Phase I Dollars
+
+$900,000
+
+Phase II Dollars
+
+$1,056,487
+
+Total Awarded
+
+## Awards
+
+**Up to 10 of the most recent awards are being displayed.** To view all of this company's awards, visit the Award Data search page.
+
+#### Catalytic Conversion of Waste Plastic to Hydrogen
+
+***Amount:** $156,487  
+
+**Topic:** 5-Recyc*
+
+Here we propose to develop methods for the microwave-assisted thermocatalytic decomposition of the non-biodegradable portion of ersatz crew mission waste to produce primarily H2 and carbon. The H2 can be used for atmosphere regeneration in the Sabatier reactor or proposed Bosch reactor, or could be used directly as fuel. The carbon produced could be used in In Situ Resource Utilization to produce activated carbon for water treatment, char for plant growth, or higher-value carbon products for manufacturing purposes. This Phase I work encompasses three Technical Objectives (TOs). TO1 will determine the optimal catalyst form, microwave energy, and reaction time to convert the ersatz waste stream. TO2 will determine the catalyst regeneration and life cycle. TO3 will characterize the carbon and other products formed and determine appropriate separation strategies and uses for each. This work supports current ECLSS systems by providing a secondary form of H2 other than electrolysis of water. Additionally, this recycling strategy could be applied to terrestrial waste streams to produce H2 from waste plastic with concomitant sequestration of the carbon, adding to the drawdown of atmospheric CO2.
+
+Tagged as:
+
+SBIR
+
+Phase I
+
+2023
+
+NASA
+
+***Amount:** $900,000  
+
+**Topic:** 5-Recyc*
+
+Cecilia Energy proposes to continue research and development on a novel technology using microwave (MW)-Assisted ThermoCatalytic Decomposition (MWATCD) of mission trash to produce hydrogen gas (H2) and solid carbon, including carbon nanotubes (CNTs). Future NASA manned missions will require significant, if not complete, recycling of water and materials to reduce system fuel and materials storage demands.
+
+Tagged as:
+
+SBIR
+
+Phase II
+
+2023
+
+NASA

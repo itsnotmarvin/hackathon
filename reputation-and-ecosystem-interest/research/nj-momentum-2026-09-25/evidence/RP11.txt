@@ -1,0 +1,23 @@
+# Chorah Labs
+
+#### At Chorah Labs we are building ARI (Automated Regulatory Intelligence);an AI-native platform building compliance-by-design tools for biopharma and advanced therapy companies, automating regulatory, CMC, and manufacturing workflows across the IND-to-GMP lifecycle.
+
+Location
+
+United States
+
+# Extended description
+
+Chorah Labs is an innovative fintech company developing ARI (Automated Regulatory Intelligence), an AI-native platform that delivers compliance-by-design tools for biopharma and advanced therapy sectors. The platform automates regulatory, chemistry, manufacturing, and controls (CMC) workflows throughout the IND-to-GMP lifecycle, enhancing efficiency and accuracy.
+The company’s mission is to reduce friction in scientific and regulatory processes by integrating intelligent systems with human expertise. By designing modular, agent-based AI solutions tailored to the complexities of biopharma, Chorah Labs supports organizations in accelerating research, regulatory submissions, and manufacturing activities.
+Chorah Labs contributes to industry innovation by transforming how insights are gathered, decisions are made, and results are delivered, enabling faster development cycles with greater clarity and confidence. The company’s approach exemplifies the pioneering use of AI to streamline compliance and operational workflows in highly regulated life sciences environments.
+
+https://chorahlabs.com/
+
+Related industries
+
+Medtech
+
+Health & Longevity
+
+Advanced Manufacturing

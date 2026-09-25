@@ -1,0 +1,123 @@
+[
+  {
+    "case_id": "P01",
+    "query_capture": "captures/recovery-1.json",
+    "query": "Dan Borok investments board portfolio",
+    "relationship_recovered": true,
+    "complete_role_and_interval_recovered": true,
+    "recovered_source_ids": [
+      "S03"
+    ],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "A primary/affiliated full-text page within top five explicitly supports the labeled relationship. Unknown dates remain unknown."
+  },
+  {
+    "case_id": "P02",
+    "query_capture": "captures/recovery-1.json",
+    "query": "Dan Borok investments board portfolio",
+    "relationship_recovered": true,
+    "complete_role_and_interval_recovered": true,
+    "recovered_source_ids": [
+      "S03"
+    ],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "A primary/affiliated full-text page within top five explicitly supports the labeled relationship. Unknown dates remain unknown."
+  },
+  {
+    "case_id": "P03",
+    "query_capture": "captures/recovery-1.json",
+    "query": "Dan Borok investments board portfolio",
+    "relationship_recovered": true,
+    "complete_role_and_interval_recovered": true,
+    "recovered_source_ids": [
+      "S03"
+    ],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "A primary/affiliated full-text page within top five explicitly supports the labeled relationship. Unknown dates remain unknown."
+  },
+  {
+    "case_id": "P04",
+    "query_capture": "captures/recovery-2.json",
+    "query": "Jim Gunton investments board portfolio",
+    "relationship_recovered": true,
+    "complete_role_and_interval_recovered": true,
+    "recovered_source_ids": [
+      "S01",
+      "S10"
+    ],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "A primary/affiliated full-text page within top five explicitly supports the labeled relationship. Unknown dates remain unknown."
+  },
+  {
+    "case_id": "P05",
+    "query_capture": "captures/recovery-2.json",
+    "query": "Jim Gunton investments board portfolio",
+    "relationship_recovered": true,
+    "complete_role_and_interval_recovered": true,
+    "recovered_source_ids": [
+      "S01",
+      "S10"
+    ],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "A primary/affiliated full-text page within top five explicitly supports the labeled relationship. Unknown dates remain unknown."
+  },
+  {
+    "case_id": "P06",
+    "query_capture": "captures/recovery-3.json",
+    "query": "Stephen Socolof investments board portfolio",
+    "relationship_recovered": true,
+    "complete_role_and_interval_recovered": true,
+    "recovered_source_ids": [
+      "S02",
+      "S04"
+    ],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "A primary/affiliated full-text page within top five explicitly supports the labeled relationship. Unknown dates remain unknown."
+  },
+  {
+    "case_id": "P07",
+    "query_capture": "captures/recovery-3.json",
+    "query": "Stephen Socolof investments board portfolio",
+    "relationship_recovered": true,
+    "complete_role_and_interval_recovered": false,
+    "recovered_source_ids": [
+      "S02",
+      "S04"
+    ],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "Director relationship recovered; 2008–2021 interval absent from selected top-five pages."
+  },
+  {
+    "case_id": "P08",
+    "query_capture": "captures/recovery-3.json",
+    "query": "Stephen Socolof investments board portfolio",
+    "relationship_recovered": false,
+    "complete_role_and_interval_recovered": false,
+    "recovered_source_ids": [],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "Energy Focus relationship absent from audited top-five source pages; known evidence is in SEC filing."
+  },
+  {
+    "case_id": "P09",
+    "query_capture": "captures/recovery-4.json",
+    "query": "Vaughn Crowe investments board portfolio",
+    "relationship_recovered": true,
+    "complete_role_and_interval_recovered": true,
+    "recovered_source_ids": [
+      "S03",
+      "S09"
+    ],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "A primary/affiliated full-text page within top five explicitly supports the labeled relationship. Unknown dates remain unknown."
+  },
+  {
+    "case_id": "P10",
+    "query_capture": "captures/recovery-5.json",
+    "query": "Jeremy Sohn investments board portfolio",
+    "relationship_recovered": false,
+    "complete_role_and_interval_recovered": false,
+    "recovered_source_ids": [],
+    "judgment": "manual full-text assessment; no extractor model evaluated",
+    "reason": "Relevant Stony Brook result ranked fourth but fetched as 404. Usable BMP evidence ranked sixth, outside cutoff."
+  }
+]

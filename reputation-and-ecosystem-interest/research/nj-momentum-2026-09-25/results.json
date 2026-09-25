@@ -1,0 +1,330 @@
+{
+  "module": "Reputation & Ecosystem Interest",
+  "as_of": "2026-09-25",
+  "method": "Assistant-curated research from live public search/fetch tools; not output of the existing regex extractor or a deployed automated pipeline.",
+  "run_status": "bounded_research_sample_completed",
+  "sampling": "Three illustrative candidates selected from official programs and affiliation discovery; not exhaustive, statistically representative, or a validated statewide ranking.",
+  "scope_correction": "Initial searches covered whole-product signals. Final candidate claims are restricted to reputation/ecosystem evidence plus company identity and sector metadata.",
+  "data_provenance": "public only; no permissioned, sample, or simulated records",
+  "candidate_count": 3,
+  "companies": [
+    {
+      "id": "R01",
+      "company": "Queens Carbon",
+      "website": "https://www.queenscarbon.com/",
+      "sector_cluster": "Climate technology and advanced materials",
+      "sector_tags": [
+        "low-carbon cement",
+        "industrial materials"
+      ],
+      "nj_presence": {
+        "status": "supported",
+        "connection_type": "NJ operations; municipality differs across sources",
+        "evidence": [
+          {
+            "source_id": "RP01",
+            "quote": "* Queens Carbon, Inc. – $74,999 (Montville)",
+            "start_offset": 4417,
+            "end_offset": 4460
+          },
+          {
+            "source_id": "RP03",
+            "quote": "Its latest expansion is a move from a 7,000 sq. ft. facility to an 18,000 sq. ft. facility in Cedar Grove, N.J., enabling the company to build a robust engineering team, accelerate R&D, and broaden pilot activities.",
+            "start_offset": 3021,
+            "end_offset": 3236
+          }
+        ]
+      },
+      "assessment": "Broadest documented institutional network in this small pilot.",
+      "signals": [
+        {
+          "type": "university_technology_relationship",
+          "statement": "Rutgers confirms an exclusive technology license to Queens Carbon.",
+          "event_date": null,
+          "event_group": "queens-rutgers-license",
+          "evidence": [
+            {
+              "source_id": "RP03",
+              "quote": "The Rutgers Office for Research executed the exclusive license agreement between the university and Queens Carbon.",
+              "start_offset": 947,
+              "end_offset": 1061
+            }
+          ],
+          "provenance": "public"
+        },
+        {
+          "type": "investor_affiliation",
+          "statement": "Clean Energy Ventures confirms leading a round with Plug and Play and Clean Energy Venture Group participating.",
+          "event_date": "2025-04",
+          "event_group": "queens-2025-investor-partner-event",
+          "evidence": [
+            {
+              "source_id": "RP07",
+              "quote": "The round was led by Clean Energy Ventures with participation from Plug and Play and Clean Energy Venture Group.",
+              "start_offset": 365,
+              "end_offset": 477
+            },
+            {
+              "source_id": "RP03",
+              "quote": "Since its launch in 2022, Queens Carbon has scaled at an unrivaled pace. Shortly after incorporation, the company secured Bill Gates’ Breakthrough Energy Fellowship, which provided catalytic support to build its core R&D team, establish laboratory infrastructure, and prototype the technology. In 2024, Queens Carbon was awarded $14.5 million from the U.S. Department of Energy’s ARPA-E SCALEUP program, accelerating development of its pilot facilities and advancing the transition toward commercial deployment. In April 2025, the company announced $10 million in seed funding led by Clean Energy Ventures with participation from Plug & Play Ventures, Clean Energy Venture Group, and strategic partner Buzzi Unicem USA, a top-five U.S. cement producer that is both an investor and host of Queens Carbon’s 2,000-tonne/year pilot facility.",
+              "start_offset": 1063,
+              "end_offset": 1900
+            }
+          ],
+          "provenance": "public"
+        },
+        {
+          "type": "strategic_partner_affiliation",
+          "statement": "Buzzi Unicem USA is identified as a strategic investor and development partner.",
+          "event_date": "2025-04",
+          "event_group": "queens-2025-investor-partner-event",
+          "evidence": [
+            {
+              "source_id": "RP07",
+              "quote": "Buzzi Unicem USA, a subsidiary of Buzzi S.p.A., one of the world’s leading cement producers, also joined as a strategic investor and development partner.",
+              "start_offset": 478,
+              "end_offset": 631
+            }
+          ],
+          "provenance": "public"
+        },
+        {
+          "type": "industry_recognition",
+          "statement": "Rutgers reports a 2025 Edison Patent Award recognizing the inventors of technology underlying Queens Carbon.",
+          "event_date": "2025",
+          "event_group": "queens-2025-edison-award",
+          "evidence": [
+            {
+              "source_id": "RP04",
+              "quote": "“It’s an honor to receive the 2025 Edison Patent Award alongside my Ph.D. advisor and long-time collaborator, Professor Richard Riman, for our work on Hydrothermal Vapor Synthesis,” said Kopp. “From the start, our focus at Rutgers was on creating a low-cost, low-energy materials processing method to help build a sustainable world. We co-founded Queens Carbon to make this focus a reality, using our invention to produce low-carbon cementitious materials. The award is especially meaningful given Edison’s role in pioneering the modern rotary kiln and his legacy of transforming industrial manufacturing.”",
+              "start_offset": 2903,
+              "end_offset": 3509
+            }
+          ],
+          "provenance": "public"
+        }
+      ],
+      "why_surface": "University technology transfer, named investor/industrial relationships, and industry recognition provide several specific reasons to include the company in a reputation-based shortlist.",
+      "public_interest_trend": "not_measured",
+      "limitations": [
+        "Rutgers and the investor are interested parties, not independent business-quality reviewers.",
+        "Two Rutgers pages do not constitute independent corroboration.",
+        "Investor and strategic-partner claims refer to the same financing announcement; do not count them as independent momentum events.",
+        "No claim of being overlooked, rising attention, or superior commercial performance.",
+        "Exact current municipality remains unresolved; both source locations are in NJ."
+      ]
+    },
+    {
+      "id": "R02",
+      "company": "Chorah Labs",
+      "website": "https://chorahlabs.com/",
+      "sector_cluster": "AI for life sciences",
+      "sector_tags": [
+        "regulatory software",
+        "biopharma"
+      ],
+      "nj_presence": {
+        "status": "supported_operating_ecosystem_connection_headquarters_unverified",
+        "connection_type": "Founder building company through NJIT; headquarters address unverified",
+        "evidence": [
+          {
+            "source_id": "RP05",
+            "quote": "For now, Rahimi’s story offers an early measure of what the model can do. A founder who once came to NJIT as a graduate student is now building a biotech company here, while students watch that work up close — not after the fact, but in real time. With Fereira and Materium adding a second example, NJIT is beginning to show how that same pathway can extend across different fields, founders and forms of student engagement.",
+            "start_offset": 6115,
+            "end_offset": 6539
+          }
+        ]
+      },
+      "assessment": "Early ecosystem-visibility candidate; NJ headquarters remains unverified.",
+      "signals": [
+        {
+          "type": "accelerator_selection",
+          "statement": "NJIT confirms Chorah Labs was accepted into the NJ AI Hub Accelerator. NJBIZ lists it in the inaugural cohort.",
+          "event_date": null,
+          "event_group": "chorah-ai-hub-cohort-2026",
+          "evidence": [
+            {
+              "source_id": "RP05",
+              "quote": "Chorah Labs was accepted into the NJ AI Hub Accelerator.",
+              "start_offset": 3763,
+              "end_offset": 3819
+            },
+            {
+              "source_id": "RP02",
+              "quote": "* **Chorah Labs** — AI platform automating regulatory, CMC and manufacturing workflows for biopharma",
+              "start_offset": 4127,
+              "end_offset": 4227
+            }
+          ],
+          "provenance": "public"
+        },
+        {
+          "type": "founder_university_affiliation",
+          "statement": "NJIT identifies co-founder Rahimi as its first Global Entrepreneur in Residence.",
+          "event_date": null,
+          "event_group": "chorah-founder-njit-geir",
+          "evidence": [
+            {
+              "source_id": "RP05",
+              "quote": "Now Rahimi is building that company as NJIT’s first Global Entrepreneur in Residence, part of a first-in-New-Jersey model with implications that reach well beyond one founder.",
+              "start_offset": 1188,
+              "end_offset": 1363
+            }
+          ],
+          "provenance": "public"
+        },
+        {
+          "type": "community_engagement",
+          "statement": "NJIT describes capstone work for Chorah Labs and the founder participating in its Tech Venture Support Program.",
+          "event_date": null,
+          "event_group": "chorah-njit-engagement",
+          "evidence": [
+            {
+              "source_id": "RP05",
+              "quote": "Ying Wu College of Computing capstone students worked on a project for the company. Rahimi also participated as a client in Professor Cesar Bandera’s Tech Venture Support Program, bringing the day-to-day needs of an active founder into spaces where students are learning how ventures actually move forward.",
+              "start_offset": 3820,
+              "end_offset": 4126
+            }
+          ],
+          "provenance": "public"
+        },
+        {
+          "type": "competition_recognition",
+          "statement": "NJIT lists Chorah Labs among community-category winners in its 2025 New Business Model Competition.",
+          "event_date": "2025",
+          "event_group": "chorah-2025-njit-competition",
+          "evidence": [
+            {
+              "source_id": "RP06",
+              "quote": "Veronica Nunez’s Cafecito Con Fashion won the community category. Other winners were MGL Consulting Group, Mardochee Louis; FreshSpan, Johanna Torres; and Chorah Labs, Jason Chou.",
+              "start_offset": 3589,
+              "end_offset": 3768
+            }
+          ],
+          "provenance": "public"
+        }
+      ],
+      "why_surface": "The company appears across named university programs and accelerator selection, with documented student/community engagement. This is a concrete early visibility signal.",
+      "public_interest_trend": "not_measured",
+      "limitations": [
+        "NJ accelerator participation alone is insufficient to establish NJ headquarters; this cohort also includes New York companies.",
+        "Most supporting facts come from NJIT and should not be treated as independent institutional endorsements.",
+        "The NJBIZ cohort report is dated 2026-04-28; the exact acceptance date is unknown.",
+        "The extracted NJIT pages lack publication dates; source observation dates are retained without inventing event dates.",
+        "An invitation to entrepreneurship training does not prove participation.",
+        "Plug and Play calls the company fintech in one paragraph, while its product description is biopharma regulatory software; classified from the described product.",
+        "No evidence here establishes customer adoption, funding, or rising public attention."
+      ]
+    },
+    {
+      "id": "R03",
+      "company": "Cecilia / Cecilia Energy",
+      "website": "https://www.ceciliamaterials.com/",
+      "sector_cluster": "Climate technology and advanced materials",
+      "sector_tags": [
+        "plastic upcycling",
+        "advanced carbon materials"
+      ],
+      "nj_presence": {
+        "status": "supported",
+        "connection_type": "Newark-based company in government sources",
+        "evidence": [
+          {
+            "source_id": "RP01",
+            "quote": "* Cecilia Energy, Inc – $75,000 (Newark)",
+            "start_offset": 3971,
+            "end_offset": 4011
+          },
+          {
+            "source_id": "RP08",
+            "quote": "NETL and Newark, New Jersey-based Cecilia Energy combined their strengths in a novel Cooperative Research and Development Agreement (CRADA) that aims to solve one of the world’s greatest environmental challenges while creating upcycled products in the process.",
+            "start_offset": 199,
+            "end_offset": 459
+          }
+        ]
+      },
+      "assessment": "Specific research-institution connection with newer public-program recognition.",
+      "signals": [
+        {
+          "type": "research_institution_collaboration",
+          "statement": "DOE national lab NETL documents a joint research relationship and a Cooperative Research and Development Agreement with Cecilia.",
+          "event_date": "2021",
+          "event_group": "cecilia-netl-collaboration",
+          "evidence": [
+            {
+              "source_id": "RP08",
+              "quote": "NETL and Newark, New Jersey-based Cecilia Energy combined their strengths in a novel Cooperative Research and Development Agreement (CRADA) that aims to solve one of the world’s greatest environmental challenges while creating upcycled products in the process.",
+              "start_offset": 199,
+              "end_offset": 459
+            },
+            {
+              "source_id": "RP08",
+              "quote": "Since 2021, the two organizations have developed a scalable microwave-based (MW) process to upcycle plastic waste into clean hydrogen and carbon nanotubes, transforming an environmental waste liability into an asset.",
+              "start_offset": 864,
+              "end_offset": 1080
+            }
+          ],
+          "provenance": "public"
+        },
+        {
+          "type": "public_program_selection",
+          "statement": "NJEDA lists Cecilia Energy among its January 2026 Clean Tech R&D Seed Grant awardees.",
+          "event_date": "2026-01-08",
+          "event_group": "cecilia-2026-csit-selection",
+          "evidence": [
+            {
+              "source_id": "RP01",
+              "quote": "* Cecilia Energy, Inc – $75,000 (Newark)",
+              "start_offset": 3971,
+              "end_offset": 4011
+            }
+          ],
+          "provenance": "public"
+        }
+      ],
+      "why_surface": "A named national laboratory describes actual joint work, and a later NJ award list supplies a separate institutional-selection signal.",
+      "public_interest_trend": "not_measured",
+      "limitations": [
+        "The NETL article is dated 2024-08-26; it documents historical collaboration, not proof that the agreement remains active today.",
+        "The energy-domain website redirects to Cecilia Materials; legal entity continuity has not been independently checked.",
+        "HAX and NASA relationships were not verified in this run and are excluded.",
+        "Program selection is recorded here as recognition; grant economics belong to the funding module.",
+        "No attention time series or independent commercial-performance assessment was performed."
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "sector": "Climate technology and advanced materials",
+      "company_ids": [
+        "R01",
+        "R03"
+      ],
+      "interpretation": "Two companies in this sample with documented institutional connections; not evidence this sector is growing fastest statewide."
+    },
+    {
+      "sector": "AI for life sciences",
+      "company_ids": [
+        "R02"
+      ],
+      "interpretation": "One candidate with university and accelerator activity; headquarters eligibility remains unverified."
+    }
+  ],
+  "cost": {
+    "provider_calls_recorded": 19,
+    "reported_provider_cost_usd": 0,
+    "excludes": [
+      "assistant/model usage",
+      "local execution",
+      "future hosting"
+    ],
+    "future_free_access_guaranteed": false
+  },
+  "quality_limits": [
+    "No public-attention trend measured.",
+    "No generalized positive or negative reputation rating assigned.",
+    "No investment recommendation or prediction of success.",
+    "Quotes verify source statements, not external truth.",
+    "Candidate assessment was performed by the assistant, not a held-out automated evaluation."
+  ]
+}

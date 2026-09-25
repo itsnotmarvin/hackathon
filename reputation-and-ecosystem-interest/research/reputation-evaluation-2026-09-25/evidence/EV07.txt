@@ -1,0 +1,665 @@
+2025 PROFILES
+OF COMPANY
+AWARDEES
+
+2
+Canyon Magnet Energy Inc. (Essex County, 4 Employees):
+Canyon Magnet Energy Inc. is a Newark-based clean tech startup
+developing superconducting magnet and cryogenic subsystems
+that enable compact, energy-efficient systems for quantum
+computing, medical imaging, power transmission, and energy
+storage. Our high-temperature superconducting (HTS) platforms
+reduce thermal losses, eliminate bulky current leads, and enhance
+magnetic field stability—supporting cleaner, smaller, and more
+sustainable technologies.
+CarbonDots LLC (Mercer County, 1.2 Employees): CarbonDots
+will scale and refine a novel graphite formation process
+developed by researchers at Rutgers University. This innovative,
+clean, low temperature process will be the first of its kind to
+convert waste polypropylene into graphitic material. The process
+was originally developed in 2023 and has been refined and
+optimized to achieve >95% graphite end product, but it is still at
+a laboratory-scale. This innovative process has been published in
+a peer-reviewed journal and the material product of the process
+has been characterized by industry standard methods to confirm
+the graphite composition.
+Cecilia Energy, Inc. (Essex County, 5.7 Employees): Cecilia is an
+advanced materials company based in Newark, NJ that transforms
+plastic waste into structured carbon nanomaterials using a
+microwave-assisted reactor system. Our fully electric, modular
+process upcycles hard-to-recycle industrial plastics into highvalue
+carbon products such as graphitic carbon and multi-walled
+carbon nanotubes (MWCNTs).
+Clean Tech R&D Seed Grant Round 4
+Awardee Company Profiles
+Cero NJ LLC (Bergen County, 1.4 Employees): We are focused on developing
+innovative AI-assisted hardware and software solutions for reducing emissions
+and improving fuel efficiency in the heavy-duty vehicle (HDV) transportation
+sector.
+Coherent Photonics LLC (Middlesex County, 3.7 Employees): This project is
+aimed at overcoming the limitations of optical interconnects with respect to
+manufacturability and cost. It will demonstrate advanced light control
+capabilities produced by nano-photonic interposers, differentiating them from
+both traditional optical interconnects and silicon photonics assemblies.
+Curbon LLC (Middlesex County, 3.1 Employees): Curbon is developing an
+artificially intelligent software platform that automates life cycle impact
+assessments to calculate the full environmental impacts of CPGs. The system
+transforms raw product, supply chain, and inventory data – such as a product’s
+bill of materials and production methods – into verified environmental impact
+metrics including GHG emissions, water usage and pollution, and waste
+production.
+EV Buddy Inc. (Middlesex County, 1.4 Employees): EV Buddy Inc. proposes
+to design, manufacture, and deploy pilot-ready prototypes of its innovative V2V
+(Vehicle-to-Vehicle) Portable DC Fast Charger. This patent-pending device
+enables one EV to deliver fast DC power directly to another EV, providing
+immediate roadside support without the need for fixed infrastructure or towing.
+The scope of this project includes redesigning the control board, fabricating a
+weatherresistant and certifiable enclosure, assembling 2-4 production-ready
+units, and validating them through pilot programs with roadside assistance
+providers and EV fleets.
+
+3
+Fundamental Carbon Co. (Middlesex County, 2.1 Employees): Ouros
+Materials has achieved Technology Readiness Level 3, successfully
+demonstrating proof-of-concept for our breakthrough low-temperature
+ceramic-polymer composite technology. We have established a process
+of producing 2-diameter pucks and 0.5” diameter pellets that establish
+baseline properties: high compressive strength (approx. 70-80Mpa),
+high toughness, wood-like machinability with screwing ability drilling
+ability, and strong screw-hold, fire-resistance, and CO2 uptake (~30-
+50% carbonation by weight).
+Metal Light Inc. (Essex County, 5.7 Employees): Metal Light is
+developing a critical Metal Air technology that is clean, quiet, and safe
+for portable power demands. Today, diesel-powered generators remain
+the dominant choice for off-grid and backup power, despite their
+significant environmental and health impacts.
+ 
+NanoSepex Inc. (Somerset County, 2.4 Employees): Our innovation
+centers on carbon nanotube immobilized membranes (CNIM), originally
+developed at NJIT with funding from the NSF, U.S. Army, and EPRI.
+NanoSepex was founded to commercialize this technology and has
+received SBIR funding from NSF, USDA, and NIEHS. Key milestones
+include: (1) establishing a membrane fabrication facility, (2) scaling the
+process to laboratory scale pilot and completing three successful
+industrial demonstrations, and (3) fabricating and testing a 2-gpm
+explosion proof industrial scale pilot unit. Ongoing efforts are focused
+on upgrading this system for real-world piloting. The current
+technology readiness level (TRL) is between 5 and 6.
+Noble Geofurnace (Monmouth County, 1.1 Employees): The Smart
+Wind Turbine Residential is engineered for seamless integration with
+rooftop solar panels, creating a hybrid renewable energy system that
+maximizes on-site clean energy generation and increases household
+energy independence. By addressing the limitations of traditional small
+wind turbines, this innovation offers a structurally resilient, efficient, and
+aesthetically compatible solution for homeowners seeking to reduce utility
+costs and lower emissions.
+Novtech LLC (Somerset County, 1 Employees):  I registered Novtech,
+LLC, in 2022, to develop technologies for energy efficiency improvements
+of chemical industry.  Chemical industry, using fossil fuel, spends
+significant amount of energy on conventional energy in-efficient
+processes such as distillations and extractions to produce chemical
+products.  We have come up with an innovative process for energy
+efficiency improvement by integrating reaction and separations to reduce
+energy required in conventional processes for chemical synthesis.
+PFASolve Inc. (Hudson County, 1.1 Employees): PFASolve Inc. is
+developing a novel, field-deployable solution for rapid detection of
+PFAScompounds in water. The proposed innovation has successfully
+demonstrated proof of concept in the lab and is currently at Technology
+Readiness Level (TRL) 3 and Commercialization Readiness Level (CRL) 2, as
+defined by the NYSERDA TRL/CRL framework.
+Queens Carbon, Inc. (Morris County, 21 Employees): Queens Carbon
+was spun out of Rutgers University to commercialize breakthrough
+cementitious material production technology. With foundational financial
+grant (nondilutive) support from the Breakthrough Energy Fellows
+program in 2022 ($4.5M Grant), the company successfully prototyped its
+Q-System, built a world-class R&D team, and established its laboratory-
+pilot facility.
+
+4
+Maternal and Infant Health R&D Seed
+Grant Round 2 Awardee Company
+Profile
+Catalyst R&D Voucher Company Profiles
+Curio Digital Therapeutics, Inc. (Mercer County, 8.6
+Employees): Curio is developing an end-to-end platform to
+improve women's behavioral health outcomes across the
+lifecycle. The platform leverages AI-driven predictive analytics to
+identify women at risk of common mental health disorders early
+and ensure that they can access self-driven, evidence-based
+behavioral therapy delivered digitally.
+ACON Pharmaceuticals Inc. (Cranbury, Mercer County, 1.1 Employees):
+ACON Pharmaceuticals is developing a proposed novel long-acting cariprazine
+microsphere formulation. The development of this novel cariprazine
+microsphere formulation holds significant clinical relevance for the treatment of
+schizophrenia.
+Advanced Technologies for Novel Therapeutics (Millburn, Essex County,
+1.1 Employees): The company is developing a novel therapeutics for local
+cancer therapy. This therapeutics belongs to the class of targeted therapies for
+oncology indication. They have successfully passed most of its preclinical
+development stage and are currently working on the last stages of IND-
+enabling studies.
+Aersys Inc (Edison, Middlesex County, 2.3 Employees): Aersys is developing
+a high-density automated storage and retrieval system (ASRS) for retail
+stockrooms. The ASRS stores retail inventory in large square bins, stacked into
+dense grids. Robots can move in up to 3 dimensions to retrieve these bins and
+bring them to processing stations when needed.
+Afsartech (Rutherford, Bergen County, 2 Employees): Afsartech operates as
+a company focused on developing dental sealer technology for the healthcare
+sector. Its main product is an expandable dental sealer designed to improve the
+effectiveness of root canal treatments by filling gaps and preventing leakage,
+thereby enhancing patient safety and reducing the risk of infection.
+APY Therapeutics (North Brunswick, Middlesex County, 1.2 Employees):
+APY Therapeutics LLC is developing arylmyxopyronins--APYs--as novel first-in-
+class oral treatments for lower-respiratory-tract infections and skin-and-soft-
+tissue infections caused by Gram-positive and fastidious Gram-negative
+bacteria, including by drug-resistant, multi-drug-resistant, and pan-drug-
+resistant isolates.
+SingletO2 Therapeutics LLC (Somerset County, 1.6
+Employees): SingletO2 Therapeutics LLC develops novel
+materials and systems that are used to treat water for aquaculture
+without the use of harsh chemicals as well as to safely disinfect
+wounds to promote wound healing without the use of antibiotics.
+Skyraptor LLC (Burlington County, 1.7 Employees): The
+company is developing a semi-autonomous, AI-powered robotic
+system for the inspection, maintenance, and repair of onshore
+wind turbine blades, eliminating the need for dangerous manual
+labor and going far beyond drone-based inspections.
+Zaic Design LLC (Mercer County, 10.2 Employees): Zaic Design
+LLC is developing an advanced decentralized wastewater
+treatment system called Bluefin Biofilter®, designed for
+installations ranging from small to large residential properties, as
+well as for emergency deployment.
+
+5
+AuraSense Tech Corporation (Newark, Essex County, 1.1
+Employees): AuraSense brings access to neurological care to
+those without access in healthcare for those that need it most by
+using a proprietary holographic telehaptics hardware solution,
+HapticsHealth™ that enables quantitative remote physical
+assessments, interventions, and neuroscience-designed
+engagement through multiplayer virtual worlds, augmented
+reality experiences, and therapeutic games. 
+ 
+BioTech Support Group LLC (Monmouth Junction, Middlesex
+County, 4.9 Employees): The mission of the company supports
+the growth in proteomic sample prep, with unique and
+proprietary surface chemistries. They create new methods and
+applications to drive efficient workflows and better data quality
+for all downstream proteomic and biomarker analyses.
+Discogen LLC (Harrington Park, Bergen County, 1.1
+Employees): The company is developing a noninvasive
+technology for the treatment of spinal disc degeneration. 
+ 
+Endomedix, Inc. (Montclair, Essex County, 5.7 Employees):
+Pre-clinical MedTech venture Endomemdix’s PLEXimine™ novel
+chemistry platform can be tuned to produce 5 separate product
+groups, including biosurgical devices that solve problems that
+can’t be addressed by the legacy devices. Its PLEXimine™
+technology uses starting materials with a history of use in FDA-
+regulated products and imparts to them unique features and
+characteristics. Its lead product, PlexiClot™ Absorbable Hemostat,
+is fast acting and eliminates through technology the risk of
+paralysis and reoperation due to device swelling.  
+Eneira LLC (Hillsborough, Somerset County, 3 Employees): The
+company focuses on development of advanced microfabrication
+processes and wafer-level thin film deposition to create high-
+performance microdevices with novel materials. 
+EnergyBioCode LLC (Cedar Knolls, Morris County, 1.1 Employees):
+EnergyBioCode offers advanced cell-based assays that closely replicates
+physiological conditions using primary cells, that can accelerate the discovery of
+effective therapiesthat support finding a cure for breast cancer. 
+Favorite Pharmaceuticals Inc. (Edison, Middlesex County, 1 Employee): This
+company is focused on the development of advanced conjugation chemistry
+and targeted delivery systems as an innovative approach to improve drug
+specificity and efficacy. 
+K&J Design (Carteret, Middlesex County, 2 Employees): The company is
+developing the UV Drink Locker, a self-sanitizing unit designed for installation
+in public restrooms. It is a seamless integration that utilizes UV technology to
+kill a vast majority of germs and bacteria, including E. coli, salmonella, MRSA,
+and many others that are common in such settings. The activation is hands-free,
+initiated by a simple hand wave, ensuring minimal contact and maximum
+hygiene. The product represents not just a tool for cleanliness but a stride
+towards health-conscious living in public spaces. 
+Kathera Bioscience Inc. (Union, Union County, 5.5 Employees): Kathera
+Bioscience, Inc. is a biotech startup company developing much needed, novel,
+broad spectrum small molecule antifungal drugs against new enzyme targets
+for which there are not currently FDA or EMA approved drugs. The company
+currently has two antifungal programs in different stages of preclinical Research
+& Development (R&D).
+LockGuard LLC (Readington, Hunterdon County, 1.3 Employees): The
+company is building home security products specifically designed for dorms
+and apartments. It is a consumer-focused device that is portable, easy to install,
+and affordable, with several use cases beyond those for apartment style
+residences.
+
+6
+Macrotope Inc. (Princeton, Mercer County, 2.3 Employees):
+Macrotope, Inc. is a biotech company that has designed and
+produced a candidate vaccine for SARS-CoV-2 that has
+demonstrated a robust and durable immune response in animal
+studies.
+Magneton, Inc. (Neshanic Station, Somerset County, 2.3
+Employees): Magneton is currently developing single photon
+detectors with sub-nanosecond timing resolution for LiDAR (Light
+Detection and Ranging) at extremely long distances. These
+detectors can create detailed 3D images of objects in varying
+atmospheric conditions that are many miles away with millimeter
+resolution. Initial applications are for use by the military with
+future commercial applications in aerospace, medical imaging,
+and automation.
+Mycsology Foods Inc. (Princeton Borough, Mercer County, 1.6
+Employees): Mycsology Foods is focused on developing a
+fermentation technology to produce nutrient-dense ingredients
+for use in food manufacturing. This project will involve the study
+of prototype products made with fermented legume flours.
+NanoNewron, LLC (Union, Union County, 1.7 Employees):
+NanoNewron is a NJ based spin-off of Rutgers University and is
+developing a new approach to treat Alzheimer’s Disease by
+carrying biologics across the blood-brain barrier (BBB) with its
+NewroBus technology.
+NemaGen Discoveries (Princeton, Mercer County, 3.4
+Employees): NemaGen Discoveries is an early phase biotech
+company focused on advancing therapies for patients suffering
+from allergic inflammation and mast cell-related diseases.
+NeuroTechR3 (Warren, Somerset County, 6.3 Employees): NeuroTechR3 is a
+start-up health technology company specializing in the development and
+distribution of R3THA™, an AI-driven rehabilitation system designed to support
+recovery of upper extremity function following neurological injury or conditions
+such as stroke or cerebral palsy.
+New Wave Wash LLC (East Windsor, Mercer County, 1.9 Employees): New
+Wave Wash LLC is developing an all-in-one washing machine designed to
+handle large volumes of laundry with enhanced efficiency.
+Next Breath Inc. (New Brunswick, Middlesex, 3.6 Employees):  Next Breath
+is revolutionizing pulmonary rehabilitation by leveraging machine learning (ML)
+to deliver precision care for underserved communities. Their focus is on
+improving outcomes for patients with Chronic Obstructive Pulmonary Disease
+(COPD) by utilizing advanced risk stratification techniques that integrate both
+pulmonary and mental health care.
+Novara Solutions Group LLC (Freehold, Monmouth County, 2.3
+Employees): Novara Solutions Group LLC, is developing an advanced
+emergency tourniquet designed for first responders, military personnel, and
+civilian use. This tourniquet integrates telemedicine capabilities to enable faster
+emergency response.
+NovoPedics Inc. (Princeton, Mercer County, 3 Employees): NovoPedics is
+developing MeniscoFix, an innovative new medical device for replacement of a
+severely injured knee meniscus, including the meniscal body, rim, and roots.
+The clinical goal of MeniscoFix™ is to relieve pain and restore mobility to
+patients suffering from severe meniscal injuries. Pre-clinical R&D is ongoing.
+
+7
+Plexymer Inc. (Plainfield, Union County, 2.3 Employees):
+Plexymer, Inc is a New Jersey startup company which is a spinout
+from Rutgers University. Plexymer uses artificial intelligence and
+lab automation to formulate proteins and design polymer
+materials. Plexymer is developing a fully automated pipeline to
+enable rapid drug formulation including the design of novel
+polymer excipients for these high-performance formulations.
+Plexymer currently operates its experiments out of incubator
+space at Princeton Innovation Center Biolabs.
+Plumeria Therapeutics (Plainsboro, Middlesex County, 1.1
+Employees): The company is developing a diagnostic to predict a
+patient's response to a non-opioid pain drug they are developing.
+This will enable them to recruit and stratify the appropriate
+patients into the next clinical trial and to create a commercial
+product for use by physicians to determine if patients with
+chronic pain would benefit from the drug.
+Rizlab Health Inc. (Princeton, Mercer County, 4.3 Employees):
+The company is developing a handheld blood cell analyzer
+consisting of an electronic reader and test strip. The white blood
+cell analyzer is capable of quantifying WBCs with differentials
+(neutrophils and lymphocytes) using a finger prick of blood,
+which significantly helps patients with specific treatments to
+monitor their WBC counts. Cancer patients on chemotherapy and
+schizophrenia patients on Clozapine treatment, are provided with
+a reference for physicians to determine whether the patient is
+bacterial infected or viral infected and whether to prescribe
+antibiotics.
+Robossis Inc. (Cherry Hill, Camden County, 1.6 Employees): Robossis is
+developing the world’s first surgical robotic platform for orthopedic trauma
+surgery. The Robossis system features a 3-arm parallel robot attached to the
+fractured bone and its configuration allows for motion in 6 degrees of freedom.
+Utilizing surgical navigation, the robot will perfectly align the fractured
+segments and hold the fracture stable during fixation. The results will include
+shorter operative time, correct limb alignment, fewer operating room personnel
+required, reduced reoperations, and improved clinical outcomes.
+Saatient Therapeutics Inc. (Cranford, Union County, 1.8 Employees):
+Saatient Therapeutics is developing new anti-cancer medicines. Their lead R&D
+project is focused on inhibiting the Serum Amyloid A protein with an antibody.  
+Sensetics Inc. (Princeton, Mercer County, 1.1 Employees): The company is
+developing high resolution fabric-based tactile sensors that capture the
+spectrum of modalities of touch experience. They are also working on a similar
+platform touch experience with fabrics that recreate realistic experiences of
+touch. 
+Shams Consulting LLC (Trenton, Mercer County, 1 Employee): The company
+focuses on incubating and propelling early-stage life sciences concepts towards
+transformative solutions, particularly in the realm of neurological disorders. 
+Six Therapeutics Inc. (Flanders, Morris County, 1.4 Employees): The
+company’s product is a synthetic, short-chain DNA molecule called a CpG. This
+DNA molecule targets and agonizes the TLR9 receptor, a critical receptor in
+regulating the innate immune system. The product is being developed for
+wound healing applications.
+SNOChip Inc. (Plainsboro, Middlesex County, 6.4 Employees): The company
+is advancing the technology of optical metasurface by leveraging various wafer
+fabrication techniques from the semiconductor industry.
+
+8
+Sonder Medicine Incorporated (New Brunswick, Middlesex
+County, 35.1 Employees): Sonder Medicine Incorporated, DBA,
+Sonder Research X, is an early-stage biotechnology company
+performing research and development on cancer liquid biopsy
+diagnostics and glaucoma therapeutics.
+Spin That Resonates LLP (Hillsborough, Somerset County, 1.1
+Employees): Spin That Resonates is developing several products
+that are accessories designed to make biomedical imaging
+research easier, more reproducible, and more robust. These
+candidate products have been used for between 1 and 10 years
+already at multiple imaging research centers with great success. 
+Targeron Therapeutics LLC (Princeton, Mercer County, 1.6
+Employees): Targeron Therapeutics LLC is an early-stage biotech
+company focused on developing multifunctional
+immunomodulators (biologics) that target disease sites,
+particularly solid tumors.  
+Tendo Technologies, Inc. (Princeton, Mercer County, 9.9
+Employees): Tendo Technologies is developing MEMS-based flow
+sensor by developing a new architecture designed to significantly
+enhance the robustness and material compatibility of the existing
+design.  This leverages MEMS fabrication techniques to produce
+highly durable devices. 
+Turtle OncoPharma Inc. (Branchburg, Somerset County, 1.1
+Employees): The company is developing a slow, sustained, and
+local drug release system for the treatment of bladder cancer and
+infection. The system consists of an active pharmaceutical agent
+(doxorubicin or ciprofloxacin) and silicone tubing. 
+Uno Biologics LLC (Edison, Middlesex County, 1.0 Employees): The company
+is developing their proprietary technology called U1Switch, which is designed
+to improve the performance and safety of oligonucleotide therapeutics (OT)
+that is a rapidly advancing field. 
+ 
+Vaneltix Pharma Inc. (New Brunswick, Middlesex County, 2.3 Employees):
+Vaneltix is looking to develop a treatment for hemorrhagic cystitis of the
+bladder. The treatment will use a proprietary peptide to induce regeneration of
+the bladder epithelial wall repairing damage caused by trauma, radition
+induced cystitis, chemical induced cystitis or resulting from severe interstitial
+cystitis. 
+Vitruviae Inc. (Nutley, Essex County, 4.9 Employees): Vitruviae is developing
+a proprietary approach that targets sugars and lipids uniquely present on
+cancer cells.   These non-mutating targets offer a promising pathway for
+effectively eradicating cancer. 
+Zena Therapeutics Inc. (North Brunswick, Middlesex, 2.3 Employees): Zena
+Therapeutics is a drug discovery company, spun-out of Rutgers University,
+designing new medications for mental health and addiction by improving safety
+profiles. Currently they are focusing on acute anxiolytic compounds that do not
+increase the risk of overdose if taken with other central nervous system
+depressing substances such as opioids and alcohol.  
+Boomerang Aero Ventures LLC (Lumberton, Morris County, 1.4
+Employees): Boomerang Aero Ventures brings together cutting-edge
+technologies, aviation industry experience and innovative solutions to create
+the next generation of aerospace.
+Clean Tech R&D Voucher Company Profiles
+
+9
+HempNTech Incorporated (Newfoundland, Morris County, 1.3 Employees):
+HempNTech (HNT) is developing a sustainable, high-performance hemp-based
+timber substitute (HempTimber). Partnering with AMMI, they will research
+advanced resin-hemp formulations and scalable production methods.
+Intelligent Material Solutions, Inc. (Princeton, Mercer County, 10.4
+Employees): The company focuses on advancing sustainability by developing
+rare-earth crystal tracers embedded in plastics and metals for real-time
+identification of product composition and recycled content. Intelligent Materials
+Solutions (IMS) develops authentication/identification technologies and
+specialty applications that leverage their precision-engineered crystals, to meet
+challenging customer needs. 
+Krell Technologies (Neptune City, Monmouth County, 9.1 Employees): Krell
+Technologies is developing advanced polishing and inspection systems for the
+photonic and fiber optic industries. Their cutting-edge product line integrates
+unique processing features and is configurable for all manufacturing, field and
+research applications. 
+Krypton Warriors Inc. (Montville, Morris County, 1 Employee): Krypton
+Warriors Inc is developing a robot for waste removal suitable for trash
+collection.
+HiT Nano Inc. (Bordentown, Burlington County, 6.9 Employees): HiT Nano
+Inc. develops next generation low cost and high performance Lithium-ion
+batteries and energy storage materials using sustainable manufacturing
+technologies such as MACHT (Micro-Aerosol Controlled High Temperature
+processing).
+Cecilia Energy Inc. (Newark, Essex County, 5.7 Employees):
+Cecilia Energy is a NASA-backed start-up commercializing a
+novel zero-emissions waste plastic to hydrogen and carbon
+nanotube technology. Their microwave-assisted reactor unit is at
+pilot-scale and they are actively doing scaled-up real-life
+operations. 
+Clean Green Recycling (Morristown, Morris County, 1
+Employee): Clean Green Electronic Recycling is a safe,
+environmentally friendly and certified ewaste recycling company
+which uses accredited electronic waste recyclers, ones that are
+governed by ISO14001 standards.
+Coherent Photonics LLC (Plainsboro, Essex County, 1
+Employee): Coherent Photonics, LLC has extensive expertise in
+the entire cycle of nano-photonics, diffractive and meta-optics
+development, from conceptual definition to detailed design,
+tolerance analysis, characterization and fabrication support. The
+company is developing lightweight photonics that will result in
+improved energy efficiency in a variety of products and
+application areas, such as wearables, drones, and AI datacenters.
+Equation USA LLC (Clifton, Passaic County, 1.1 Employees):
+Equation USA minimizes emissions through green chemistry,
+sustainable sourcing, and eco-friendly processing in health and
+wellness formulations.
+EV Edison (Kearny, Hudson County, 2.3 Employees): EV
+Edison is a developer and a provider of high-power electric
+vehicle fleet charging solutions for Class 4 - 8 electric trucks and
+a leading consultant on fleet electrification.
+
+10
+Queens Carbon Inc. (Pine Brook, Morris County, 6.3 Employees): Queens
+Carbon’s patented approach leverages hydrothermal technology to reduce the
+temperature of carbonate mineral processing to less than 1000 F compared
+with typical calcination temperatures of greater than 1800 F. Furthermore, this
+technology is also capable of producing carbon-neutral cement at less than
+1000 F, which is substantially lower than typical cement production
+temperatures of over 2700 F. Ultimately, this temperature reduction enables the
+use of renewable energy technologies and decreases the cost requirements for
+carbon emissions avoidance and capture. This technology will enable billions-
+of-tons-scale decarbonization and defossilization of the chemical industry
+without compromising on cost or product performance.
+Still Bright, Inc. (Newark, Essex County, 7.1 Employees): The company is
+powering a faster, cleaner, and more abundant copper supply. Their R&D is
+focused on offering a sustainable alternative to smelting, the extraction method
+used to produce ~70% of copper globally. 
+Swind Power LLC (Princeton Junction, Mercer County, 1 Employee):
+SWIND is developing a new innovative concept of Vertical Axis Turbine (VAT).
+Their technology takes turbines to a new level by analyzing existing rotor
+designs and harvesting fluid (Wind, Water etc.) energy. SWIND embodies
+inspirations from drag driven principals utilizing sail-type configuration.
+Zolx, Inc. (East Brunswick, Middlesex County, 1.1 Employees):  Zolx is
+transforming the world’s emissions into valuable, sustainable products that
+actively reduce the collective carbon footprint. By harnessing the power of
+biotechnology, fermentation, and green chemistry, they convert aquatic
+biomass into high-value materials—ranging from food to renewable biobased
+chemicals and biofuels.
+Mallika Ashwin Maya Corporation (Bridgewater, Somerset
+County, 2.3 Employees): M.A.M. Inc. serves clients in the high
+frequency power electronics space with energy efficient systems,
+components, and solutions. They focus on Micro grid demonstration
+using the Vanadium Flow Battery as Long duration energy storage
+system (LDES) in the network.
+Materium Technologies LLC (Summit, Union County, 1.7
+Employees): Materium Technologies is rapidly evolving and growing,
+refining our advanced machine learning models to optimize material
+selection for clean energy applications.
+NanoSepex Inc. (Bridgewater, Somerset County, 2.4 Employees):
+NanoSepex is developing cutting-edge membrane separation
+technologies designed to tackle critical challenges in solvent recovery
+and environmental remediation. Much of the low concentration
+solvent wastes from pharmaceutical, paints, and petrochemical
+companies in New Jersey are incinerated leading to significant CO2
+emissions.
+Nascent Materials Inc. (Short Hills, Essex County, 2.3 Employees):
+Nascent Materials is a battery cathode manufacturing startup
+company part of the accelerator program HAX, based in Newark, NJ.
+Nascent is scaling a portfolio of durable, low-cost, and safe cathode
+chemistries to support the EV, grid storage, and industrial markets.
+Pollux Technologies LLC DBA Lumiaq (East Brunswick, Middlesex
+County, 5.2 Employees): Lumiaq is developing an accurate air filter
+monitoring technology using optical sensors based on two issued US
+patents 10,864,471 and 11,235,272. The technology will contribute to
+reducing waste, increasing energy efficiency, and better public health
+by increasing indoor air quality. The technology will significantly
+reduce filter waste by an estimated 151 million filters per year.
+
+11
+AuresTech Incorporated (Branchburg, Somerset County, 2.9
+Employees): AuresTech specializes in cutting-edge research and
+development in the fields of wireless communication and navigation
+technologies. With a focus on advancing high-performance wireless
+networks, the company explores innovative solutions for seamless
+connectivity, efficient data transmission, and enhanced signal reliability.
+Couragene Inc. (Edison, Middlesex County, 5.7 Employees):
+Couragene's STEP (Stimuli-responsive Traceless Engineering Platform)
+technology has demonstrated great potential to overcome the delivery
+hurdles for treatment of various diseases, including neurogenetic
+disorders.
+Coherent Photonics LLC (Plainsboro, Essex County, 1 Employee):
+Coherent Photonics, LLC has extensive expertise in the entire cycle of
+nano-photonics, The company is developing lightweight photonics that
+will result in improved energy efficiency in a variety of products and
+application areas, such as wearables, drones, and AI datacenters.
+Impact Business Information Solutions, Inc. (Princeton, Mercer
+County, 7.1 Employees): The company develops software solutions for
+life sciences and health sciences, focusing primarily on medical imaging
+and AI enablement and operationalization.
+Direct Funding ($25K)
+SBIR/STTR Direct Financial Assistance
+Company Profiles
+Jason Rahimzadeh DBA CyroScope Medical (Wantage, Sussex
+County, 2.0 Employees): CryoScope medical is developing a
+cryotherapeutic medical device for the treatment of esophageal
+disease. CryoScope Medical’s patented single-use ablation device
+allows the physician to trans-nasally pass into the esophagus, enabling
+unsedated cryoablation. Cryoablation is unique in that the therapy has
+an analgesic effect on tissues and reduces reliance on narcotics post-
+procedure, compared to Radio Frequency Ablation (RFA). 
+Kathera Bioscience Inc. (Union, Union County, 5.5 Employees):
+Kathera Bioscience, Inc. is a biotech startup company developing much
+needed, novel, broad spectrum small molecule antifungal drugs
+against new enzyme targets for which there are not currently FDA or
+EMA approved drugs. The company currently has two antifungal
+programs in different stages of preclinical Research & Development
+(R&D).
+Lactiga US, Inc. (North Brunswick, Middlesex County, 2.3
+Employees): Lactiga is a biotechnology company developing novel
+mucosal antibodies derived from human breastmilk to improve the
+lives of vulnerable, immunocompromised populations. The company
+specializes in secretory IgA (sIgA)-based therapeutics, utilizing
+proprietary technologies to develop targeted treatments for infectious
+and inflammatory diseases.
+Myracle Therapeutics, Inc. (East Hanover, Morris County, 1.6
+Employees): Myracle Therapeutics is a preclinical stage company
+developing small molecules against novel targets in adipocytes to
+treat obesity and metabolic related diseases. Our lead program is a
+genetically validated target that regulates intracellular signaling
+resulting in metabolic reprogramming of adipose for durable weight
+loss and metabolic health.
+
+12
+NeuroPair Inc. (Princeton, Mercer County, 2.1 Employees): NeuroPair
+is an early-stage medical device company aiming to regenerate and re-
+connect neurons after spinal cord injury. It uses an injectable gel
+formulation that includes magnetically aligning nanoparticles to create a
+fiber scaffold in the injury site that supports neuronal growth while the
+directionally aligned fibers guide the regrowth. 
+NanoSepex Inc. (Newark, Essex County, 2.4 Employees): NanoSepex
+Inc. is a NJ based small business focusing on research and development
+of nanomaterial modified membranes and filtration systems for
+applications in solvent recovery from dilute waste solutions, removal of
+solvent contaminants from contaminated Superfund sites and zero liquid
+discharge.
+Plexymer Inc. (Plainfield, Union County, 2.3 Employees): Plexymer, Inc
+is a New Jersey startup company which is a spinout from Rutgers
+University. Plexymer uses artificial intelligence and lab automation to
+formulate proteins and design polymer materials. Plexymer is developing
+a fully automated pipeline to enable rapid drug formulation including the
+design of novel polymer excipients for these high-performance
+formulations. Plexymer currently operates its experiments out of
+incubator space at Princeton Innovation Center Biolabs.
+Pumpkin Baby Inc. (Lawrenceville, Mercer County, 6.7 Employees):
+PumpKinBaby is a Princeton University Spin-Out revolutionizing
+breastmilk research and developing easy to use solutions for pumping
+parents. 
+Ricovr Healthcare Inc. (Princeton, Mercer County, 6.9 Employees):
+Ricovr is developing a point-of-care (POC) test for detecting THC in saliva
+for determination of recent cannabis use. This test employs a novel
+Plasmonic fiber-optic absorbance biosensor (P-FAB) and gold
+nanoparticles conjugated to anti-THC antibody (Ab-AuNP) to perform a
+rapid competitive immunoassay.
+AuresTech Inc. (Branchburg, Somerset County, 2 Employees):
+AuresTech develops advanced systems that provide secure, resilient
+communication and navigation technologies for the DoD. It has been
+awarded and executed STTR Phase 1 for the Army to develop a
+revolutionary way for existing communication systems to use the same
+spectrum used by other users without interfering with them.
+Academic Web Pages Inc. (Beach Haven, Ocean County, 3.4
+Employees): The company is a research-backed SaaS platform that
+manages and scales evidence-based mentoring and career
+development programs for postsecondary institutions, nonprofits, and
+workforce organizations. 
+Fria, Inc. (Avenel, Middlesex County, 1.4 Employees): Fria Inc. is a
+revolutionizing, fem-tech innovation that creates wearable cooling
+accessories to alleviate the discomfort of hot flashes and overheating.
+Fuceltech Inc. (Princeton Junction, Mercer County, 6.9 Employees):
+Fuceltech DBA Princeton Innotech does research on a new type of
+diode laser for atomic sensors using their basic approach of Vertical
+Cavity Surface Emitting Lasers.
+High Throughput Biology Inc. (Summit, Union County, 2.3
+Employees): High Throughput Biology Inc. has developed a next-
+generation authentication technology to put a stop to the proliferation
+of cyber crimes including ransomware attacks. With the superior
+synthetic DNA-based, three-factor authentication solution, they enable
+businesses and organizations to achieve unprecedented cybersecurity.
+Bridge Funding ($50K)
+
+13
+Inaedis, Inc. (Princeton, Mercer County, 3.2 Employees): Inaedis Inc., a
+pioneering Princeton University spin-out, is revolutionizing vaccine and
+biologic drug stability and cold chain logistics. Their mission is to deliver
+health via high-quality powdered, room-temperature stable vaccines and
+biological drugs.
+Magneton, Inc. (Branchburg, Somerset County, 1.1 Employees):
+Magneton is a developer and manufacturer of single photon avalanche
+detectors (SPADs) which are highly sensitive semiconductor devices capable
+of sensing light at levels as minute as a single photon. 
+NanoNewron LLC (Union, Union County, 1.1 Employees): NanoNewron,
+a NJ based spin-off of Rutgers University, is developing a new approach to
+treat Alzheimer’s Disease by carrying biologics across the blood-brain
+barrier with its NewroBus technology.
+NovoPedics Inc. (Princeton, Mercer County, 2.9 Employees): NovoPedics
+is a medical device start-up company developing MeniscoFix™, a single use
+medical device. It is designed to mimic the architecture and biomechanical
+properties of the native meniscus, serve as a load sharing device following
+implantation, and gradually resorb and support development of functional
+neo-meniscus tissue.
+Owlfly LLC (Kingwood Township, Hunterdon County, 2.6 Employees):
+Owlfly’s mission is to develop cutting-edge sustainable technologies. They
+are currently working to develop a new type of safe, effective, and
+affordable thermal insulation for buildings.
+Pollux Technologies, LLC (Piscataway, Middlesex County, 4.0
+Employees): Pollux Technologies (D/B/A Lumiaq) located at 35 Berrue
+Circle, Piscataway, NJ 08854 is an early-stage startup company
+developing accurate air filter monitoring technology using optical
+sensors based on two issued US patents (10,864,471 and 11,235,272).
+The technology will contribute to reducing waste and cleaning the
+environment. 
+SNOChip (Plainsboro, Middlesex County, 6.4 Employees): SNOChip
+Inc designs and makes micro- and nano-optics based on optical
+metasurface technology. 
+Spectronn (Red Bank, Monmouth County, 1.1 Employees) Spectronn is
+engaged in dual-use trusted multimodal AI for geospatial intelligence
+R&D and product development.
+ZSX Medical (Moorestown, Burlington County, 2.9 Employees): ZSX
+Medical is a clinical-stage medical device company located in
+Moorestown, New Jersey that is developing Zip-stitch®, a surgical
+closure platform designed specifically for closing internal surgical
+incisions in laparoscopic hysterectomy. Zip-stitch consists of a series of
+attachable clips and a reusable stainless-steel applicator.
+
+NJCSIT.GOV

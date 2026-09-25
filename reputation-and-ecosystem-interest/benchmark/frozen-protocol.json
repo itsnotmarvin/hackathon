@@ -1,0 +1,74 @@
+{
+  "frozen_at": "2026-09-25T14:59:07.362296+00:00",
+  "purpose": "Unblinded retrieval feasibility pilot; same researcher built labels and assesses results. Not a predictive benchmark.",
+  "cases": [
+    {
+      "id": "P01",
+      "person": "Dan Borok",
+      "company": "BigCommerce",
+      "relationship": "led_or_coled_investment"
+    },
+    {
+      "id": "P02",
+      "person": "Dan Borok",
+      "company": "Janrain",
+      "relationship": "led_or_coled_investment"
+    },
+    {
+      "id": "P03",
+      "person": "Dan Borok",
+      "company": "Yodle",
+      "relationship": "led_or_coled_investment"
+    },
+    {
+      "id": "P04",
+      "person": "Jim Gunton",
+      "company": "InstaMed",
+      "relationship": "historical_director"
+    },
+    {
+      "id": "P05",
+      "person": "Jim Gunton",
+      "company": "CytoSorbents",
+      "relationship": "historical_director"
+    },
+    {
+      "id": "P06",
+      "person": "Stephen Socolof",
+      "company": "SunRay Scientific",
+      "relationship": "director"
+    },
+    {
+      "id": "P07",
+      "person": "Stephen Socolof",
+      "company": "Everspin Technologies",
+      "relationship": "director_2008_2021"
+    },
+    {
+      "id": "P08",
+      "person": "Stephen Socolof",
+      "company": "Energy Focus",
+      "relationship": "director_since_2019_05_as_of_2023"
+    },
+    {
+      "id": "P09",
+      "person": "Vaughn Crowe",
+      "company": "Toothio",
+      "relationship": "board_member"
+    },
+    {
+      "id": "P10",
+      "person": "Jeremy Sohn",
+      "company": "TriNetX",
+      "relationship": "founder_investor"
+    }
+  ],
+  "queries": [
+    "Dan Borok investments board portfolio",
+    "Jim Gunton investments board portfolio",
+    "Stephen Socolof investments board portfolio",
+    "Vaughn Crowe investments board portfolio",
+    "Jeremy Sohn investments board portfolio"
+  ],
+  "policy": "One TinyFish web query per person, page 0. Candidate pool: first five results. No answer URLs or company names in queries. Audit full pages selected from that pool; snippets never suffice. No enrichment queries counted toward recovery."
+}

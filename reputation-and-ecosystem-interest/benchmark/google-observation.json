@@ -1,0 +1,12 @@
+{
+  "query": "\"Jim Gunton\" \"InstaMed\" board",
+  "url": "https://www.google.com/search?q=%22Jim+Gunton%22+%22InstaMed%22+board",
+  "observed_date": "2026-09-25",
+  "method": "Chrome UI; manual observation, not an engine benchmark",
+  "observed_links": [
+    "https://techcouncilventures.com/team-members/jim-gunton/",
+    "https://www.epibone.com/team",
+    "https://www.bostonmillenniapartners.com/news/boston-millennia-partners-expands-venture-affiliate-program/"
+  ],
+  "note": "Read linked pages through TinyFish. Google snippet described Jim at EpiBone as Lead Investor, Board Observer; fetched text places his bio under Advisors and does not retain that precise title. Do not turn snippet into verified title."
+}

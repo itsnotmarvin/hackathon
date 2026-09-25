@@ -1,0 +1,53 @@
+[
+  {
+    "id": "C01",
+    "claim": "Jennifer Solomon led the investment in BigCommerce.",
+    "expected_action": "abstain_unsupported_attribution",
+    "source_ids": [
+      "S03"
+    ],
+    "rationale": "The same page contains both names, but the investment sentence belongs to Dan Borok. Jennifer is Head of Platform. No claim is made that no relationship exists anywhere.",
+    "observed_action": "manual_rejected"
+  },
+  {
+    "id": "C02",
+    "claim": "Stephen Socolof is definitively a voting director of Kintra Fibers.",
+    "expected_action": "flag_role_conflict",
+    "source_ids": [
+      "S02",
+      "S04",
+      "S05"
+    ],
+    "rationale": "TCV says on the board; SEC as of 2023 and TranscendAP say observer. No effective dates establish whether a role changed. Preserve conflict and dated observer evidence.",
+    "observed_action": "manual_flagged"
+  },
+  {
+    "id": "C03",
+    "claim": "Vaughn Crowe joined the Toothio board on October 13, 2023.",
+    "expected_action": "abstain_date_unknown",
+    "source_ids": [
+      "S03"
+    ],
+    "rationale": "2023-10-13 is provider webpage publication metadata; body does not give the board appointment date.",
+    "observed_action": "manual_rejected"
+  },
+  {
+    "id": "C04",
+    "claim": "Dan Borok was a seed investor in BigCommerce.",
+    "expected_action": "abstain_stage_unknown",
+    "source_ids": [
+      "S03",
+      "S07"
+    ],
+    "rationale": "Led or co-led does not establish seed stage. Firm biographies cannot supply an unstated round.",
+    "observed_action": "manual_rejected"
+  },
+  {
+    "id": "C05",
+    "claim": "Jeremy Sohn associated with the law-firm search result is the P74/MPM investor.",
+    "expected_action": "do_not_merge_without_identity_evidence",
+    "source_ids": [],
+    "rationale": "Recovery query returned a law-firm homonym at rank eight. This was a discovery-only trap; its page was not fetched and no identity conclusion is established.",
+    "observed_action": "not_scored_discovery_only"
+  }
+]

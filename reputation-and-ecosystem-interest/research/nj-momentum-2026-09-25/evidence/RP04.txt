@@ -1,0 +1,79 @@
+Research News
+
+Research & Innovation
+
+# Two Rutgers Research Teams Honored With Edison Patent Awards
+
+Two Rutgers startups, driving solutions to global issues. Two technologies, developed at Rutgers. Two Rutgers research teams, honored with Edison Patent Awards at the 2025 ceremony.
+
+For the fourth-straight year, a pair of Rutgers research teams received Research & Development Council of New Jersey (RDNJ) Edison Patent Awards, New Jersey’s highest recognition of innovation. They and other winners were recognized during a ceremony and banquet at Bell Works in Holmdel, NJ.
+
+Double Rutgers graduate Eric Wengrowski, PhD, and School of Engineering professor of Electrical and Computer Engineering Kristin Dana, PhD, will receive the Emerging Technology award for their **“Light-Field Messaging to Embed a Hidden Message Into a Carrier” patent (U.S. 11,790,475 B2)**. Their patent is a forensic watermarking technique that embeds information in digital images and video that can be shared online or camera-captured. The watermark is invisible to the human eye but detectable algorithmically through AI and deep learning. This technology led to the formation of the Rutgers startup Steg.AI.
+
+"Steg.AI builds AI-powered forensic watermarks to protect media content against misuse. Seeing is no longer believing, so we are developing tools to restore trust and truth,” said Wengrowski. “As a kid from the Garden State, it's quite a trip to have your work celebrated by one of America's original technology hubs. I am hopeful that New Jersey educators and members of the scientific community will continue to encourage asking challenging questions, solving hard problems, and generously giving back to the world.”
+
+“We are honored to receive this award and excited that this patent, commercialized by Steg AI, will protect digital media via watermarking,” said Dana. “Ensuring trust in our photos and videos is vital as emerging AI innovation meets the established internet era. The NY/NJ region, where I have spent my career, is a powerhouse of innovation and home to Edison’s own remarkable inventions, from the light bulb to the motion-picture camera. Edison’s life exemplified hard work and the application of science to real-world problems, values that continue to inspire me and make this award especially meaningful.”
+
+Daniel Kopp, PhD, and School of Engineering Distinguished Professor of Materials Science and Engineering Richard Riman, PhD, will take home the Industrial Processes award for **“Methods for Low Energy Inorganic Material Synthesis” patent (U.S. 11,332,847 B2)**. Kopp, who received his BS, Masters, and PhD from Rutgers, developed a hydrothermal technology as part of his PhD thesis while working in Riman’s lab. This technology can drastically reduce the heat in the production of cement, thus decreasing its CO2 emission, and is the basis of the Rutgers startup Queens Carbon.
+
+“It’s an honor to receive the 2025 Edison Patent Award alongside my Ph.D. advisor and long-time collaborator, Professor Richard Riman, for our work on Hydrothermal Vapor Synthesis,” said Kopp. “From the start, our focus at Rutgers was on creating a low-cost, low-energy materials processing method to help build a sustainable world. We co-founded Queens Carbon to make this focus a reality, using our invention to produce low-carbon cementitious materials. The award is especially meaningful given Edison’s role in pioneering the modern rotary kiln and his legacy of transforming industrial manufacturing.”
+
+“Anyone in the world knows who Thomas Edison is. Dr. Kopp and I are honored to be associated with the world’s most highly regarded inventor.  And I am honored to see the educational collaboration between a student and an advisor recognized by the award search committee for creating intellectual knowledge that provides value to the industry, environment, and public at large,” said Riman. “Any cement or concrete expert knows that New Jersey does not manufacture cement. New Jersey buys it from Pennsylvania. We hope this award marks a crucial step in reviving cement manufacturing in New Jersey, creating jobs as Edison did many years ago.”
+
+The Office for Research has supported both research teams through its Technology Transfer and New Ventures units. Technology Transfer worked with the researchers to patent the technologies, ensure intellectual property protection, and execute the exclusive licenses in the formation of their respective startups, and New Ventures continues to aid the companies as they seek funding and/or investors to continue their important work.
+
+Rutgers Health
+
+The two research teams were not the only Rutgers honorees, as former Chancellor of Rutgers Health Brian Strom, MD, MPH, received the Educator of the Year for his work “as the chief architect of Rutgers’ academic health enterprise…positioning New Jersey as a national leader in health sciences education.”
+
+“From all of us at the Office for Research, congratulations to Drs. Dana, Wengrowski, Kopp, and Riman on their well-deserved Edison Patent Awards, as well as to Dr. Strom on his Educator of the Year award,” said Michael E. Zwick, PhD, senior vice president for Research. “These two technologies are emblematic of the research that is being conducted at Rutgers that looks to address the world’s biggest challenges. We are proud to continue to support the work these companies are doing.”
+
+“We are very proud to have supported Drs. Dana, Wengrowski, Kopp, and Riman from the beginning of their research all the way to the launch of their startup and beyond,” said Deborah Perez Fernandez, PhD, MBA, executive director of the Technology Transfer unit within the Office for Research. “Our team worked with the research teams to submit their applications for the Edison Patent Awards, and we are thrilled that their important work is being recognized by the RDNJ.”
+
+“The work being done by Steg.AI and Queens Carbon is critical in addressing two of the biggest issues facing the world: climate change and online deepfakes,” said Vincent Smeraglia, JD, executive director of the OfR’s New Ventures department. “Our team is proud to continue to support them as they strive to expand their reach and impact.”
+
+The Edison Patent Awards, named for Thomas Edison and now in their 46th year, include 12 categories and are presented annually by the RDNJ to recognize and highlight the “broad array of research conducted in the state.”
+
+A team of R&D Council board members selected the winners after evaluating nominated patents “for the significance of the problem, utility/socio-economic value, novelty, and commercial impact.” At least part of the technical/scientific work for the winning patents must have been completed in New Jersey. The 46th annual Edison Patent Awards Ceremony and Receptionv took place on Thursday, November 20, at Bell Works in Holmdel, N.J. To read the RDNJ release and see the complete list of the 2025 Edison Patent Award winners, click here.
+
+#### Emerging Technology: Rutgers, The State University of New Jersey and inventors Eric Wengrowski and Kristin Dana
+
+#### Industrial Processes: Rutgers, The State University of New Jersey and inventors Daniel Kopp and Richard E. Riman
+
+#### Educator of the Year: Brian Strom, MD, MPH, Chancellor of Rutgers Health and Executive Vice President for Health Affairs at Rutgers
+
+2025 Edison Patent Award winners Kristin Dana (center left) and Eric Wengrowski (center right) and their partners
+
+Rutgers Health Vice Chancellor for Research Kathy Scotto
+
+2025 Edison Patent Award winners Richard Riman (left) and Daniel Kopp
+
+Rutgers Health Chancellor Brian Strom
+
+l-r: Vince Smeraglia, Todd Slawsky, Deb Perez Fernandez, Andrea Dick, Eusebio Pires, Brice Kessler, Dan Benderly, Alex Pechhold
+
+2025 Edison Patent Award winners Daniel Kopp (center left) and Richard Riman (center right) and partners
+
+2025 Edison Patent Award winners Richard Riman (left) and Daniel Kopp
+
+Rutgers staff and Rutgers' 2025 Edison Patent Award winners
+
+2025 Edison Patent Award winners Kristin Dana and Eric Wengrowski
+
+2025 Edison Patent Awards winner Kristin Dana
+
+2025 Edison Patent awards winner Eric Wengrowski
+
+Rutgers Health Chancellor Brian Strom and Vice Chancellor for Research Kathy Scotto
+
+Rutgers Health Chancellor Brian Strom
+
+Rutgers Health Chancellor Brian Strom and wife Elaine
+
+2025 Edison Patent Award winners Kristin Dana and Eric Wengrowski
+
+Rutgers Office for Research executive director of New Ventures Vince Smeraglia
+
+2025 Edison Patent Award winners Daniel Kopp (left) and Richard Riman
+
+## You May Also Like
