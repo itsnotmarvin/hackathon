@@ -7,6 +7,7 @@ for sources. This script only handles the parts that are computable:
 
   * headcount-data.csv: growth_rate = current_headcount / (as_of_year - founding_year)
   * business-model-scores.csv: checks every company from startups.csv is scored 1-5
+    on business model and novelty, and that novelty_type matches novelty_score
   * sector-data.csv: prints year-over-year funding change per sector
 
 Usage (from the repository root):
@@ -26,6 +27,14 @@ STARTUPS = ROOT / "startups.csv"
 HEADCOUNT = FOLDER / "scalability" / "headcount-data.csv"
 SCORES = FOLDER / "business-model" / "business-model-scores.csv"
 SECTORS = FOLDER / "market-timing" / "sector-data.csv"
+
+# Novelty rubric: 0-1 = creates something that did not exist; 1-n = improves on existing.
+#   5 = new category or market        (0-1)
+#   4 = new core technology           (0-1)
+#   3 = meaningfully new approach     (1-n)
+#   2 = incremental improvement       (1-n)
+#   1 = me-too in a crowded category  (1-n)
+NOVELTY_TYPE = {"5": "0-1", "4": "0-1", "3": "1-n", "2": "1-n", "1": "1-n"}
 
 
 def read_csv(path):
@@ -90,10 +99,23 @@ def check_scores(companies):
         elif not r["justification"].strip():
             print(f"  missing justification for {r['company']}")
             ok = False
-    counts = defaultdict(int)
-    for r in rows:
-        counts[r["score"]] += 1
-    print("  score distribution: " + ", ".join(f"{s}={counts[s]}" for s in sorted(counts)))
+        novelty = r.get("novelty_score", "")
+        if novelty not in NOVELTY_TYPE:
+            print(f"  bad novelty_score for {r['company']}: {novelty!r}")
+            ok = False
+        elif r["novelty_type"] != NOVELTY_TYPE[novelty]:
+            print(f"  novelty_type {r['novelty_type']!r} does not match novelty_score {novelty} "
+                  f"for {r['company']} (expected {NOVELTY_TYPE[novelty]!r})")
+            ok = False
+        elif not r["novelty_justification"].strip():
+            print(f"  missing novelty_justification for {r['company']}")
+            ok = False
+    for column in ("score", "novelty_score"):
+        counts = defaultdict(int)
+        for r in rows:
+            counts[r.get(column, "")] += 1
+        print(f"  {column} distribution: " + ", ".join(f"{s}={counts[s]}" for s in sorted(counts)))
+    print("  0-1 companies: " + ", ".join(r["company"] for r in rows if r.get("novelty_type") == "0-1"))
     return ok
 
 
