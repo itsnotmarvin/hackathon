@@ -1,0 +1,253 @@
+# Investor Portal
+
+# General Public Portal
+
+New York Deep Tech Week — SOSV HAX 2026 Investor Showcase
+
+### Welcome to the investor portal for SOSV HAX’s On-Demand Virtual Investor Showcase.
+
+Investors are invited to review the companies’ profiles and decks as well as request meetings. Questions? Contact us at events@sosv.com
+
+### Welcome to the public portal for SOSV HAX’s On-Demand Virtual Investor Showcase
+
+You are invited to review the virtual assets, including company profiles, for the startups participating in the demo day. Questions? Contact us at events@sosv.com
+
+## 2026 HAX Deep Tech Showcase
+
+* Advanced Compute
+* Energy Independence
+* Health
+* Space
+* Robotics
+* All series
+
+  Advanced Compute (7) 
+
+  Energy Independence (4) 
+
+  Health (4) 
+
+  Space (1) 
+
+  Robotics (5)
+
+## Advanced Compute (7)
+
+* ### Bosonic
+
+  Building a scalable quantum computer from nature’s building blocks, ions and photons, that snap together to reach fault tolerance with a fraction of the hardware. And the platform for anyone to use it.
+
+  HQ:
+  Austin, TX
+
+  Website:
+  bosonic.us
+* ### Kenyi Technologies
+
+  AI is transitioning from a Training-Centric to an Inference-Centric growth phase as it evolves to encompass Agentic and Physical AI use cases requiring low latency processing. Telecommunications operators are uniquely positioned to take advantage of this multi-billion dollar opportunity due to their existing distributed networks. We at Kenyi are developing a CPU technology that enables telco networks to migrate compute to general purpose servers as a pre-requisite to 6G Wireless and the hosting of proximal AI inferencing services.
+
+  To book meetings, please send an email to vloncke@kenyitech.com
+
+  HQ:
+  Newark, NJ
+
+  Website:
+  kenyitech.com
+* ### Nabu Optical Systems
+
+  Nabu is a groundbreaking startup aimed at revolutionizing the semiconductor industry by reducing the cost and eliminating barriers of entry to chip manufacturing. We’re set to offer superior lithography tools that solve existing challenges faced by startups and established industry players.
+
+  HQ:
+  Dayton, OH
+
+  Website:
+  nabulitho.com
+* ### Tessellate2d
+
+  Tessellate 2D is building the first scalable manufacturing platform for high‑quality exfoliated 2D semiconductors. These materials offer superior performance to silicon at the nanometer limit, enabling another decade of exponential performance improvement for the semiconductor industry.
+
+  HQ:
+  New York City, NY
+
+  Website:
+  tessellate2d.com
+* ### VISION IV
+
+  VISION IV Corporation develops high‑purity, single‑crystal diamond substrates for quantum sensors, radiation detectors, and next‑generation power semiconductors. By combining scalable crystal growth and precise doping control, we enable reliable device performance in extreme environments where silicon fails. Our technology bridges advanced materials research and real‑world industrial deployment.
+
+  HQ:
+  Tokyo, JPN
+
+  Website:
+  visioniv.co.jp
+* ### YPlasma
+
+  YPlasma develops solid-state cooling systems powered by ionic wind technology, replacing traditional fans and heatsinks in Edge AI devices, data centers, and high-performance electronics. Using Dielectric Barrier Discharge (DBD) plasma actuators, our solution delivers silent, vibration-free thermal management with no moving parts — enabling smaller, more reliable, and more efficient hardware.
+
+  HQ:
+  Newark, NJ
+
+  Website:
+  yplasma.tech
+* ### Halltech B.V.
+
+  HallTech is building the thin-film deposition platform that unlocks the next semiconductor nodes. As chip scaling pushes past lithography into a materials bottleneck, our technology delivers film quality current tools cannot match, with a clear path to fab-grade production. We have a working proof-of-concept, validated results, multiple OEM evaluations underway, and two letters of intent signed.
+
+  HQ:
+  Eindhoven, NL
+
+  Website:
+  halltech.nl
+
+## Energy Independence (4)
+
+* ### Canyon Magnet
+
+  Canyon Magnet Energy designs and manufactures high-temperature superconducting (HTS) magnets, coils and cables for fusion, quantum computing, medical systems, nano research and AI data center power. Its systems run without scarce liquid helium and ship with built-in quench detection and protection and fully automated cryocooling, delivered from its Newark, NJ line in weeks rather than the industry’s typical year-long waits. CME is post-revenue with $500K+ in purchase orders and $1M+ pending from tier-1 customers, a team out of PPPL, Brookhaven and MagLab holding 280+ publications and 40+ patents, and Navy STTR, DOE SBIR and NJEDA support.
+
+  Superconducting MagnetsSuperconductorsFusion Supply ChainQuantum ComputingAI Data Center PowerCryogenicsSuperconducting Energy Storage
+
+  HQ:
+  Newark, New Jersey
+
+  Website:
+  canyonmagnet.energy
+* ### Nascent Materials
+
+  Nascent Materials manufactures next-generation LFP and LMFP battery cathode materials in the U.S., where more than 90% of cathode supply currently comes from Asia. Its pCAM-free thermo-fusion process skips the precursor step entirely, letting it take locally available, lower-grade feedstock and convert it directly into pure cathode material. The Newark, NJ company runs a fully operational bench production facility, has scaled to multi-hundred-kilogram batches, and has 10+ customer sampling programs underway.
+
+  Battery MaterialsCathode MaterialsLithium Iron PhosphateEnergy StorageDomestic Supply Chain
+
+  HQ:
+  Newark, New Jersey
+
+  Website:
+  nascentmaterials.com
+* ### Project K Energy
+
+  Project K Energy is commercializing potassium-ion batteries for AI hyperscalers and next-generation EV OEMs, eliminating lithium, cobalt, nickel and copper from the cell entirely. Removing these materials eliminates the price and supply-chain exposure that comes with them, and potassium-ion chemistry offers advantages over LFP, NMC, and sodium on fast charging, safety, cost, and low temperature performance. The team has moved the chemistry from TRL <2 to >5 in three years, demonstrated 2,000 cycles on small cells and is now testing >1 Ah cells past 200 cycles, and scaled to multi-layer pouch cells. Project K is backed by $2.6M from the U.S. DOE and $650K from the California Energy Commission.
+
+  Potassium-Ion BatteriesLithium-FreeFast ChargingEnergy StorageAI Data Center PowerEV Batteries
+
+  HQ:
+  Pasadena, CA
+
+  Website:
+  projectk.energy
+* ### Terra Fusion Energy
+
+  Terra Fusion Energy is developing centrifugal mirror fusion, a modular approach the company projects can reach net positive energy on roughly $100M of capital investment. Founded in 2024 on 25+ years of patented research and two university experiments, the most recent funded by more than $5M in ARPA-E grants, it is led by the leading figure in centrifugal mirror technology. Terra Fusion has reached 10 million degrees (1 keV) in stable, peer-reviewed discharges and cleared two of the six accepted milestones toward fusion energy on under $1.5M of funding, with funded collaborations at LLNL and AFRL.
+
+  Fusion EnergyCentrifugal MirrorMagnetic MirrorPlasma PhysicsFirm Clean Power
+
+  HQ:
+  College Park, MD
+
+  Website:
+  tf.energy
+
+## Health (4)
+
+* ### InnSight Technology
+
+  InnSight Technology is a leader in ophthalmic diagnostics and tear fluid testing. Our product, OcuCheck, disrupts industry predicates with superior technology to provide more accurate, versatile and reliable testing of molecular biomarker in tear fluid that will improve patient care in dry eye disease and open new opportunities for health monitoring through noninvasive, tear fluid testing.
+
+  HQ:
+  Champaign, IL
+
+  Website:
+  innsightech.com
+* ### Sharper Sense
+
+  Sharper Sense produces daily-disposable neural interface patches that deliver continuous cognitive optimization through targeted peripheral nerve stimulation. We are initially launching to mitigate human error and fatigue in high-liability military environments. The technology is safe, and the effect terminates immediately upon removal, providing an ideal alternative to stimulant pills with side effects.
+
+  HQ:
+  New York City, NY
+
+  Website:
+  sharpersense.com
+* ### Untap
+
+  Untap Health detects infectious disease within communities before symptoms appear, without the need for individual testing. This enables earlier, targeted intervention, reduces disease spread, and strengthens operational resilience across sectors including healthcare, agriculture, and defense.
+
+  We achieve this through our patented, fully automated wastewater monitoring technology, which is being deployed at scale to build the world’s first near real-time map of infectious disease.
+
+  HQ:
+  London, UK
+
+  Website:
+  untaphealth.com
+* ### LightHearted AI
+
+  We have developed a proprietary silicon and photonics device that captures ultra-precise cardiac data invisible to existing tools – this unique dataset has enabled us to build a platform of first-in-class AI cardiac diagnostic models.
+
+  HQ:
+  London, UK
+
+  Website:
+  lighthearted.ai
+
+## Space (1)
+
+* ### Aspect Aerospace
+
+  Aspect Aerospace is completely changing the space industry by making spacecraft an off-the-shelf piece of consumer electronics. We turn hardware and components companies into data companies, becoming a hardware and data infrastructure layer for the new space economy.
+
+  HQ:
+  Mobile, AL
+
+  Website:
+  aspectaerospace.com
+
+## Robotics (5)
+
+* ### Cargo Robotics
+
+  Cargo Robotics is revolutionizing logistics with our fully automated delivery vans, eliminating the need for warehouses and enabling faster, more efficient deliveries. The flagship product, the Cargo X1, is a modular system that automates parcel loading and retrieval— eliminating 4–6 hours of manual work per van each day, and slashing the injuries and delivery failures that cost carriers billions annually. By increasing parcel capacity by 30% per vehicle, the Cargo X1 also unlocks leaner van fleets and smaller warehouses. It’s the first step toward our broader vision: a fully autonomous delivery system.
+
+  HQ:
+  Palo Alto, CA
+
+  Website:
+  withcargo.com
+* ### Danu Robotics
+
+  Danu Robotics builds physical AI for autonomous waste sorting, combining perception, multi-robot coordination and precision picking to recover valuable material from complex waste streams. Its systems are commercially deployed in the UK and Canada, most recently at a customer facility in Toronto in September 2026. The company holds five contracts worth over $510K and ten signed LOIs with major North American waste and resource-management firms, and was selected for the Google DeepMind Robotics Accelerator 2026 and TechCrunch Startup Battlefield 200.
+
+  Physical AIRobotic SortingComputer VisionRecyclingMaterial RecoveryWaste ManagementCircular Economy
+
+  HQ:
+  Edinburgh, UK
+
+  Website:
+  danurobotics.com
+* ### Gemma Robotics
+
+  Gemma Robotics is creating a new category: automated professional makeup—unlocking a multi-billion dollar daily beauty ritual.
+
+  HQ:
+  Newark, NJ
+
+  Website:
+  gemmarobotics.com
+* ### Navlive
+
+  Handheld LiDAR + Edge AI scanner that converts physical assets into BIM-ready digital twins instantly, bypassing days of manual CAD processing
+
+  HQ:
+  Oxford, UK
+
+  Website:
+  navlive.ai
+* ### Terabora
+
+  TeraBora is developing a portable, worm-inspired digging robot that installs geothermal heat loops with far less cost and disruption than conventional drilling rigs. It uses high-pressure water jets, peristaltic motion, and traction features to move through the ground and make ground-source heating accessible to far more homes.
+
+  HQ:
+  England, UK
+
+  Website:
+  terabora.com
+
+**No Offer, Solicitation, Advice, or Recommendation**  
+Except to the extent expressly set forth in materials as may be provided through a password protected area on the SOSV website (the “Materials”), or as otherwise expressly specified by SOSV in writing, nothing on the SOSV website or on any platform or other communications medium owned, operated or otherwise by or on behalf of SOSV, is intended to constitute (i) an offer, or solicitation of an offer, to purchase or sell any security, other asset or service, (ii) investment advice or an offer to provide such advice, or (iii) a basis for making any investment decision. Except as expressly stated by SOSV in writing, neither the SOSV website or any platform or other communications medium owned, operated or otherwise by or on behalf of SOSV, nor any of the Materials make any effort to present a comprehensive or balanced description of SOSV or its investment activities. Please note the SOSV Communication Policy available here.

@@ -1,0 +1,188 @@
+{
+  "note": "Development-run observations; earlier rule versions are not validation of the final classifier. No simulated companies in these run summaries.",
+  "runs": [
+    {
+      "id": "871b1f9d56dd410a920e037c6efaace1",
+      "pipeline_version": "1.0.1",
+      "created_at": "2026-09-25T17:42:38.466382+00:00",
+      "updated_at": "2026-09-25T17:46:31.891647+00:00",
+      "status": "partial",
+      "stage": "Research complete with evidence gaps",
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "requested_count": 2,
+      "sector": "All sectors",
+      "qualified_count": 1,
+      "metrics": {
+        "searches": 13,
+        "pages_fetched": 19,
+        "cache_hits": 9,
+        "model_calls": 9,
+        "model_usage": {
+          "calls": 9,
+          "input_tokens": 82367,
+          "output_tokens": 4961,
+          "thinking_tokens": 0
+        }
+      },
+      "error": null,
+      "error_code": null,
+      "companies": [
+        {
+          "name": "Cecilia Energy, Inc",
+          "assessment": "stronger_evidence",
+          "signal_count": 3
+        },
+        {
+          "name": "Canyon Magnet Energy Inc.",
+          "assessment": "limited_evidence",
+          "signal_count": 1
+        },
+        {
+          "name": "CarbonDots, LLC",
+          "assessment": "limited_evidence",
+          "signal_count": 1
+        },
+        {
+          "name": "Cero NJ LLC",
+          "assessment": "limited_evidence",
+          "signal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "9531d65a648941eaabf1a513b63d584f",
+      "pipeline_version": "1.0.2",
+      "created_at": "2026-09-25T17:47:39.222504+00:00",
+      "updated_at": "2026-09-25T17:52:19.107971+00:00",
+      "status": "partial",
+      "stage": "Partial results saved",
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "requested_count": 2,
+      "sector": "All sectors",
+      "qualified_count": 1,
+      "metrics": {
+        "searches": 7,
+        "pages_fetched": 9,
+        "cache_hits": 7,
+        "model_calls": 5,
+        "model_usage": {
+          "calls": 5,
+          "input_tokens": 17413,
+          "output_tokens": 1246,
+          "thinking_tokens": 0
+        }
+      },
+      "error": "Could not securely connect to Gemini.",
+      "error_code": "model_connection",
+      "companies": [
+        {
+          "name": "Canyon Magnet Energy Inc.",
+          "assessment": "emerging_evidence",
+          "signal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "4f4774ac504340128dc251f840eef07b",
+      "pipeline_version": "1.0.3",
+      "created_at": "2026-09-25T17:53:24.110976+00:00",
+      "updated_at": "2026-09-25T17:55:14.089698+00:00",
+      "status": "failed",
+      "stage": "Research needs attention",
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "requested_count": 1,
+      "sector": "Climate & materials",
+      "qualified_count": 0,
+      "metrics": {
+        "searches": 3,
+        "pages_fetched": 6,
+        "cache_hits": 0,
+        "model_calls": 1,
+        "model_usage": {
+          "calls": 1,
+          "input_tokens": 10723,
+          "output_tokens": 313,
+          "thinking_tokens": 0
+        }
+      },
+      "error": "Gemini returned an invalid research record.",
+      "error_code": "model_format",
+      "companies": []
+    },
+    {
+      "id": "58262454872848018fbe1be181152fdd",
+      "pipeline_version": "1.0.3",
+      "created_at": "2026-09-25T17:57:00.878781+00:00",
+      "updated_at": "2026-09-25T17:57:26.278120+00:00",
+      "status": "failed",
+      "stage": "Research needs attention",
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "requested_count": 1,
+      "sector": "Climate & materials",
+      "qualified_count": 0,
+      "metrics": {
+        "searches": 3,
+        "pages_fetched": 0,
+        "cache_hits": 6,
+        "model_calls": 3,
+        "model_usage": {
+          "calls": 3,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "thinking_tokens": 0
+        }
+      },
+      "error": "Gemini is temporarily unavailable. Saved progress is retained.",
+      "error_code": "model_unavailable",
+      "companies": []
+    },
+    {
+      "id": "57b6d0c6c16e4b50b5fad8fa25a09931",
+      "pipeline_version": "1.0.3",
+      "created_at": "2026-09-25T17:58:58.606403+00:00",
+      "updated_at": "2026-09-25T17:58:58.612892+00:00",
+      "status": "completed",
+      "stage": "Saved research loaded",
+      "mode": "sample",
+      "model": null,
+      "requested_count": 3,
+      "sector": "All sectors",
+      "qualified_count": 1,
+      "metrics": {
+        "searches": 0,
+        "pages_fetched": 0,
+        "cache_hits": 0,
+        "model_calls": 0,
+        "model_usage": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "thinking_tokens": 0
+        }
+      },
+      "error": null,
+      "error_code": null,
+      "companies": [
+        {
+          "name": "Cecilia / Cecilia Energy",
+          "assessment": "stronger_evidence",
+          "signal_count": 2
+        },
+        {
+          "name": "Queens Carbon",
+          "assessment": "limited_evidence",
+          "signal_count": 2
+        },
+        {
+          "name": "Chorah Labs",
+          "assessment": "location_review",
+          "signal_count": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "name": "NJ Reputation & Ecosystem Interest",
+  "status": "research protocol; no application runner implemented",
+  "scope": "Discover New Jersey startups with attributable reputation and ecosystem-interest evidence.",
+  "excluded_assessments": [
+    "funding amounts and financial health",
+    "hiring growth",
+    "founder quality",
+    "commercial or market performance",
+    "patent valuation"
+  ],
+  "phases": [
+    {
+      "name": "discover",
+      "families": [
+        {
+          "signal": "program_selection",
+          "queries": [
+            "\"New Jersey\" accelerator selected cohort startups",
+            "site:njit.edu startup incubator companies",
+            "site:research.rutgers.edu startup award",
+            "site:princeton.edu startup incubator recognition"
+          ]
+        },
+        {
+          "signal": "institutional_recognition",
+          "queries": [
+            "\"New Jersey\" startup \"Edison Patent Award\"",
+            "site:njeda.gov startups awardees"
+          ]
+        },
+        {
+          "signal": "attributable_affiliation",
+          "queries": [
+            "\"New Jersey\" startup investor portfolio partnership",
+            "\"Newark\" startup national laboratory collaboration"
+          ]
+        },
+        {
+          "signal": "community_attention",
+          "queries": [
+            "\"New Jersey\" startup industry conference finalist",
+            "\"New Jersey\" startup community launch"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "resolve_identity",
+      "queries": [
+        "\"{company}\" official website location New Jersey",
+        "\"{company}\" headquarters contact"
+      ]
+    },
+    {
+      "name": "verify_evidence",
+      "queries": [
+        "\"{company}\" \"{institution}\"",
+        "\"{company}\" accelerator cohort award",
+        "\"{company}\" independent coverage community"
+      ],
+      "requirements": [
+        "read source pages",
+        "prefer confirmation by named institution",
+        "preserve exact role",
+        "deduplicate repeated events",
+        "keep event date separate from publication/observation dates"
+      ]
+    },
+    {
+      "name": "assess_and_return",
+      "outputs": [
+        "company",
+        "NJ connection type",
+        "sector cluster",
+        "supported ecosystem signals",
+        "dates and citations",
+        "evidence quality",
+        "attention trend or unknown",
+        "limitations"
+      ]
+    }
+  ],
+  "continuation": "Internal targeted searches only. Do not stop at a relationship mention or repeatedly ask the user to continue.",
+  "completion": "Return the scoped candidate cards plus supported sector groupings or a clear evidence shortfall within a bounded run.",
+  "guardrails": [
+    "Association is not proof of commercial success",
+    "Institutional affiliation is not necessarily an endorsement",
+    "Missing mentions do not prove low attention",
+    "Rising attention requires comparable observations over time",
+    "No fabricated 0-100 success score"
+  ],
+  "provenance_modes": [
+    "public",
+    "permissioned",
+    "sample",
+    "simulated"
+  ],
+  "provenance_policy": "Use only authorized permissioned data; simulated/sample evidence stays labeled and excluded from real-company validation.",
+  "executed_queries": [
+    {
+      "id": "01-public-support",
+      "query": "site:njeda.gov 2025 2026 CSIT startup grant awarded companies clean tech",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "02-funding",
+      "query": "\"New Jersey\" startup \"2026\" \"seed\" funding",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "03-accelerators",
+      "query": "\"New Jersey\" accelerator cohort startups 2025 2026 companies",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "04-intellectual-property",
+      "query": "\"New Jersey\" startup patent granted 2025 2026 technology",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "05-hiring",
+      "query": "\"New Jersey\" startup hiring careers 2026 seed",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "07-queens-carbon",
+      "query": "\"Queens Carbon\" funding patent careers New Jersey 2025 2026",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "08-cecilia-energy",
+      "query": "\"Cecilia Energy\" funding HAX patent Newark 2025 2026",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "09-inaedis",
+      "query": "\"Inaedis\" Princeton funding patent careers",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "10-chorah-labs",
+      "query": "\"Chorah Labs\" headquarters funding New Jersey accelerator",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "11-tailorbird",
+      "query": "\"Tailorbird\" funding headquarters New Jersey careers 2025 2026",
+      "scope_note": "Initial broader discovery before user's scope correction; only relevant affiliation/identity evidence retained."
+    },
+    {
+      "id": "12-cecilia-reputation",
+      "query": "\"Cecilia Energy\" HAX NASA Newark",
+      "scope_note": "Reputation-specific research"
+    },
+    {
+      "id": "13-queens-reputation",
+      "query": "\"Queens Carbon\" Rutgers Edison Patent Award Clean Energy Ventures",
+      "scope_note": "Reputation-specific research"
+    },
+    {
+      "id": "14-chorah-identity",
+      "query": "\"Chorah Labs\" Newark NJIT incubator",
+      "scope_note": "Reputation-specific research"
+    },
+    {
+      "id": "16-cecilia-name",
+      "query": "\"Cecilia Energy\"",
+      "scope_note": "Reputation-specific research"
+    },
+    {
+      "id": "17-chorah-name",
+      "query": "\"Chorah Labs\" company",
+      "scope_note": "Reputation-specific research"
+    },
+    {
+      "id": "18-queens-investor",
+      "query": "\"Queens Carbon\" \"Clean Energy Ventures\" portfolio",
+      "scope_note": "Reputation-specific research"
+    }
+  ]
+}

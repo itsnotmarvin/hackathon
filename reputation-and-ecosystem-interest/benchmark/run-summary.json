@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-25",
+  "evaluation_type": "unblinded manual retrieval feasibility pilot",
+  "protocol_sha256": "278e8cf3248ce38369968d242cdecf1442244095a240868183b972d7f70de44f",
+  "positive_cases": 10,
+  "person_queries": 5,
+  "top_k": 5,
+  "relationship_recovered": 8,
+  "complete_role_and_interval_recovered": 7,
+  "dated_start_in_reference_cases": 2,
+  "early_stage_verified": 0,
+  "predictive_accuracy": null,
+  "detection_delay": null,
+  "automated_extractor_precision": null,
+  "firecrawl": "Unavailable: HTTP 402 in preceding source test, not rerun.",
+  "google": "Manual Jim Gunton + InstaMed + board query; discovery/corroboration only, not a matched engine benchmark.",
+  "controls_scored_manually": 4,
+  "controls_not_scored": 1,
+  "notable_errors": [
+    "Empty output on Toothio enrichment search; its batch stopped. No results inferred.",
+    "Stony Brook top-five result fetched as HTTP 404."
+  ],
+  "limitations": [
+    "Convenience sample selected from accessible biographies; same researcher established labels and assessed recovery.",
+    "Multiple cases share a person, source and query; ten cases are not ten independent trials.",
+    "Affiliated biographies can repeat self-reported claims; separate sites do not guarantee independent evidence.",
+    "No historical replay, detection-latency measurement, failure-company comparison cohort, or success prediction evaluation.",
+    "Energy Focus is an intentional public-company boundary case, not a startup lead."
+  ]
+}

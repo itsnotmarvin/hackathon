@@ -1,0 +1,11 @@
+benchmark/captures/
+research/*/raw/
+.DS_Store
+__pycache__/
+.env
+.env.*
+!.env.example
+.runtime/
+.venv/
+*.sqlite3
+*.sqlite3-*

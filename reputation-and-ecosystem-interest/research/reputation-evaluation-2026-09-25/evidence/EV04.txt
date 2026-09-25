@@ -1,0 +1,113 @@
+Featured
+
+|Data Center Frontier Show Podcast
+
+# Canyon Magnet Energy: The Superconducting Future of Powering AI Data Centers
+
+At this year’s Data Center Frontier Trends Summit, Honghai Song, founder of Canyon Magnet Energy, introduced his company’s breakthrough superconducting magnet technology as part of the conference’s “6 Moonshot Trends for the 2026 Data Center Frontier” panel, highlighting how high-temperature superconductors could transform both fusion energy and AI data center power infrastructure.
+
+Matt Vincent
+
+Nov. 4, 2025
+
+6 min read
+
+Add Us On Google
+
+Data Center Frontier
+
+At this year’s Data Center Frontier Trends Summit, Honghai Song, founder of Canyon Magnet Energy, presented his company’s breakthrough superconducting magnet technology during the panel—showcasing how high-temperature superconductors (HTS) could reshape both fusion energy and AI data-center power systems.
+
+In this episode of the Data Center Frontier Show, Editor in Chief Matt Vincent speaks with Song about how Canyon Magnet Energy—founded in 2023 and based in New Jersey with research roots at Stony Brook University—is bridging fusion research and AI infrastructure through next-generation magnet and energy-storage technology.
+
+### From Fusion Research to Data Center Reality
+
+Founded in 2023, Canyon Magnet Energy emerged from the advanced-magnet research ecosystem around Stony Brook and now operates a manufacturing line in Newark, New Jersey. Its team draws on decades of experience designing the ultra-strong magnetic fields that enable the confinement and stability of fusion plasma—but their ambitions go far beyond the laboratory.
+
+“Super magnets are the foundation of fusion,” Song explains in the interview. “But the same high-temperature superconductors that can make fusion practical can also dramatically improve how we move and store electricity in data centers.”
+
+The company’s magnets are built using REBCO (Rare Earth Barium Copper Oxide) tape, which operates at around 77 Kelvin—cold, but far warmer and more manageable than traditional low-temperature superconductors. The result is a zero-resistance pathway for electricity, unlocking new possibilities in power transmission, energy storage, and grid integration.
+
+### Why High-Temperature Superconductors Matter
+
+Since their discovery in 1986, high-temperature superconductors have progressed from exotic physics experiments to industrial-scale wire and magnet manufacturing. Canyon Magnet Energy is among a new generation of companies moving this technology into the AI data-center context—where efficiency and instantaneous power responsiveness are increasingly critical.
+
+With AI training clusters consuming power at hundreds of megawatts per campus, traditional electrical infrastructure faces limits in both efficiency and response time. HTS cables, by contrast, could reduce power loss by 7–10% in a 1-gigawatt facility, representing significant energy and cost savings.
+
+### The SMASH System: Instant Energy for the AI Era
+
+A key development at Canyon Magnet Energy is the company’s SMASH (Superconducting Magnetic Storage Hybrid) system—a Superconducting Magnetic Energy Storage (SMES) solution tailored for AI workloads.
+
+Unlike batteries, which discharge over minutes, SMES systems release energy instantly—within milliseconds if needed—making them ideal for compensating the spiky, burst-driven power behavior of AI chips.
+
+“When a GPU cluster suddenly draws a surge of power, the grid can’t always react fast enough,” Song says. “Our superconducting storage can deliver that burst on demand, then recharge just as quickly. It’s about creating a stable electrical environment for AI at scale.”
+
+Canyon’s team is currently modeling SMES discharge parameters—current, voltage, and cycle time—for integration directly at the data-rack level. The concept dovetails neatly with emerging DC-power architectures, where data centers bypass multiple conversion steps to improve overall efficiency.
+
+### Building the Superconducting DC Data Center
+
+In Song’s vision, future AI data centers will operate on direct current from end to end:
+
+Superconducting DC cables will deliver near-lossless power from local renewables or microgrids.
+
+SMES modules will sit near racks, smoothing instantaneous power fluctuations.
+
+Cooling channels for superconducting lines—just one to two inches in diameter—will align with liquid-cooling loops already used for high-density GPUs.
+
+The result could be a new infrastructure paradigm where superconducting power and cooling systems are designed together, not separately—a convergence that’s rarely been possible until now.
+
+### From Demo Projects to Fusion-Powered Futures
+
+Canyon Magnet Energy’s roadmap begins with small-scale demonstration projects: pairing a single SMES system with an AI rack in New Jersey or Pennsylvania, in collaboration with potential partners including major colocation data center operators and infrastructure vendors.
+
+Phase two envisions multi-mile superconducting DC transmission lines linking solar or wind farms directly to data-center campuses.
+
+And in the longer term—five to ten years out—the company aims to connect its technology back to its origins: enabling fusion energy plants as limitless, carbon-free power sources for the world’s most energy-intensive digital infrastructure.
+
+“We see this as a three-step journey,” Song says. “Start small, prove it works, and scale toward fusion.”
+
+### Anchored in the Northeast US, Aiming for the Future
+
+Supported by an NG Accelerate grant from the State of New Jersey, Canyon Magnet Energy is establishing a strong East Coast foundation across New Jersey, New York, and Pennsylvania.
+
+Its dual focus—fusion and data centers—positions it uniquely at the intersection of long-term scientific breakthrough and immediate industrial relevance.
+
+“The fusion revolution will take time,” Song says. “But data centers need better power solutions right now—and superconductors can bridge that gap.”
+
+*At Data Center Frontier, we talk the industry talk and walk the industry walk. In that spirit, DCF Staff members may occasionally use AI tools to assist with content. Elements of this article were created with help from**OpenAI's GPT5.*
+
+##### 
+
+##### Keep pace with the fast-moving world of data centers and cloud computing by connecting with Data Center Frontier on LinkedIn, following us on X/Twitter and Facebook, as well as on BlueSky, and signing up for our weekly newsletters using the form below.
+
+## About the Author
+
+Email
+
+### Matt Vincent
+
+Matt Vincent is Editor in Chief of *Data Center Frontier*, where he leads editorial strategy and coverage focused on the infrastructure powering cloud computing, artificial intelligence, and the digital economy. A veteran B2B technology journalist with more than two decades of experience, Vincent specializes in the intersection of data centers, power, cooling, and emerging AI-era infrastructure. Since assuming the EIC role in 2023, he has helped guide *Data Center Frontier*’s coverage of the industry’s transition into the gigawatt-scale AI era, with a focus on hyperscale development, behind-the-meter power strategies, liquid cooling architectures, and the evolving energy demands of high-density compute, while working closely with the Digital Infrastructure Group at Endeavor Business Media to expand the brand’s analytical and multimedia footprint. Vincent also hosts *The Data Center Frontier Show* podcast, where he interviews industry leaders across hyperscale, colocation, utilities, and the data center supply chain to examine the technologies and business models reshaping digital infrastructure. Since its inception he serves as Head of Content for the *Data Center Frontier Trends Summit.* Before becoming Editor in Chief, he served in multiple senior editorial roles across Endeavor Business Media’s digital infrastructure portfolio, with coverage spanning data centers and hyperscale infrastructure, structured cabling and networking, telecom and datacom, IP physical security, and wireless and Pro AV markets. He began his career in 2005 within PennWell’s Advanced Technology Division and later held senior editorial positions supporting brands such as *Cabling Installation & Maintenance*, *Lightwave Online,* *Broadband Technology Report*, and *Smart Buildings Technology*. Vincent is a frequent moderator, interviewer, and keynote speaker at industry events including the HPC Forum, where he delivers forward-looking analysis on how AI and high-performance computing are reshaping digital infrastructure. He graduated with honors from Indiana University Bloomington with a B.A. in English Literature and Creative Writing and lives in southern New Hampshire with his family, remaining an active musician in his spare time.
+
+**You can connect with Matt via LinkedIn or email.**
+
+**You can connect with Matt via LinkedIn or email.**
+
+Sign up for our eNewsletters
+
+Get the latest news and updates
+
+# Voices of the Industry
+
+View More
+
+Image courtesy of Bell & Gossett
+
+Sponsored
+
+Xylem's Steven Lucente explains why the intelligence of any data center cooling system begins with sound hydronic system design.
+
+Adobe Stock, courtesy of ebm-papst
+
+Sponsored
+
+As data centers and AI accelerate demand for resources, operators face a new set of infrastructure challenges. Success depends on more than adding capacity. It requires a holistic...

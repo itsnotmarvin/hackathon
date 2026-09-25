@@ -1,0 +1,445 @@
+{
+  "id": "bundled-public-research-2026-09-25",
+  "pipeline_version": "1.0.3",
+  "status": "completed",
+  "stage": "Saved research ready",
+  "created_at": "2026-09-25T17:58:58.606403+00:00",
+  "created_epoch": 1790359138.606433,
+  "updated_at": "2026-09-25T17:58:58.612892+00:00",
+  "requested_count": 3,
+  "sector": "All sectors",
+  "mode": "sample",
+  "model": null,
+  "cards": [
+    {
+      "company_id": "company-fa8453fee90bb6e1",
+      "name": "Cecilia / Cecilia Energy",
+      "official_domain": null,
+      "aliases": [
+        "Cecilia",
+        "Cecilia Energy"
+      ],
+      "sector": "Climate & materials",
+      "description": "plastic upcycling / advanced carbon materials",
+      "nj_presence": {
+        "status": "operations",
+        "location": "Newark-based company in government sources",
+        "evidence": [
+          {
+            "source_id": "RP01",
+            "quote": "* Cecilia Energy, Inc – $75,000 (Newark)",
+            "start_offset": 3971,
+            "end_offset": 4011,
+            "url": "https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/",
+            "title": "CSIT Awards Nearly $1.3M to 17 NJ Startups through Round 4 Clean Tech R&D Seed Grant Program - NJEDA",
+            "published_at": "2026-01-08",
+            "observed_at": "2026-09-25T16:09:15.861Z",
+            "source_family": "njeda-csit",
+            "snapshot_sha256": "4fb0abcbf194799f95d631819e863892587efbcca4544f8bf81c4323142f7975"
+          },
+          {
+            "source_id": "RP08",
+            "quote": "NETL and Newark, New Jersey-based Cecilia Energy combined their strengths in a novel Cooperative Research and Development Agreement (CRADA) that aims to solve one of the world’s greatest environmental challenges while creating upcycled products in the process.",
+            "start_offset": 199,
+            "end_offset": 459,
+            "url": "https://netl.doe.gov/node/14075",
+            "title": "NETL and Cecilia Energy Incubate New Technology to Address Plastic Waste",
+            "published_at": null,
+            "observed_at": "2026-09-25T16:11:57.234Z",
+            "source_family": "doe.gov",
+            "snapshot_sha256": "b93edb22749517ea3e66995a8430ee00267388b6cc1965031151030948c04a58"
+          }
+        ]
+      },
+      "signals": [
+        {
+          "type": "research_collaboration",
+          "organization": "NETL",
+          "statement": "DOE national lab NETL documents a joint research relationship and a Cooperative Research and Development Agreement with Cecilia.",
+          "event_date": null,
+          "event_key": "cecilia-netl-collaboration",
+          "status": "historical",
+          "source_role": "institution_confirmation",
+          "evidence": [
+            {
+              "source_id": "RP08",
+              "quote": "NETL and Newark, New Jersey-based Cecilia Energy combined their strengths in a novel Cooperative Research and Development Agreement (CRADA) that aims to solve one of the world’s greatest environmental challenges while creating upcycled products in the process.",
+              "start_offset": 199,
+              "end_offset": 459,
+              "url": "https://netl.doe.gov/node/14075",
+              "title": "NETL and Cecilia Energy Incubate New Technology to Address Plastic Waste",
+              "published_at": null,
+              "observed_at": "2026-09-25T16:11:57.234Z",
+              "source_family": "doe.gov",
+              "snapshot_sha256": "b93edb22749517ea3e66995a8430ee00267388b6cc1965031151030948c04a58"
+            }
+          ]
+        },
+        {
+          "type": "program_selection",
+          "organization": "NJEDA / CSIT",
+          "statement": "NJEDA lists Cecilia Energy among its January 2026 Clean Tech R&D Seed Grant awardees.",
+          "event_date": null,
+          "event_key": "cecilia-2026-csit-selection",
+          "status": "historical",
+          "source_role": "institution_confirmation",
+          "evidence": [
+            {
+              "source_id": "RP01",
+              "quote": "* Cecilia Energy, Inc – $75,000 (Newark)",
+              "start_offset": 3971,
+              "end_offset": 4011,
+              "url": "https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/",
+              "title": "CSIT Awards Nearly $1.3M to 17 NJ Startups through Round 4 Clean Tech R&D Seed Grant Program - NJEDA",
+              "published_at": "2026-01-08",
+              "observed_at": "2026-09-25T16:09:15.861Z",
+              "source_family": "njeda-csit",
+              "snapshot_sha256": "4fb0abcbf194799f95d631819e863892587efbcca4544f8bf81c4323142f7975"
+            }
+          ]
+        }
+      ],
+      "public_interest_trend": "not_measured",
+      "limitations": [
+        "Saved pilot from September 25, 2026. This is not a fresh search.",
+        "The NETL article is dated 2024-08-26; it documents historical collaboration, not proof that the agreement remains active today.",
+        "The energy-domain website redirects to Cecilia Materials; legal entity continuity has not been independently checked.",
+        "HAX and NASA relationships were not verified in this run and are excluded.",
+        "Program selection is recorded here as recognition; grant economics belong to the funding module.",
+        "No attention time series or independent commercial-performance assessment was performed.",
+        "An unsupported event date was removed; source publication dates remain separate."
+      ],
+      "follow_up_query": "",
+      "provenance": "public",
+      "assessment_method": "Saved assistant-curated research; current backend quote checks and ranking rules. No live search or Gemini call.",
+      "assessment": "stronger_evidence",
+      "qualified": true,
+      "evidence_summary": {
+        "external_organizations": 2,
+        "source_families": 2,
+        "distinct_event_labels": 2,
+        "substantial_relationships": 1,
+        "recent_signals": 1
+      },
+      "why_surfaced": "Substantial outside involvement, multiple source families and recent activity."
+    }
+  ],
+  "review_cards": [
+    {
+      "company_id": "company-aa02d5f9825facb8",
+      "name": "Queens Carbon",
+      "official_domain": null,
+      "aliases": [],
+      "sector": "Climate & materials",
+      "description": "low-carbon cement / industrial materials",
+      "nj_presence": {
+        "status": "operations",
+        "location": "NJ operations; municipality differs across sources",
+        "evidence": [
+          {
+            "source_id": "RP01",
+            "quote": "* Queens Carbon, Inc. – $74,999 (Montville)",
+            "start_offset": 4417,
+            "end_offset": 4460,
+            "url": "https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/",
+            "title": "CSIT Awards Nearly $1.3M to 17 NJ Startups through Round 4 Clean Tech R&D Seed Grant Program - NJEDA",
+            "published_at": "2026-01-08",
+            "observed_at": "2026-09-25T16:09:15.861Z",
+            "source_family": "njeda-csit",
+            "snapshot_sha256": "4fb0abcbf194799f95d631819e863892587efbcca4544f8bf81c4323142f7975"
+          }
+        ]
+      },
+      "signals": [
+        {
+          "type": "technology_license",
+          "organization": "Rutgers",
+          "statement": "Rutgers confirms an exclusive technology license to Queens Carbon.",
+          "event_date": null,
+          "event_key": "queens-rutgers-license",
+          "status": "historical",
+          "source_role": "institution_confirmation",
+          "evidence": [
+            {
+              "source_id": "RP03",
+              "quote": "The Rutgers Office for Research executed the exclusive license agreement between the university and Queens Carbon.",
+              "start_offset": 947,
+              "end_offset": 1061,
+              "url": "https://research.rutgers.edu/news/queens-carbon-making-impact-concrete-industry-new-jersey-economy",
+              "title": "Queens Carbon Making an Impact on Concrete Industry, New Jersey Economy",
+              "published_at": "2025-09-18",
+              "observed_at": "2026-09-25T16:10:52.687Z",
+              "source_family": "rutgers.edu",
+              "snapshot_sha256": "9857a1cf4ed8fc0378b0194d5d571988affa526f1016e5f505cf49b5ad7d16b0"
+            }
+          ]
+        },
+        {
+          "type": "award",
+          "organization": "Edison Patent Awards",
+          "statement": "Rutgers reports a 2025 Edison Patent Award recognizing the inventors of technology underlying Queens Carbon.",
+          "event_date": "2025",
+          "event_key": "queens-2025-edison-award",
+          "status": "historical",
+          "source_role": "institution_confirmation",
+          "evidence": [
+            {
+              "source_id": "RP04",
+              "quote": "“It’s an honor to receive the 2025 Edison Patent Award alongside my Ph.D. advisor and long-time collaborator, Professor Richard Riman, for our work on Hydrothermal Vapor Synthesis,” said Kopp. “From the start, our focus at Rutgers was on creating a low-cost, low-energy materials processing method to help build a sustainable world. We co-founded Queens Carbon to make this focus a reality, using our invention to produce low-carbon cementitious materials. The award is especially meaningful given Edison’s role in pioneering the modern rotary kiln and his legacy of transforming industrial manufacturing.”",
+              "start_offset": 2903,
+              "end_offset": 3509,
+              "url": "https://research.rutgers.edu/news/two-rutgers-research-teams-honored-edison-patent-awards",
+              "title": "Two Rutgers Research Teams Honored With Edison Patent Awards",
+              "published_at": "2026-01-27",
+              "observed_at": "2026-09-25T16:10:52.687Z",
+              "source_family": "rutgers.edu",
+              "snapshot_sha256": "5e261546224585655d62858a5e6d54821753e646b26ad3c1614f7820be735481"
+            }
+          ]
+        }
+      ],
+      "public_interest_trend": "not_measured",
+      "limitations": [
+        "Saved pilot from September 25, 2026. This is not a fresh search.",
+        "Rutgers and the investor are interested parties, not independent business-quality reviewers.",
+        "Two Rutgers pages do not constitute independent corroboration.",
+        "Investor and strategic-partner claims refer to the same financing announcement; do not count them as independent momentum events.",
+        "No claim of being overlooked, rising attention, or superior commercial performance.",
+        "Exact current municipality remains unresolved; both source locations are in NJ.",
+        "A source without a matching company attribution was excluded."
+      ],
+      "follow_up_query": "",
+      "provenance": "public",
+      "assessment_method": "Saved assistant-curated research; current backend quote checks and ranking rules. No live search or Gemini call.",
+      "assessment": "limited_evidence",
+      "qualified": false,
+      "evidence_summary": {
+        "external_organizations": 2,
+        "source_families": 1,
+        "distinct_event_labels": 2,
+        "substantial_relationships": 1,
+        "recent_signals": 2
+      },
+      "why_surfaced": "Some sourced activity; breadth, depth or recency remains incomplete."
+    },
+    {
+      "company_id": "company-d6aab5b021e9ebd2",
+      "name": "Chorah Labs",
+      "official_domain": null,
+      "aliases": [],
+      "sector": "Life sciences",
+      "description": "regulatory software / biopharma",
+      "nj_presence": {
+        "status": "unclear",
+        "location": "Founder building company through NJIT; headquarters address unverified",
+        "evidence": []
+      },
+      "signals": [
+        {
+          "type": "accelerator_participation",
+          "organization": "NJ AI Hub",
+          "statement": "NJIT confirms Chorah Labs was accepted into the NJ AI Hub Accelerator. NJBIZ lists it in the inaugural cohort.",
+          "event_date": null,
+          "event_key": "chorah-ai-hub-cohort-2026",
+          "status": "historical",
+          "source_role": "institution_confirmation",
+          "evidence": [
+            {
+              "source_id": "RP05",
+              "quote": "Chorah Labs was accepted into the NJ AI Hub Accelerator.",
+              "start_offset": 3763,
+              "end_offset": 3819,
+              "url": "https://news.njit.edu/njits-first-global-entrepreneur-residence-turning-founder-pathway-student-opportunity",
+              "title": "NJIT's First Global Entrepreneur in Residence Is Turning a Founder Pathway Into Student Opportunity",
+              "published_at": null,
+              "observed_at": "2026-09-25T16:10:52.687Z",
+              "source_family": "njit.edu",
+              "snapshot_sha256": "a535f153d20eaf3ae26485e19308cdaf1a3aec5490b78c5bd6f2e0bb4939d22e"
+            }
+          ]
+        },
+        {
+          "type": "award",
+          "organization": "NJIT",
+          "statement": "NJIT lists Chorah Labs among community-category winners in its 2025 New Business Model Competition.",
+          "event_date": null,
+          "event_key": "chorah-2025-njit-competition",
+          "status": "historical",
+          "source_role": "institution_confirmation",
+          "evidence": [
+            {
+              "source_id": "RP06",
+              "quote": "Veronica Nunez’s Cafecito Con Fashion won the community category. Other winners were MGL Consulting Group, Mardochee Louis; FreshSpan, Johanna Torres; and Chorah Labs, Jason Chou.",
+              "start_offset": 3589,
+              "end_offset": 3768,
+              "url": "https://news.njit.edu/njit-student-turns-stone-art-wins-2025-business-model-competition",
+              "title": "NJIT Student Turns Stone into Art, Wins 2025 Business Model Competition",
+              "published_at": null,
+              "observed_at": "2026-09-25T16:10:52.687Z",
+              "source_family": "njit.edu",
+              "snapshot_sha256": "b6cf179de61fa1103286cc62b2ccdae585cfd90e23c3049f98d4ada2f16f3e0f"
+            }
+          ]
+        }
+      ],
+      "public_interest_trend": "not_measured",
+      "limitations": [
+        "Saved pilot from September 25, 2026. This is not a fresh search.",
+        "NJ accelerator participation alone is insufficient to establish NJ headquarters; this cohort also includes New York companies.",
+        "Most supporting facts come from NJIT and should not be treated as independent institutional endorsements.",
+        "The NJBIZ cohort report is dated 2026-04-28; the exact acceptance date is unknown.",
+        "The extracted NJIT pages lack publication dates; source observation dates are retained without inventing event dates.",
+        "An invitation to entrepreneurship training does not prove participation.",
+        "Plug and Play calls the company fintech in one paragraph, while its product description is biopharma regulatory software; classified from the described product.",
+        "No evidence here establishes customer adoption, funding, or rising public attention.",
+        "A source without a matching company attribution was excluded.",
+        "An unsupported event date was removed; source publication dates remain separate.",
+        "NJ presence could not be supported by a verified source quotation."
+      ],
+      "follow_up_query": "",
+      "provenance": "public",
+      "assessment_method": "Saved assistant-curated research; current backend quote checks and ranking rules. No live search or Gemini call.",
+      "assessment": "location_review",
+      "qualified": false,
+      "evidence_summary": {
+        "external_organizations": 2,
+        "source_families": 1,
+        "distinct_event_labels": 2,
+        "substantial_relationships": 0,
+        "recent_signals": 0
+      },
+      "why_surfaced": "Ecosystem evidence found; the NJ connection needs review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "RP01",
+      "url": "https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/",
+      "title": "CSIT Awards Nearly $1.3M to 17 NJ Startups through Round 4 Clean Tech R&D Seed Grant Program - NJEDA",
+      "published_at": "2026-01-08",
+      "observed_at": "2026-09-25T16:09:15.861Z",
+      "sha256": "4fb0abcbf194799f95d631819e863892587efbcca4544f8bf81c4323142f7975",
+      "source_family": "njeda-csit",
+      "provenance": "public"
+    },
+    {
+      "id": "RP02",
+      "url": "https://njbiz.com/nj-ai-hub-accelerator-selects-14-startups-first-cohort/",
+      "title": "NJ AI Hub Accelerator selects 14 startups for first cohort",
+      "published_at": "2026-04-28",
+      "observed_at": "2026-09-25T16:09:15.861Z",
+      "sha256": "8a80226b3d80315bf23bb226dab1e75b2697895db4c0364e5ce8f31eec545271",
+      "source_family": "njbiz.com",
+      "provenance": "public"
+    },
+    {
+      "id": "RP03",
+      "url": "https://research.rutgers.edu/news/queens-carbon-making-impact-concrete-industry-new-jersey-economy",
+      "title": "Queens Carbon Making an Impact on Concrete Industry, New Jersey Economy",
+      "published_at": "2025-09-18",
+      "observed_at": "2026-09-25T16:10:52.687Z",
+      "sha256": "9857a1cf4ed8fc0378b0194d5d571988affa526f1016e5f505cf49b5ad7d16b0",
+      "source_family": "rutgers.edu",
+      "provenance": "public"
+    },
+    {
+      "id": "RP04",
+      "url": "https://research.rutgers.edu/news/two-rutgers-research-teams-honored-edison-patent-awards",
+      "title": "Two Rutgers Research Teams Honored With Edison Patent Awards",
+      "published_at": "2026-01-27",
+      "observed_at": "2026-09-25T16:10:52.687Z",
+      "sha256": "5e261546224585655d62858a5e6d54821753e646b26ad3c1614f7820be735481",
+      "source_family": "rutgers.edu",
+      "provenance": "public"
+    },
+    {
+      "id": "RP05",
+      "url": "https://news.njit.edu/njits-first-global-entrepreneur-residence-turning-founder-pathway-student-opportunity",
+      "title": "NJIT's First Global Entrepreneur in Residence Is Turning a Founder Pathway Into Student Opportunity",
+      "published_at": null,
+      "observed_at": "2026-09-25T16:10:52.687Z",
+      "sha256": "a535f153d20eaf3ae26485e19308cdaf1a3aec5490b78c5bd6f2e0bb4939d22e",
+      "source_family": "njit.edu",
+      "provenance": "public"
+    },
+    {
+      "id": "RP06",
+      "url": "https://news.njit.edu/njit-student-turns-stone-art-wins-2025-business-model-competition",
+      "title": "NJIT Student Turns Stone into Art, Wins 2025 Business Model Competition",
+      "published_at": null,
+      "observed_at": "2026-09-25T16:10:52.687Z",
+      "sha256": "b6cf179de61fa1103286cc62b2ccdae585cfd90e23c3049f98d4ada2f16f3e0f",
+      "source_family": "njit.edu",
+      "provenance": "public"
+    },
+    {
+      "id": "RP07",
+      "url": "https://cleanenergyventures.com/news/queens-carbon-seed-round-low-carbon-cement",
+      "title": "Queens Carbon Secures $10M Seed Round to Propel U.S. Leadership in Low-Carbon Cement Manufacturing",
+      "published_at": null,
+      "observed_at": "2026-09-25T16:11:57.234Z",
+      "sha256": "e9259504e7281eb4a1cbfcf152f16440659a1b4528fe0a882c720273d640ec12",
+      "source_family": "cleanenergyventures.com",
+      "provenance": "public"
+    },
+    {
+      "id": "RP08",
+      "url": "https://netl.doe.gov/node/14075",
+      "title": "NETL and Cecilia Energy Incubate New Technology to Address Plastic Waste",
+      "published_at": null,
+      "observed_at": "2026-09-25T16:11:57.234Z",
+      "sha256": "b93edb22749517ea3e66995a8430ee00267388b6cc1965031151030948c04a58",
+      "source_family": "doe.gov",
+      "provenance": "public"
+    },
+    {
+      "id": "RP09",
+      "url": "https://www.ceciliaenergy.com/",
+      "title": "Cecilia: Transform Plastic Waste into Recycled Carbon",
+      "published_at": null,
+      "observed_at": "2026-09-25T16:11:57.234Z",
+      "sha256": "9929734f81d2402630ecb73db7dee83d07ba877618f9d670cf5a7034980a736b",
+      "source_family": "ceciliaenergy.com",
+      "provenance": "public"
+    },
+    {
+      "id": "RP10",
+      "url": "https://chorahlabs.com/contact",
+      "title": "Chorah Labs • Regulatory Operating System for Biotech",
+      "published_at": null,
+      "observed_at": "2026-09-25T16:11:57.234Z",
+      "sha256": "ebc26dd57e4641bd7cc7e598ad8083945bf7036345d5ad473e8a926ec9a753ef",
+      "source_family": "chorahlabs.com",
+      "provenance": "public"
+    },
+    {
+      "id": "RP11",
+      "url": "https://www.plugandplaytechcenter.com/startup/chorahlabs-com",
+      "title": "Startup",
+      "published_at": null,
+      "observed_at": "2026-09-25T16:11:57.234Z",
+      "sha256": "90467a227849f87063bc8b287de817837e7a4a6940bd74d8b00f5a826c7e61c1",
+      "source_family": "plugandplaytechcenter.com",
+      "provenance": "public"
+    }
+  ],
+  "events": [],
+  "warnings": [
+    "Saved research preview. No new searches, model requests or freshness claims."
+  ],
+  "metrics": {
+    "searches": 0,
+    "pages_fetched": 0,
+    "cache_hits": 0,
+    "model_calls": 0,
+    "model_usage": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "thinking_tokens": 0
+    }
+  },
+  "qualified_count": 1,
+  "public_interest_trend": "not_measured",
+  "snapshot_date": "2026-09-25"
+}

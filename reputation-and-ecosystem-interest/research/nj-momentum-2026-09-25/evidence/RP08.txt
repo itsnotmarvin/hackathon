@@ -1,0 +1,31 @@
+Skip to main content
+
+NETL and Cecilia Energy Incubate New Technology to Address Plastic Waste
+
+August 26, 2024
+
+NETL Reaction Analysis & Chemical Transformation (ReACT) Facility in Morgantown, WV.
+
+NETL and Newark, New Jersey-based Cecilia Energy combined their strengths in a novel Cooperative Research and Development Agreement (CRADA) that aims to solve one of the world’s greatest environmental challenges while creating upcycled products in the process.
+
+Plastic is integrated into our modern life, but 90% of it isn’t being recycled and most plastic is incapable of being recycled with today’s solutions. In fact, half of all plastic that has ever existed was made in just the last 15 years. By 2050, the world will have exceeded crisis levels without a way to mitigate plastic waste.
+
+NETL and Cecilia Energy have already been working on such a solution.
+
+Since 2021, the two organizations have developed a scalable microwave-based (MW) process to upcycle plastic waste into clean hydrogen and carbon nanotubes, transforming an environmental waste liability into an asset. 
+
+Carbon nanotubes can be used in a wide variety of technologies and applications such as nanotechnology, automotive parts, electrical circuitry, supercapacitors, solar panels, LEDs, sensors, transistors, field emitting devices, fuel cells, batteries, absorbents, catalysts and storage devices, among others. Hydrogen is an important chemical feedstock for decarbonizing the American industrial and energy sectors.
+
+“While much of the focus of the scientific community has rightfully been on addressing the effects of climate change, plastic waste is another environmental priority,” said Christina Wildfire, research scientist for NETL. “With this application of microwave technology, we have a way to solve two problems at once.”
+
+The initial research into this reactor technology was conducted at NETL’s Morgantown facility. Microwaves have been investigated at NETL for electrification and process intensification of many conversion processes. The team used their experience with waste gasification to develop the novel process with Cecilia for mixed plastic waste. The team used the selective heating of the microwaves for a more efficient conversion to hydrogen while reducing hydrocarbon side products. The process also produces no carbon dioxide, further reducing greenhouse gas emissions. 
+
+After a successful co-invention between the Cecilia and NETL teams in 2022, Cecilia extracted the technology intellectual property (IP) out of the U.S. Department of Energy and commenced the commercialization and scaling journey. Cecilia has built a dedicated team to commercialize the technology incubated within NETL.
+
+“We are addressing the endgame for plastic waste by commercializing a modular, distributable, microwave-based system that upcycles plastic waste into clean hydrogen and carbon nanotubes,” said Kathryn Carpenter of Cecilia Energy. “Our electricity-powered microwave reactor can operate entirely on renewable grid power, transforming plastic waste into valuable performance carbon.”
+
+Cecilia Energy is currently on its seventh generation of its custom MW reactor and is in process of assembling a pilot reactor capable of processing five kilograms of waste plastic per day at its laboratory in Newark.
+
+“What is unique about this CRADA is that our two organizations worked together from the start to develop this IP, versus taking off-the-shelf IP from the national lab to then commercialize,” Carpenter said. “It goes to show what can be achieved when the best minds from private companies and DOE’s national labs work together from scratch toward a common goal.”
+
+NETL is a U.S. Department of Energy national laboratory that drives innovation and delivers solutions for an environmentally sustainable and prosperous energy future. By leveraging its world-class talent and research facilities, NETL is ensuring affordable, abundant and reliable energy that drives a robust economy and national security, while developing technologies to manage carbon across the full life cycle, enabling environmental sustainability for all Americans.

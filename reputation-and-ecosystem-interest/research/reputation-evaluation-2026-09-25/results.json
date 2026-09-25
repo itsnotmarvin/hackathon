@@ -1,0 +1,451 @@
+{
+  "date": "2026-09-25",
+  "method": "Assistant-executed public-source research and self-review; not an automated or blinded test.",
+  "sampling": "All three earlier picks plus first two awardees in saved NJEDA list, frozen before new searches.",
+  "grade": "B (qualitative, provisional)",
+  "screen_counts": {
+    "strong_lead": 4,
+    "watchlist": 1,
+    "insufficient": 0,
+    "exclude": 0
+  },
+  "comparative_review_counts": {
+    "close_look": 3,
+    "early_lead": 1,
+    "location_review": 1
+  },
+  "interpretation": "The initial two-organization screen finds credible leads but does not adequately distinguish accelerator recognition from deeper outside commitment. Comparative prioritization is a post-test reviewer judgment, not a pre-registered ranking metric.",
+  "companies": [
+    {
+      "company": "Queens Carbon",
+      "sector": "Low-carbon cement / advanced materials",
+      "screen": "strong_lead",
+      "priority": "close_look",
+      "why": "University license plus confirmed industrial development relationship, recognition and recent NJ program selection.",
+      "limits": [
+        "Shared financing release counts once; partner publication is confirmation, not independent journalism.",
+        "Exact NJ municipality varies across sources.",
+        "No measured public-attention growth."
+      ],
+      "public_interest_trend": "not_measured",
+      "claim_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "company": "Canyon Magnet Energy",
+      "sector": "Superconducting systems / energy infrastructure",
+      "screen": "strong_lead",
+      "priority": "close_look",
+      "why": "HAX profile and 2026 showcase, federal program recognition, documented industry conference appearance, and NJ presence.",
+      "limits": [
+        "HAX and SOSV belong to the same source family.",
+        "Tulane work is proposed in an award abstract, not demonstrated as completed.",
+        "Trade interview is founder-supplied commentary, not independent product validation.",
+        "Earlier NY listing does not override newer specific NJ operating evidence."
+      ],
+      "public_interest_trend": "not_measured",
+      "claim_indices": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "company": "Cecilia",
+      "sector": "Plastic upcycling / advanced materials",
+      "screen": "strong_lead",
+      "priority": "close_look",
+      "why": "NETL confirms actual research collaboration; newer NJ program recognition and a federal portfolio strengthen identity and institutional links.",
+      "limits": [
+        "NETL relationship report is August 2024; current agreement status is unverified.",
+        "NASA award records establish research-program participation, not endorsement or mission deployment.",
+        "Federal portfolio supports Energy/Materials alias association; formal legal continuity was not independently audited."
+      ],
+      "public_interest_trend": "not_measured",
+      "claim_indices": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "company": "CarbonDots",
+      "sector": "Battery materials / plastic upcycling",
+      "screen": "strong_lead",
+      "priority": "early_lead",
+      "why": "Cleantech Open confirms 2025 accelerator participation; NJEDA documents 2026 program selection and NJ location.",
+      "limits": [
+        "Passes the initial screen but has thinner evidence of substantial outside collaboration.",
+        "Rutgers event attendance is not a university partnership or license.",
+        "CSIT profile describes Rutgers-origin research; license and institutional relationship not independently confirmed."
+      ],
+      "public_interest_trend": "not_measured",
+      "claim_indices": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "company": "Chorah Labs",
+      "sector": "AI for life sciences / regulatory software",
+      "screen": "watchlist",
+      "priority": "location_review",
+      "why": "Real NJIT involvement and accelerator acceptance, but a new source lists New York headquarters.",
+      "limits": [
+        "NJ ecosystem activity is supported; headquarters and extent of NJ company operations need clarification.",
+        "A directory is not a definitive headquarters authority, so do not label the company conclusively out of state.",
+        "Institutional program activity does not establish market adoption."
+      ],
+      "public_interest_trend": "not_measured",
+      "claim_indices": [
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "company": "Queens Carbon",
+      "source_id": "RP03",
+      "description": "Rutgers confirms exclusive technology license",
+      "quote": "The Rutgers Office for Research executed the exclusive license agreement between the university and Queens Carbon.",
+      "start": 947,
+      "end": 1061,
+      "event_date": null
+    },
+    {
+      "company": "Queens Carbon",
+      "source_id": "EV01",
+      "description": "Buzzi confirms development-partner role by hosting the shared press release",
+      "quote": "Buzzi Unicem USA, a subsidiary of Buzzi S.p.A., one of the world’s leading cement producers, also joined as a strategic investor and development partner.",
+      "start": 460,
+      "end": 613,
+      "event_date": "2025-04-30"
+    },
+    {
+      "company": "Queens Carbon",
+      "source_id": "EV01",
+      "description": "Duplicate release origin explicitly disclosed",
+      "quote": "**(The above press release was distributed on April 30 by Queens Carbon.)**",
+      "start": 5306,
+      "end": 5381,
+      "event_date": null
+    },
+    {
+      "company": "Queens Carbon",
+      "source_id": "RP01",
+      "description": "NJ presence and public program selection",
+      "quote": "Queens Carbon, Inc. – $74,999 (Montville)",
+      "start": 4419,
+      "end": 4460,
+      "event_date": "2026-01-08"
+    },
+    {
+      "company": "Canyon Magnet Energy",
+      "source_id": "EV02",
+      "description": "Federal portfolio identifies Newark address",
+      "quote": "2 Cedar Street  \nNewark, NJ, 07102  \nUSA",
+      "start": 93,
+      "end": 133,
+      "event_date": null
+    },
+    {
+      "company": "Canyon Magnet Energy",
+      "source_id": "EV02",
+      "description": "Federal award abstract names proposed Tulane collaboration, not completed outcome",
+      "quote": "Canyon Magnet Energy (CME) in collaboration with Tulane University proposes a hybrid N2/Ne thermosiphon system for rapid cooldown of a 2000 lb HTS magnet.",
+      "start": 678,
+      "end": 832,
+      "event_date": "2025"
+    },
+    {
+      "company": "Canyon Magnet Energy",
+      "source_id": "EV04",
+      "description": "Industry publisher documents conference presentation and interview",
+      "quote": "At this year’s Data Center Frontier Trends Summit, Honghai Song, founder of Canyon Magnet Energy, introduced his company’s breakthrough superconducting magnet technology as part of the conference’s “6 Moonshot Trends for the 2026 Data Center Frontier” panel, highlighting how high-temperature superconductors could transform both fusion energy and AI data center power infrastructure.",
+      "start": 126,
+      "end": 510,
+      "event_date": null
+    },
+    {
+      "company": "Canyon Magnet Energy",
+      "source_id": "EV09",
+      "description": "SOSV lists company in 2026 HAX showcase and gives NJ headquarters",
+      "quote": "HQ:\n  Newark, New Jersey\n\n  Website:\n  canyonmagnet.energy",
+      "start": 4735,
+      "end": 4793,
+      "event_date": "2026"
+    },
+    {
+      "company": "Cecilia",
+      "source_id": "RP08",
+      "description": "National lab describes actual joint development",
+      "quote": "Since 2021, the two organizations have developed a scalable microwave-based (MW) process to upcycle plastic waste into clean hydrogen and carbon nanotubes, transforming an environmental waste liability into an asset.",
+      "start": 864,
+      "end": 1080,
+      "event_date": "2021"
+    },
+    {
+      "company": "Cecilia",
+      "source_id": "RP01",
+      "description": "Recent Newark identity and program selection",
+      "quote": "Cecilia Energy, Inc – $75,000 (Newark)",
+      "start": 3973,
+      "end": 4011,
+      "event_date": "2026-01-08"
+    },
+    {
+      "company": "Cecilia",
+      "source_id": "EV11",
+      "description": "Current federal portfolio identifies Cecilia Materials in Newark",
+      "quote": "## CECILIA MATERIALS INC.\n\n### Address\n\n211 WARREN ST STE 516  \nNEWARK, NJ, 07103-3568",
+      "start": 51,
+      "end": 137,
+      "event_date": null
+    },
+    {
+      "company": "Cecilia",
+      "source_id": "EV11",
+      "description": "Same portfolio ties Energy name to NASA project; selection is not a NASA endorsement",
+      "quote": "Cecilia Energy proposes to continue research and development on a novel technology using microwave (MW)-Assisted ThermoCatalytic Decomposition (MWATCD) of mission trash to produce hydrogen gas (H2) and solid carbon, including carbon nanotubes (CNTs).",
+      "start": 2044,
+      "end": 2294,
+      "event_date": null
+    },
+    {
+      "company": "CarbonDots",
+      "source_id": "EV05",
+      "description": "Cleantech Open forum identifies company and Lawrenceville location",
+      "quote": "CarbonDots\n\nRegion: Northeast\n\nEnergy Distribution / Storage\n\nLawrenceville, New Jersey",
+      "start": 2262,
+      "end": 2349,
+      "event_date": null
+    },
+    {
+      "company": "CarbonDots",
+      "source_id": "EV10",
+      "description": "Accelerator defines participation-year notation",
+      "quote": "The years in parenthesis indicate when the startups participated in the Cleantech Open accelerator",
+      "start": 1000,
+      "end": 1098,
+      "event_date": null
+    },
+    {
+      "company": "CarbonDots",
+      "source_id": "EV10",
+      "description": "Accelerator identifies 2025 participation",
+      "quote": "**CarbonDots (2025) -****Website**",
+      "start": 6855,
+      "end": 6889,
+      "event_date": "2025"
+    },
+    {
+      "company": "CarbonDots",
+      "source_id": "RP01",
+      "description": "Public program selection in Lawrence Township",
+      "quote": "CarbonDots, LLC – $75,000 (Lawrence Township)",
+      "start": 3925,
+      "end": 3970,
+      "event_date": "2026-01-08"
+    },
+    {
+      "company": "Chorah Labs",
+      "source_id": "RP05",
+      "description": "NJIT confirms student collaboration and acceptance, without proving headquarters",
+      "quote": "Chorah Labs was accepted into the NJ AI Hub Accelerator. Ying Wu College of Computing capstone students worked on a project for the company.",
+      "start": 3763,
+      "end": 3903,
+      "event_date": null
+    },
+    {
+      "company": "Chorah Labs",
+      "source_id": "RP02",
+      "description": "NJBIZ cohort report identifies company",
+      "quote": "**Chorah Labs** — AI platform automating regulatory, CMC and manufacturing workflows for biopharma",
+      "start": 4129,
+      "end": 4227,
+      "event_date": null
+    },
+    {
+      "company": "Chorah Labs",
+      "source_id": "EV12",
+      "description": "Event directory supplies conflicting NY headquarters label",
+      "quote": "**Startup** · HQ **New York, NY, USA** · FOUNDED **2025**",
+      "start": 15,
+      "end": 72,
+      "event_date": null
+    },
+    {
+      "company": "Chorah Labs",
+      "source_id": "EV12",
+      "description": "Directory is not evidence of actual event appearances",
+      "quote": "0 UPCOMING · 0 PAST\n\nNo events to show.",
+      "start": 452,
+      "end": 491,
+      "event_date": null
+    }
+  ],
+  "calls": [
+    {
+      "file": "raw/01-queens.json",
+      "status": "COMPLETED",
+      "query": "\"Queens Carbon\" partnership Rutgers Buzzi 2026 2025 closed controversy",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/02-chorah.json",
+      "status": "HTTP_504",
+      "query": null,
+      "reported_cost": null
+    },
+    {
+      "file": "raw/03-cecilia.json",
+      "status": "HTTP_504",
+      "query": null,
+      "reported_cost": null
+    },
+    {
+      "file": "raw/04-canyon.json",
+      "status": "COMPLETED",
+      "query": "\"Canyon Magnet Energy\" Newark partnership research",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/05-carbondots.json",
+      "status": "HTTP_504",
+      "query": null,
+      "reported_cost": null
+    },
+    {
+      "file": "raw/06-pages.json",
+      "status": "COMPLETED",
+      "query": null,
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/07-chorah-retry.json",
+      "status": "COMPLETED",
+      "query": "\"Chorah Labs\" New Jersey NJIT accelerator address 2026",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/08-cecilia-retry.json",
+      "status": "HTTP_504",
+      "query": null,
+      "reported_cost": null
+    },
+    {
+      "file": "raw/09-carbondots-retry.json",
+      "status": "COMPLETED",
+      "query": "\"CarbonDots\" \"New Jersey\" startup partnership",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/10-chorah-short.json",
+      "status": "COMPLETED",
+      "query": "\"Chorah Labs\"",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/11-cecilia-short.json",
+      "status": "COMPLETED",
+      "query": "\"Cecilia Energy\"",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/12-canyon-hax.json",
+      "status": "COMPLETED",
+      "query": "\"Canyon Magnet\" HAX SOSV",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/13-carbon-short.json",
+      "status": "COMPLETED",
+      "query": "\"CarbonDots\" \"Cleantech\"",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/14-challenge.json",
+      "status": "COMPLETED",
+      "query": "\"Queens Carbon\" lawsuit OR shutdown OR controversy",
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/15-carbon-pages.json",
+      "status": "COMPLETED",
+      "query": null,
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    },
+    {
+      "file": "raw/16-verification-pages.json",
+      "status": "COMPLETED",
+      "query": null,
+      "reported_cost": {
+        "currency": "USD",
+        "value": 0,
+        "unit": "MICRO_DOLLAR"
+      }
+    }
+  ],
+  "limitations": [
+    "Convenience sample biased toward clean tech and public-program winners.",
+    "Same assistant selected evidence and reviewed it.",
+    "No estimate of statewide recall, hiddenness, success prediction or production reliability.",
+    "Public-interest growth unmeasured for all five.",
+    "One explicit adverse-news query covered Queens Carbon only; comprehensive reputation-risk checks not completed."
+  ]
+}
