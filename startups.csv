@@ -1,0 +1,13 @@
+id,company,person,relationship,source_url,additional_source_url
+L01,Vulcan Elements,Dan Borok,works_with,https://nvpcap.com/nvp-capital-team/,
+L02,HomeVision,Dan Borok,works_with,https://nvpcap.com/nvp-capital-team/,
+L03,Compyl,Dan Borok,works_with,https://nvpcap.com/nvp-capital-team/,
+L04,Upscale.ai,Dan Borok,works_with,https://nvpcap.com/nvp-capital-team/,
+L05,Toothio,Vaughn Crowe,board_member,https://nvpcap.com/nvp-capital-team/,https://simonquickadvisors.com/advisory-board/vaughn-crowe/
+L06,Handspring Health,Vaughn Crowe,board_member,https://nvpcap.com/nvp-capital-team/,https://simonquickadvisors.com/advisory-board/vaughn-crowe/
+L07,Ryse Marketplace,Vaughn Crowe,board_member,https://nvpcap.com/nvp-capital-team/,https://simonquickadvisors.com/advisory-board/vaughn-crowe/
+L08,Workgrounds,Vaughn Crowe,board_member,https://nvpcap.com/nvp-capital-team/,https://simonquickadvisors.com/advisory-board/vaughn-crowe/
+L09,SunRay Scientific,Stephen Socolof,director,https://transcendap.com/stephen-socolof/,https://www.sec.gov/Archives/edgar/data/924168/000092416823000048/a2023efoiproxystatementdef.htm
+L10,Kintra Fibers,Stephen Socolof,board_member_or_observer_conflict,https://techcouncilventures.com/team-members/steve-socolof/,https://transcendap.com/stephen-socolof/
+L11,Adrich,Stephen Socolof,board_member_or_observer_conflict,https://techcouncilventures.com/team-members/steve-socolof/,https://transcendap.com/stephen-socolof/
+L12,Regenosine,Stephen Socolof,board_observer,https://transcendap.com/stephen-socolof/,
