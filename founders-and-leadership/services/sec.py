@@ -60,3 +60,20 @@ def to_evidence_claims(hits: list[dict]) -> list[dict]:
             }
         )
     return claims
+
+
+def to_achievement_rows(hits: list[dict]) -> list[dict]:
+    """Normalize full-text-search hits into rows for the `achievements`
+    table (caller still needs to attach founder_id)."""
+    rows = []
+    for claim in to_evidence_claims(hits):
+        rows.append(
+            {
+                "achievement": claim["claim"],
+                "issuer": "SEC",
+                "year": (claim.get("source_date") or "")[:4] or None,
+                "source_name": claim["source_name"],
+                "source_url": claim["source_url"],
+            }
+        )
+    return rows

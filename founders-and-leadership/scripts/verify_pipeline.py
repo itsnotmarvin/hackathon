@@ -36,10 +36,13 @@ DEMO_STARTUP = {
 DEMO_FOUNDER_NAME = "Stephen Socolof"
 
 KNOWN_SOURCES = [
-    "OpenCorporates",
     "Wikidata",
+    "Wikipedia",
     "Semantic Scholar",
+    "ORCID",
+    "GDELT",
     "GitHub",
+    "SEC EDGAR",
     "USAspending.gov",
     "NSF Award Search",
     "NIH RePORTER",

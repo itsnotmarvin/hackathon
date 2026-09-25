@@ -32,15 +32,25 @@ def to_grant_rows(awards: list[dict]) -> list[dict]:
     needs to attach startup_id/founder_id)."""
     rows = []
     for award in awards:
+        # NSF's API returns estimatedTotalAmt as a string ("1749000"), not a
+        # number - cast it so downstream dedup (which compares against the
+        # numeric value Supabase reads back) actually matches.
+        raw_amount = award.get("estimatedTotalAmt")
+        try:
+            amount = float(raw_amount) if raw_amount not in (None, "") else None
+        except (TypeError, ValueError):
+            amount = None
+
+        award_id = award.get("id")
         rows.append(
             {
-                "program": "NSF Award",
+                "program": f"NSF Award {award_id}" if award_id else "NSF Award",
                 "agency": "National Science Foundation",
-                "amount": award.get("estimatedTotalAmt"),
+                "amount": amount,
                 "award_date": award.get("startDate"),
                 "source_name": "NSF Award Search",
-                "source_url": f"https://www.nsf.gov/awardsearch/showAward?AWD_ID={award.get('id')}"
-                if award.get("id")
+                "source_url": f"https://www.nsf.gov/awardsearch/showAward?AWD_ID={award_id}"
+                if award_id
                 else None,
             }
         )
