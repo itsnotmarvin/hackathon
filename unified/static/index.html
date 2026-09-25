@@ -34,7 +34,8 @@
       <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
       <symbol id="icon-warning" viewBox="0 0 24 24"><path d="M11.1 3.8 2.8 18.2c-.4.8.1 1.8 1 1.8h16.4c.9 0 1.5-1 1-1.8L12.9 3.8a1 1 0 0 0-1.8 0Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 9v4.3M12 16.8h.01" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
       <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-      <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5m9.1-3A7.4 7.4 0 0 0 5.4 7M5.9 15a7.4 7.4 0 0 0 12.7 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-5M12 16V7M16 16v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="icon-refresh"viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5m9.1-3A7.4 7.4 0 0 0 5.4 7M5.9 15a7.4 7.4 0 0 0 12.7 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     </svg>
 
     <div class="app-shell">
@@ -54,6 +55,15 @@
             <svg aria-hidden="true"><use href="#icon-directory"></use></svg>
             <span>Directory</span>
             <span class="nav-count" id="directory-count">—</span>
+          </button>
+          <button class="nav-item" type="button" data-view="sectors">
+            <svg aria-hidden="true"><use href="#icon-chart"></use></svg>
+            <span>Sectors &amp; map</span>
+            <span class="nav-count" id="sectors-count">—</span>
+          </button>
+          <button class="nav-item" type="button" data-view="scoring">
+            <svg aria-hidden="true"><use href="#icon-info"></use></svg>
+            <span>How scoring works</span>
           </button>
           <button class="nav-item" type="button" data-view="shortlist">
             <svg aria-hidden="true"><use href="#icon-bookmark"></use></svg>
@@ -104,27 +114,13 @@
         </header>
 
         <main id="main-content" tabindex="-1">
-          <section class="hero" aria-labelledby="page-title">
+          <section class="hero simple-hero" aria-labelledby="page-title">
             <div class="hero-copy">
-              <p class="eyebrow" id="view-eyebrow"><span></span> New Jersey company records</p>
-              <h1 id="page-title">Company intelligence,<br><em>with the receipts.</em></h1>
-              <p class="hero-description" id="page-description">Discover companies, inspect the public evidence and keep the unknowns in view. Coverage shows what we can document. It is not a prediction of success.</p>
-            </div>
-            <div class="snapshot-card">
-              <div class="snapshot-top"><span>Catalog snapshot</span><svg aria-hidden="true"><use href="#icon-directory"></use></svg></div>
-              <strong id="snapshot-date">—</strong>
-              <p>Publication dates and observation dates stay separate.</p>
+              <h1 id="page-title">New Jersey startups,<br><em>with the receipts.</em></h1>
+              <p class="hero-description" id="page-description">Find promising NJ companies, see why they rank where they do and check every source.</p>
+              <p class="hero-count" id="hero-count">Loading companies…</p>
             </div>
           </section>
-
-          <section class="stat-grid" id="stat-grid" aria-label="Catalog summary">
-            <div class="stat-card is-loading"><span>Catalog records</span><strong>—</strong><small>Research, filings and leads</small></div>
-            <div class="stat-card is-loading"><span>NJ supported</span><strong>—</strong><small>Location evidence attached</small></div>
-            <div class="stat-card is-loading"><span>Linked sources</span><strong>—</strong><small>Unique public URLs</small></div>
-            <div class="stat-card is-loading"><span>Team reviewed</span><strong>—</strong><small>Leadership research</small></div>
-          </section>
-
-          <section class="catalog-notices" id="catalog-notices" aria-label="Catalog notices" hidden></section>
 
           <section class="access-gate" id="access-gate" hidden aria-labelledby="access-title">
             <div class="access-illustration"><svg aria-hidden="true"><use href="#icon-lock"></use></svg></div>
@@ -141,28 +137,31 @@
           </section>
 
           <section class="directory" id="directory-section" aria-labelledby="directory-title">
-            <div class="directory-heading">
-              <div>
-                <p class="section-number">01 / Investigate</p>
-                <h2 id="directory-title">Company directory</h2>
+            <h2 class="sr-only" id="directory-title">Company directory</h2>
+
+            <div class="directory-tools simple-tools">
+              <div class="tool-row">
+                <label class="search-field" for="catalog-search">
+                  <svg aria-hidden="true"><use href="#icon-search"></use></svg>
+                  <input id="catalog-search" type="search" autocomplete="off" placeholder="Search companies, sectors or towns" aria-describedby="search-hint">
+                </label>
+                <span class="sr-only" id="search-hint">Search updates the company directory as you type.</span>
+                <label class="inline-select"><span>Sort</span><select id="sort-filter"><option value="signal">Top signal score</option><option value="name">Name A–Z</option><option value="research">Research first</option><option value="coverage">Most evidence</option><option value="sources">Most sources</option><option value="updated">Recently updated</option></select></label>
+                <details class="add-filter" id="add-filter">
+                  <summary class="button button-quiet"><svg aria-hidden="true"><use href="#icon-filter"></use></svg> Add filter</summary>
+                  <div class="add-filter-menu" id="add-filter-menu"></div>
+                </details>
               </div>
-              <button class="button button-quiet filter-toggle" type="button" data-action="toggle-filters" aria-expanded="false" aria-controls="filter-panel"><svg aria-hidden="true"><use href="#icon-filter"></use></svg> Filters</button>
-            </div>
 
-            <div class="directory-tools">
-              <label class="search-field" for="catalog-search">
-                <svg aria-hidden="true"><use href="#icon-search"></use></svg>
-                <input id="catalog-search" type="search" autocomplete="off" placeholder="Search company, sector or location" aria-describedby="search-hint">
-                <kbd>⌘ K</kbd>
-              </label>
-              <span class="sr-only" id="search-hint">Search updates the company directory as you type.</span>
-
-              <div class="filter-panel" id="filter-panel">
-                <label class="toggle-field" for="startup-filter"><input id="startup-filter" type="checkbox" checked><span class="toggle-control" aria-hidden="true"></span><span><strong>Hide likely non-startups</strong><small id="nonstartup-filter-note">Classification tags remain available</small></span></label>
-                <label class="select-field"><span>NJ evidence</span><select id="nj-filter"><option value="all">All statuses</option><option value="supported">Supported</option><option value="unverified">Needs review</option></select></label>
-                <label class="select-field"><span>Sector</span><select id="sector-filter"><option value="all">All sectors</option></select></label>
-                <label class="select-field"><span>Record</span><select id="record-filter"><option value="all">All record types</option><option value="research">Research profiles</option><option value="filing">Filing records</option><option value="lead">Team leads</option></select></label>
-                <label class="select-field"><span>Sort</span><select id="sort-filter"><option value="research">Research first</option><option value="name">Name A–Z</option><option value="coverage">Most evidence coverage</option><option value="sources">Most linked sources</option><option value="updated">Recently updated</option></select></label>
+              <div class="active-filters" id="active-filters" hidden>
+                <div class="filter-slot" data-filter-slot="cluster" hidden><label class="select-field"><span>Sector cluster</span><select id="cluster-filter"><option value="all">All clusters</option></select></label><button type="button" class="remove-filter" data-remove-filter="cluster" aria-label="Remove sector cluster filter"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+                <div class="filter-slot" data-filter-slot="score" hidden><label class="select-field"><span>Signal strength</span><select id="score-filter"><option value="0">Any score</option><option value="15">Moderate+ (15+)</option><option value="35">Elevated+ (35+)</option><option value="50">High signal (50+)</option></select></label><button type="button" class="remove-filter" data-remove-filter="score" aria-label="Remove signal strength filter"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+                <div class="filter-slot" data-filter-slot="young" hidden><label class="toggle-field" for="young-filter"><input id="young-filter" type="checkbox"><span class="toggle-control" aria-hidden="true"></span><span><strong>Young companies only</strong><small>Formed within 5 years of a filing</small></span></label><button type="button" class="remove-filter" data-remove-filter="young" aria-label="Remove young companies filter"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+                <div class="filter-slot" data-filter-slot="sector" hidden><label class="select-field"><span>Industry</span><select id="sector-filter"><option value="all">All industries</option></select></label><button type="button" class="remove-filter" data-remove-filter="sector" aria-label="Remove industry filter"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+                <div class="filter-slot" data-filter-slot="nj" hidden><label class="select-field"><span>NJ evidence</span><select id="nj-filter"><option value="all">All statuses</option><option value="supported">Supported</option><option value="unverified">Needs review</option></select></label><button type="button" class="remove-filter" data-remove-filter="nj" aria-label="Remove NJ evidence filter"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+                <div class="filter-slot" data-filter-slot="record" hidden><label class="select-field"><span>Record type</span><select id="record-filter"><option value="all">All record types</option><option value="research">Research profiles</option><option value="filing">Filing records</option><option value="lead">Team leads</option></select></label><button type="button" class="remove-filter" data-remove-filter="record" aria-label="Remove record type filter"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+                <div class="filter-slot" data-filter-slot="startup" hidden><label class="toggle-field" for="startup-filter"><input id="startup-filter" type="checkbox" checked><span class="toggle-control" aria-hidden="true"></span><span><strong>Hide likely non-startups</strong><small id="nonstartup-filter-note">Funds, holding and real-estate entities</small></span></label><button type="button" class="remove-filter" data-remove-filter="startup" aria-label="Remove non-startup filter"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+                <div class="filter-slot is-wide" data-filter-slot="signals" hidden><div class="signal-field"><span class="signal-field-label">Must have signals</span><div class="signal-chips" id="signal-chips"></div></div><button type="button" class="remove-filter" data-remove-filter="signals" aria-label="Remove signals filter"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
               </div>
             </div>
 
@@ -192,6 +191,88 @@
             <nav class="pagination" id="pagination" aria-label="Directory pages"></nav>
           </section>
 
+          <section class="sectors" id="sectors-section" hidden aria-labelledby="sectors-title">
+            <div class="directory-heading">
+              <div>
+                <p class="section-number">02 / Map the ecosystem</p>
+                <h2 id="sectors-title">Sector clusters across New Jersey</h2>
+              </div>
+            </div>
+            <p class="sectors-lead" id="sectors-lead">Loading sector signals…</p>
+
+            <article class="viz-card">
+              <header class="viz-head"><div><h3>Sector ranking</h3><p>Sector score = signal depth (50) + funding momentum (30) + breadth (20). Select a row to see how its score is built.</p></div></header>
+              <div class="table-scroll"><table class="sector-table" id="sector-table"></table></div>
+            </article>
+
+            <div class="viz-grid">
+              <article class="viz-card">
+                <header class="viz-head"><div><h3>Cluster map</h3><p>Funding momentum vs sector score. Bubble size = number of companies.</p></div></header>
+                <div class="viz-body" id="cluster-chart"></div>
+              </article>
+              <article class="viz-card">
+                <header class="viz-head"><div><h3>Where it's happening</h3><p id="region-caption">Companies by NJ region</p></div>
+                  <label class="select-field compact"><span>Cluster</span><select id="region-cluster"><option value="all">All clusters</option></select></label>
+                </header>
+                <div class="viz-body" id="region-map"></div>
+              </article>
+            </div>
+
+            <article class="viz-card">
+              <header class="viz-head"><div><h3>Funding trend by cluster</h3><p id="trend-caption">SEC Form D rounds filed per year</p></div>
+                <div class="segmented" role="group" aria-label="Trend metric"><button type="button" class="is-active" data-trend-metric="rounds">Rounds filed</button><button type="button" data-trend-metric="amount">Amount raised</button></div>
+              </header>
+              <div class="viz-body" id="trend-chart"></div>
+              <details class="viz-table-toggle"><summary>Show as table</summary><div class="table-scroll" id="trend-table"></div></details>
+            </article>
+
+            <article class="viz-card method-card">
+              <header class="viz-head"><div><h3>How the scores work</h3></div></header>
+              <ul id="sector-method"></ul>
+            </article>
+          </section>
+
+          <section class="scoring" id="scoring-section" hidden aria-labelledby="scoring-title">
+            <h2 class="sr-only" id="scoring-title">How scoring works</h2>
+
+            <article class="viz-card">
+              <header class="viz-head"><div><h3>1. Every company gets a signal score out of 100</h3><p>We add up points for public signs of momentum. Each signal has a fixed maximum, and the bar below shows how the 100 points are split.</p></div></header>
+              <div class="weight-bar" id="weight-bar" aria-hidden="true"></div>
+              <div class="table-scroll"><table class="sector-table scoring-table" id="signal-table"></table></div>
+            </article>
+
+            <div class="scoring-grid">
+              <article class="viz-card">
+                <header class="viz-head"><div><h3>2. Scores fall into four tiers</h3><p>Tiers make the directory easy to scan. They are cut points on the same 0–100 score.</p></div></header>
+                <div class="tier-list" id="tier-list"></div>
+              </article>
+              <article class="viz-card">
+                <header class="viz-head"><div><h3>3. The ground rules</h3></div></header>
+                <ul class="rule-list">
+                  <li><strong>No evidence, no points.</strong> A missing signal scores 0 and is labeled “not detected.” We never guess or fill in averages.</li>
+                  <li><strong>Every point is visible.</strong> Each company profile shows exactly which signals earned which points, with the source.</li>
+                  <li><strong>Funds and holding companies are set aside.</strong> Likely non-startup entities are hidden by default and left out of sector totals.</li>
+                  <li><strong>A score is not a prediction.</strong> It measures how strong the public signals are today, not whether a company will succeed. A low score can simply mean little public data.</li>
+                </ul>
+              </article>
+            </div>
+
+            <article class="viz-card">
+              <header class="viz-head"><div><h3>4. Worked example: the top-ranked company</h3><p id="example-caption">Loading…</p></div><button class="button button-quiet small" type="button" id="example-open" hidden>Open profile <svg aria-hidden="true"><use href="#icon-arrow"></use></svg></button></header>
+              <div id="scoring-example"></div>
+            </article>
+
+            <article class="viz-card">
+              <header class="viz-head"><div><h3>5. Sectors get their own score out of 100</h3><p>Companies are grouped into sector clusters (for example, Life sciences &amp; health). Each cluster is scored on three parts.</p></div></header>
+              <div class="sector-parts">
+                <div><strong>50</strong><h4>Signal depth</h4><p>How strong the sector's best companies are: half of the average score of its top 10 companies.</p></div>
+                <div><strong>30</strong><h4>Funding momentum</h4><p>Whether funding is speeding up: SEC funding rounds in the latest 24 months compared with the 24 months before. Flat earns 15, +50% or more earns 30.</p></div>
+                <div><strong>20</strong><h4>Breadth</h4><p>Whether it's more than one star: 2 points for each company scoring 35 or higher, up to 20.</p></div>
+              </div>
+              <p class="score-note" id="sector-example"></p>
+            </article>
+          </section>
+
           <footer class="site-footer">
             <div><svg aria-hidden="true"><use href="#icon-mark"></use></svg><strong>Garden State</strong></div>
             <p>Evidence first. Unknowns stay visible. Sources stay attached.</p>
@@ -209,6 +290,8 @@
 
     <nav class="mobile-nav" aria-label="Mobile navigation">
       <button class="is-active" type="button" data-view="directory"><svg aria-hidden="true"><use href="#icon-directory"></use></svg><span>Directory</span></button>
+      <button type="button" data-view="sectors"><svg aria-hidden="true"><use href="#icon-chart"></use></svg><span>Sectors</span></button>
+      <button type="button" data-view="scoring"><svg aria-hidden="true"><use href="#icon-info"></use></svg><span>Scoring</span></button>
       <button type="button" data-view="shortlist"><svg aria-hidden="true"><use href="#icon-bookmark"></use></svg><span>Shortlist</span></button>
       <button type="button" data-action="open-compare"><svg aria-hidden="true"><use href="#icon-compare"></use></svg><span>Compare</span><b id="mobile-compare-count" hidden>0</b></button>
       <button type="button" data-action="open-research"><svg aria-hidden="true"><use href="#icon-spark"></use></svg><span>Research</span></button>
@@ -273,13 +356,15 @@
         <p class="method-lead">Garden State joins four lines of public evidence without turning them into an investment rating. Each profile keeps the source, quote and date close to the claim.</p>
 
         <div class="method-grid">
-          <article><span>01</span><h3>Coverage, not quality</h3><p>A filled pillar means we found something supportable. It does not mean the company is strong, weak or likely to succeed.</p></article>
+          <article><span>01</span><h3>Scores show signals, not destiny</h3><p>The signal score adds visible points for observed funding, hiring, accelerator, IP and grant signals. Missing data earns nothing and is labeled. A score is not a prediction of success.</p></article>
           <article><span>02</span><h3>NJ status needs proof</h3><p>“Supported” means a source backs the New Jersey connection. A filing address alone does not prove current operations or startup status.</p></article>
           <article><span>03</span><h3>Roles stay distinct</h3><p>Founders, CEOs, advisors and SEC-related people are shown as reported. We do not quietly turn one role into another.</p></article>
           <article><span>04</span><h3>Dates mean different things</h3><p>Published is when a source appeared. Observed is when the research process retrieved it. Both remain visible.</p></article>
         </div>
 
         <section class="method-section"><h3>Four evidence pillars</h3><div class="pillar-key"><span><i class="pillar-dot founders"></i><b>Founders &amp; leadership</b> People, roles and documented background</span><span><i class="pillar-dot business"></i><b>Business &amp; market</b> Model, timing and operating signals</span><span><i class="pillar-dot funding"></i><b>Funding &amp; financial</b> Disclosed fundraising and financial evidence</span><span><i class="pillar-dot reputation"></i><b>Reputation &amp; interest</b> Public relationships and outside attention</span></div></section>
+
+        <section class="method-section"><h3>Catalog notes</h3><ul class="catalog-note-list" id="catalog-notices"></ul></section>
 
         <section class="method-section connection-section">
           <div class="subsection-title"><div><p class="section-number">Connections</p><h3>Data modules</h3></div><button class="button button-outline" id="refresh-founder-data" type="button" data-action="sync-founders" hidden><svg aria-hidden="true"><use href="#icon-refresh"></use></svg> Refresh founder data</button></div>
@@ -297,5 +382,6 @@
     </div>
 
     <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <div class="viz-tooltip" id="viz-tooltip" role="tooltip" hidden></div>
   </body>
 </html>

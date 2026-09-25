@@ -23,7 +23,49 @@ const RECORD_LABELS = {
   lead: "Team research lead",
 };
 
-const TERMINAL_RESEARCH_STATES = new Set(["completed", "partial", "failed", "interrupted"]);
+const SIGNALS = [
+  { key: "momentum", label: "Recent raise" },
+  { key: "repeat", label: "Repeat raises" },
+  { key: "investors", label: "Investor breadth" },
+  { key: "hiring", label: "Hiring" },
+  { key: "accelerator", label: "Accelerator / program" },
+  { key: "ip", label: "IP & partnerships" },
+  { key: "grants", label: "Public grants" },
+];
+
+const SIGNAL_GUIDE = [
+  { key: "capital", label: "Capital raised", max: 20, full: "$50M or more reported sold (log scale from $50K)", source: "SEC Form D filings" },
+  { key: "momentum", label: "Recent raise", max: 20, full: "Latest round within 6 months (16 within a year, 10 within 2 years, 4 within 3)", source: "SEC Form D filing dates" },
+  { key: "hiring", label: "Hiring", max: 15, full: "50+ employees added per year since founding", source: "Headcount research" },
+  { key: "repeat", label: "Repeat raises", max: 10, full: "3 or more separate rounds (7 for 2 rounds)", source: "SEC Form D filings" },
+  { key: "investors", label: "Investor breadth", max: 10, full: "25 or more investors across rounds", source: "SEC Form D filings" },
+  { key: "accelerator", label: "Accelerator / program", max: 10, full: "Accelerator or program selection (awards add 5)", source: "Sourced reputation research" },
+  { key: "ip", label: "IP & research partnerships", max: 10, full: "Two of: technology license, research collaboration, industry partnership", source: "Sourced reputation research" },
+  { key: "grants", label: "Public grants", max: 5, full: "Any linked public grant record", source: "Founder and grant records" },
+];
+
+const TIER_GUIDE = [
+  { key: "high", label: "High signal", range: "50–100", text: "Several strong signals at once, usually recent money from many investors." },
+  { key: "elevated", label: "Elevated", range: "35–49", text: "Clear momentum on a few signals." },
+  { key: "moderate", label: "Moderate", range: "15–34", text: "Some activity, often a single funding round." },
+  { key: "low", label: "Low", range: "0–14", text: "Little public evidence so far. Not the same as a weak company." },
+];
+
+// Fixed categorical order so a cluster keeps its color under every filter.
+const CLUSTER_COLORS = {
+  tech: "#2a78d6",
+  life: "#eb6834",
+  climate: "#1baf7a",
+  industrial: "#eda100",
+  fintech: "#e87ba4",
+  consumer: "#008300",
+  services: "#4a3aa7",
+  other: "#898781",
+};
+
+const SEQUENTIAL = ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"];
+
+const TERMINAL_RESEARCH_STATES =new Set(["completed", "partial", "failed", "interrupted"]);
 const numberFormatter = new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 });
 
 const state = {
@@ -42,9 +84,18 @@ const state = {
     nj: "all",
     sector: "all",
     recordType: "all",
-    sort: "research",
+    cluster: "all",
+    minScore: 0,
+    youngOnly: false,
+    signals: [],
+    sort: "signal",
     perPage: 24,
   },
+  shownFilters: [],
+  sectorView: null,
+  trendMetric: "rounds",
+  regionCluster: "all",
+  selectedSector: "",
   shortlist: { ids: [], notes: {} },
   shortlistBusy: new Set(),
   shortlistQueue: Promise.resolve(),
@@ -293,9 +344,8 @@ function renderAuthState() {
   renderHealth();
   const locked = state.auth.required && !state.auth.token;
   $("access-gate").hidden = !locked;
-  $("directory-section").hidden = locked;
-  $("stat-grid").hidden = locked;
-  $("catalog-notices").hidden = locked || !state.notices.length;
+  $("directory-section").hidden = locked || ["sectors", "scoring"].includes(state.view);
+  $("hero-count").hidden = locked;
 
   const title = $("session-access-title");
   const copy = $("session-access-copy");
@@ -372,12 +422,15 @@ function applyCatalog(payload) {
   state.stats = asObject(payload?.stats);
   state.notices = uniqueStrings(payload?.notices);
   state.snapshotDate = String(payload?.snapshot_date || "");
+  state.sectorView = payload?.sector_view && typeof payload.sector_view === "object" ? payload.sector_view : null;
   state.catalogLoading = false;
   state.catalogError = "";
   state.auth.serverOk = true;
   populateSectorFilters();
   renderCatalogChrome();
   renderDirectory();
+  renderSectors();
+  renderScoring();
   renderCompareState({ directory: false });
   if (openDetailId) {
     const rebound = companyById(openDetailId);
@@ -412,20 +465,10 @@ function renderCatalogChrome() {
   const stats = state.stats;
   const companyTotal = finiteNumber(stats.companies, state.catalog.length);
   $("directory-count").textContent = formatNumber(companyTotal);
-  $("snapshot-date").textContent = state.snapshotDate ? formatDate(state.snapshotDate, { month: "long", day: "numeric", year: "numeric" }) : "Date not reported";
-  $("sidebar-snapshot").textContent = state.snapshotDate ? `Catalog snapshot · ${formatDate(state.snapshotDate)}` : "Catalog snapshot date not reported";
-
-  const statItems = [
-    [companyTotal, "Catalog records", "Research, filings and leads"],
-    [finiteNumber(stats.nj_supported), "NJ supported", "Location evidence attached"],
-    [finiteNumber(stats.sources), "Linked sources", "Unique public URLs"],
-    [finiteNumber(stats.team_reviewed), "Team reviewed", "Leadership research"],
-  ];
-  $("stat-grid").innerHTML = statItems.map(([value, label, detail]) => `<div class="stat-card"><span>${escapeHTML(label)}</span><strong>${formatNumber(value)}</strong><small>${escapeHTML(detail)}</small></div>`).join("");
-
-  const noticeArea = $("catalog-notices");
-  noticeArea.innerHTML = state.notices.length ? `<details class="catalog-notice-disclosure"><summary>${icon("info")}<span><strong>${plural(state.notices.length, "catalog note")}</strong><small>Source scope, evidence limits and interpretation</small></span>${icon("chevron")}</summary><div class="catalog-notice-list">${state.notices.map((notice) => `<div class="catalog-notice">${icon("info")}<span>${escapeHTML(notice)}</span></div>`).join("")}</div></details>` : "";
-  noticeArea.hidden = !state.notices.length || (state.auth.required && !state.auth.token);
+  $("sidebar-snapshot").textContent = state.snapshotDate ? `Data as of ${formatDate(state.snapshotDate)}` : "Data date not reported";
+  const startups = state.catalog.filter((company) => !isLikelyNonStartup(company)).length;
+  $("hero-count").innerHTML = `<strong>${formatNumber(startups)}</strong> New Jersey companies found${state.snapshotDate ? ` · data as of ${escapeHTML(formatDate(state.snapshotDate))}` : ""}`;
+  $("catalog-notices").innerHTML = state.notices.map((notice) => `<li>${escapeHTML(notice)}</li>`).join("");
 }
 
 function populateSelect(select, values, firstOption, preferredValue) {
@@ -438,6 +481,40 @@ function populateSectorFilters() {
   populateSelect($("sector-filter"), state.sectors, { value: "all", label: "All sectors" }, state.filters.sector);
   const researchSectors = uniqueStrings(state.research.status?.sectors?.length ? state.research.status.sectors : state.sectors);
   populateSelect($("research-sector"), researchSectors, { value: "All sectors", label: "All sectors" });
+  const clusters = asArray(state.sectorView?.clusters);
+  const clusterOptions = `<option value="all">All clusters</option>${clusters.map((cluster) => `<option value="${escapeHTML(cluster.key)}">${escapeHTML(cluster.label)}</option>`).join("")}`;
+  for (const [id, current] of [["cluster-filter", state.filters.cluster], ["region-cluster", state.regionCluster]]) {
+    const select = $(id);
+    select.innerHTML = clusterOptions;
+    select.value = [...select.options].some((option) => option.value === current) ? current : "all";
+  }
+  $("signal-chips").innerHTML = SIGNALS.map(({ key, label }) => {
+    const active = state.filters.signals.includes(key);
+    return `<button type="button" class="signal-chip${active ? " is-active" : ""}" data-signal-chip="${key}" aria-pressed="${active}">${escapeHTML(label)}</button>`;
+  }).join("");
+}
+
+function signalScore(company) {
+  const score = asObject(company?.signal_score);
+  return { ...score, total: finiteNumber(score.total), components: asArray(score.components), signals: asArray(score.signals) };
+}
+
+function scoreBadge(company, className = "") {
+  const score = signalScore(company);
+  const tier = String(score.tier || "low");
+  return `<span class="score-badge tier-${escapeHTML(tier)} ${className}" title="Signal score ${score.total}/100 · ${escapeHTML(score.tier_label || "Low")}"><strong>${score.total}</strong><small>${escapeHTML(score.tier_label || "Low")}</small></span>`;
+}
+
+function scoreBreakdown(company) {
+  const score = signalScore(company);
+  const rows = score.components.map((component) => {
+    const item = asObject(component);
+    const max = finiteNumber(item.max, 1);
+    const points = finiteNumber(item.points);
+    const width = Math.max(0, Math.min(100, (points / max) * 100));
+    return `<div class="score-row${item.detected ? "" : " is-missing"}"><div class="score-row-head"><span>${escapeHTML(item.label || "Signal")}</span><strong>${item.detected ? `${Number(points.toFixed(1))} / ${max}` : `Not detected · 0 / ${max}`}</strong></div><div class="score-track" aria-hidden="true"><span style="width:${width}%"></span></div><small>${escapeHTML(item.detail || "")}</small></div>`;
+  }).join("");
+  return `<section class="profile-section"><div class="profile-section-head"><div><p class="section-number">Signal score</p><h3>${score.total}/100 · ${escapeHTML(score.tier_label || "Low")}</h3></div><span>${plural(score.signals.length, "signal")} detected</span></div><div class="score-breakdown">${rows}</div><p class="score-note">Points come only from observed signals. Missing data scores zero and is labeled, so a low score can mean little public evidence rather than a weak company.</p></section>`;
 }
 
 function getFilteredCompanies() {
@@ -450,6 +527,11 @@ function getFilteredCompanies() {
     if (state.filters.nj !== "all" && company.nj_status !== state.filters.nj) return false;
     if (state.filters.sector !== "all" && company.sector !== state.filters.sector) return false;
     if (state.filters.recordType !== "all" && company.record_type !== state.filters.recordType) return false;
+    if (state.filters.cluster !== "all" && company.cluster !== state.filters.cluster) return false;
+    if (state.filters.youngOnly && !asArray(company.tags).includes("young company")) return false;
+    const score = signalScore(company);
+    if (score.total < state.filters.minScore) return false;
+    if (state.filters.signals.some((key) => !score.signals.includes(key))) return false;
     if (!tokens.length) return true;
     const peopleText = asArray(company.people).map((person) => `${person?.name || ""} ${person?.role || ""}`).join(" ");
     const searchable = normalizedText([
@@ -465,7 +547,8 @@ function getFilteredCompanies() {
   });
 
   const sorters = {
-    name: (a, b) => String(a.name || "").localeCompare(String(b.name || ""), undefined, { sensitivity: "base" }),
+    signal: (a, b) => signalScore(b).total - signalScore(a).total || signalScore(b).signals.length - signalScore(a).signals.length || String(a.name || "").localeCompare(String(b.name || "")),
+    name:(a, b) => String(a.name || "").localeCompare(String(b.name || ""), undefined, { sensitivity: "base" }),
     coverage: (a, b) => coverageCount(b) - coverageCount(a) || finiteNumber(b.source_count) - finiteNumber(a.source_count) || String(a.name || "").localeCompare(String(b.name || "")),
     sources: (a, b) => finiteNumber(b.source_count) - finiteNumber(a.source_count) || coverageCount(b) - coverageCount(a) || String(a.name || "").localeCompare(String(b.name || "")),
     updated: (a, b) => String(b.updated_at || "").localeCompare(String(a.updated_at || "")) || String(a.name || "").localeCompare(String(b.name || "")),
@@ -476,7 +559,8 @@ function getFilteredCompanies() {
 }
 
 function filtersAreActive() {
-  return Boolean(state.filters.query || !state.filters.hideNonStartups || state.filters.nj !== "all" || state.filters.sector !== "all" || state.filters.recordType !== "all" || state.filters.sort !== "research");
+  const f = state.filters;
+  return Boolean(f.query || !f.hideNonStartups || f.nj !== "all" || f.sector !== "all" || f.recordType !== "all" || f.cluster !== "all" || f.minScore || f.youngOnly || f.signals.length || f.sort !== "signal");
 }
 
 function companyCard(company) {
@@ -500,6 +584,7 @@ function companyCard(company) {
           <button class="company-title" type="button" data-open-company="${escapeHTML(id)}" title="${escapeHTML(company.name || "Company")}">${escapeHTML(company.name || "Unnamed company")}</button>
           <p class="company-location" title="${escapeHTML(location)}">${escapeHTML(location)}</p>
         </div>
+        ${scoreBadge(company)}
         <button class="card-save${saved ? " is-saved" : ""}" type="button" data-toggle-save="${escapeHTML(id)}" aria-pressed="${saved}" aria-label="${saved ? "Remove" : "Add"} ${escapeHTML(company.name || "company")} ${saved ? "from" : "to"} shortlist" ${busy ? "disabled" : ""}>${icon("bookmark")}</button>
       </div>
       <div class="card-badges">
@@ -620,21 +705,71 @@ function renderPagination(pageCount) {
     <button class="page-button is-arrow" type="button" data-page="${state.page + 1}" ${state.page === pageCount ? "disabled" : ""} aria-label="Next page">${icon("arrow")}</button>`;
 }
 
+const FILTERS = [
+  { key: "cluster", label: "Sector cluster", reset: () => { state.filters.cluster = "all"; $("cluster-filter").value = "all"; } },
+  { key: "score", label: "Signal strength", reset: () => { state.filters.minScore = 0; $("score-filter").value = "0"; } },
+  { key: "signals", label: "Must-have signals", reset: () => { state.filters.signals = []; populateSectorFilters(); } },
+  { key: "young", label: "Young companies only", add: () => { state.filters.youngOnly = true; $("young-filter").checked = true; }, reset: () => { state.filters.youngOnly = false; $("young-filter").checked = false; } },
+  { key: "sector", label: "Industry", reset: () => { state.filters.sector = "all"; $("sector-filter").value = "all"; } },
+  { key: "nj", label: "NJ evidence", reset: () => { state.filters.nj = "all"; $("nj-filter").value = "all"; } },
+  { key: "record", label: "Record type", reset: () => { state.filters.recordType = "all"; $("record-filter").value = "all"; } },
+  { key: "startup", label: "Include non-startups", add: () => { state.filters.hideNonStartups = false; $("startup-filter").checked = false; }, reset: () => { state.filters.hideNonStartups = true; $("startup-filter").checked = true; } },
+];
+
+function renderFilterSlots() {
+  const shown = state.shownFilters;
+  document.querySelectorAll("[data-filter-slot]").forEach((slot) => { slot.hidden = !shown.includes(slot.dataset.filterSlot); });
+  $("active-filters").hidden = !shown.length;
+  const remaining = FILTERS.filter((filter) => !shown.includes(filter.key));
+  $("add-filter").hidden = !remaining.length;
+  $("add-filter-menu").innerHTML = remaining.map((filter) => `<button type="button" data-add-filter="${filter.key}">${escapeHTML(filter.label)}</button>`).join("");
+}
+
+function addFilter(key) {
+  const filter = FILTERS.find((item) => item.key === key);
+  if (!filter || state.shownFilters.includes(key)) return;
+  state.shownFilters = [...state.shownFilters, key];
+  filter.add?.();
+  $("add-filter").open = false;
+  state.page = 1;
+  renderFilterSlots();
+  renderDirectory();
+  document.querySelector(`[data-filter-slot="${key}"] select, [data-filter-slot="${key}"] button.signal-chip`)?.focus();
+}
+
+function removeFilter(key) {
+  FILTERS.find((item) => item.key === key)?.reset();
+  state.shownFilters = state.shownFilters.filter((item) => item !== key);
+  state.page = 1;
+  renderFilterSlots();
+  renderDirectory();
+}
+
 function clearFilters() {
-  state.filters = { ...state.filters, query: "", hideNonStartups: true, nj: "all", sector: "all", recordType: "all", sort: "research" };
+  state.shownFilters = [];
+  renderFilterSlots();
+  state.filters = { ...state.filters, query: "", hideNonStartups: true, nj: "all", sector: "all", recordType: "all", cluster: "all", minScore: 0, youngOnly: false, signals: [], sort: "signal" };
   state.page = 1;
   $("catalog-search").value = "";
   $("startup-filter").checked = true;
+  $("young-filter").checked = false;
   $("nj-filter").value = "all";
   $("sector-filter").value = "all";
   $("record-filter").value = "all";
-  $("sort-filter").value = "research";
+  $("cluster-filter").value = "all";
+  $("score-filter").value = "0";
+  $("sort-filter").value = "signal";
+  populateSectorFilters();
   renderDirectory();
 }
 
 function setView(view, { scroll = true } = {}) {
-  state.view = view === "shortlist" ? "shortlist" : "directory";
+  state.view = ["shortlist", "sectors", "scoring"].includes(view) ? view : "directory";
   state.page = 1;
+  $("directory-section").hidden = ["sectors", "scoring"].includes(state.view);
+  $("sectors-section").hidden = state.view !== "sectors";
+  $("scoring-section").hidden = state.view !== "scoring";
+  history.replaceState(null, "", state.view === "directory" ? location.pathname : `#${state.view}`);
   document.querySelectorAll("[data-view]").forEach((button) => {
     const active = button.dataset.view === state.view;
     button.classList.toggle("is-active", active);
@@ -643,18 +778,34 @@ function setView(view, { scroll = true } = {}) {
   });
   if (state.view === "shortlist") {
     $("breadcrumb-current").textContent = "Shortlist";
-    $("view-eyebrow").innerHTML = "<span></span> Your saved company records";
     $("page-title").innerHTML = "Your saved companies,<br><em>ready for a closer look.</em>";
-    $("page-description").textContent = "Keep notes beside the evidence, compare up to three records and return to the source whenever a claim needs a closer look.";
+    $("page-description").textContent = "Your saved companies and notes. Compare up to three side by side.";
     $("directory-title").textContent = "Shortlisted companies";
+  } else if (state.view === "scoring") {
+    $("breadcrumb-current").textContent = "How scoring works";
+    $("page-title").innerHTML = "How we rank<br><em>New Jersey startups.</em>";
+    $("page-description").textContent = "Simple points for public signals, with every point shown. Here is exactly how a company and a sector earn their scores.";
+  } else if (state.view === "sectors") {
+    $("breadcrumb-current").textContent = "Sectors & map";
+    $("page-title").innerHTML = "Where New Jersey<br><em>is gaining traction.</em>";
+    $("page-description").textContent = "Which sectors and regions show the strongest signals, and how each ranking is built.";
   } else {
     $("breadcrumb-current").textContent = "Company directory";
-    $("view-eyebrow").innerHTML = "<span></span> New Jersey company records";
-    $("page-title").innerHTML = "Company intelligence,<br><em>with the receipts.</em>";
-    $("page-description").textContent = "Discover companies, inspect the public evidence and keep the unknowns in view. Coverage shows what we can document. It is not a prediction of success.";
+    $("page-title").innerHTML = "New Jersey startups,<br><em>with the receipts.</em>";
+    $("page-description").textContent = "Find promising NJ companies, see why they rank where they do and check every source.";
     $("directory-title").textContent = "Company directory";
   }
   closeSidebar();
+  if (state.view === "scoring") {
+    renderScoring();
+    if (scroll) $("scoring-section").scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+  if (state.view === "sectors") {
+    renderSectors();
+    if (scroll) $("sectors-section").scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
   renderDirectory();
   if (scroll) $("directory-section").scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -827,7 +978,8 @@ function renderCompanyDrawer(company, { loading = false, fallback = false } = {}
       <div class="profile-actions"><button class="button ${saved ? "button-outline" : "button-dark"}" type="button" data-toggle-save="${escapeHTML(id)}">${icon("bookmark")} ${saved ? "Remove from shortlist" : "Add to shortlist"}</button><button class="button ${compared ? "button-accent" : "button-outline"}" type="button" data-toggle-compare="${escapeHTML(id)}">${icon("compare")} ${compared ? "Added to comparison" : "Add to comparison"}</button></div>
       ${loading ? `<div class="profile-fallback"><div class="spinner" aria-hidden="true"></div><span>Checking the latest profile…</span></div>` : fallback ? `<div class="profile-fallback">${icon("warning")}<span>The latest profile could not load. This is the catalog snapshot.</span></div>` : ""}
     </section>
-    <div class="profile-stat-row"><div class="profile-stat"><strong>${coverageCount(company)}/4</strong><span>Evidence pillars</span></div><div class="profile-stat"><strong>${formatNumber(company.source_count)}</strong><span>Unique sources</span></div><div class="profile-stat"><strong>${escapeHTML(formatDate(company.updated_at, { month: "short", day: "numeric", year: "numeric" }))}</strong><span>Record updated</span></div></div>
+    <div class="profile-stat-row"><div class="profile-stat"><strong>${signalScore(company).total}/100</strong><span>Signal score</span></div><div class="profile-stat"><strong>${coverageCount(company)}/4</strong><span>Evidence pillars</span></div><div class="profile-stat"><strong>${formatNumber(company.source_count)}</strong><span>Unique sources</span></div><div class="profile-stat"><strong>${escapeHTML(formatDate(company.updated_at, { month: "short", day: "numeric", year: "numeric" }))}</strong><span>Record updated</span></div></div>
+    ${scoreBreakdown(company)}
     <section class="profile-section"><div class="profile-section-head"><div><p class="section-number">Evidence map</p><h3>Four research pillars</h3></div><span>Coverage is not a score</span></div><div class="pillar-list">${profilePillars(company)}</div></section>
     ${profilePeople(company)}
     ${profileSources(company)}
@@ -902,6 +1054,12 @@ function renderComparison() {
   }
   const headers = companies.map((company) => `<div class="compare-cell compare-company"><span class="compare-avatar" aria-hidden="true">${escapeHTML(initials(company.name))}</span><h3>${escapeHTML(company.name)}</h3><p>${escapeHTML(company.sector || "Sector not reported")}</p><button class="remove-comparison" type="button" data-remove-compare="${escapeHTML(company.id)}" aria-label="Remove ${escapeHTML(company.name)}">${icon("close")}</button></div>`).join("");
   const overview = companies.map((company) => `<div class="compare-cell"><span class="badge ${company.nj_status === "supported" ? "nj-supported" : "nj-unverified"}">${escapeHTML(company.nj_status === "supported" ? "NJ supported" : "NJ unverified")}</span><p>${escapeHTML(RECORD_LABELS[company.record_type] || sentenceCase(company.record_type || "Company record"))}</p><div class="compare-mini-metrics"><span>${coverageCount(company)}/4 pillars</span><span>${plural(finiteNumber(company.source_count), "source")}</span></div></div>`).join("");
+  const scoreCells = companies.map((company) => {
+    const score = signalScore(company);
+    const detected = score.components.filter((item) => item?.detected).map((item) => `<span>${escapeHTML(item.label)}: ${formatNumber(item.points)}/${escapeHTML(item.max)}</span>`).join("");
+    return `<div class="compare-cell">${scoreBadge(company)}<div class="compare-mini-metrics">${detected || "<span>No signals detected</span>"}</div></div>`;
+  }).join("");
+  const scoreRow = `<div class="compare-row"><div class="compare-label">Signal score</div>${scoreCells}</div>`;
   const pillarRows = PILLARS.map(({ key, label }) => {
     const cells = companies.map((company) => {
       const pillar = pillarFor(company, key);
@@ -911,12 +1069,271 @@ function renderComparison() {
     }).join("");
     return `<div class="compare-row"><div class="compare-label">${escapeHTML(label)}</div>${cells}</div>`;
   }).join("");
-  container.innerHTML = `<div class="compare-table" style="--compare-columns:${companies.length}"><div class="compare-row"><div class="compare-label">Company</div>${headers}</div><div class="compare-row"><div class="compare-label">Record</div>${overview}</div>${pillarRows}</div>`;
+  container.innerHTML = `<div class="compare-table" style="--compare-columns:${companies.length}"><div class="compare-row"><div class="compare-label">Company</div>${headers}</div><div class="compare-row"><div class="compare-label">Record</div>${overview}</div>${scoreRow}${pillarRows}</div>`;
 }
 
 function openComparison(trigger = document.activeElement) {
   renderComparison();
   openLayer($("compare-layer"), trigger);
+}
+
+function clusterColor(key) {
+  return CLUSTER_COLORS[key] || CLUSTER_COLORS.other;
+}
+
+function formatUsdShort(value) {
+  const amount = finiteNumber(value);
+  if (amount >= 1e9) return `$${(amount / 1e9).toFixed(1)}B`;
+  if (amount >= 1e6) return `$${(amount / 1e6).toFixed(1)}M`;
+  if (amount >= 1e3) return `$${(amount / 1e3).toFixed(0)}K`;
+  return `$${formatNumber(amount)}`;
+}
+
+function formatPct(value) {
+  if (value == null || !Number.isFinite(Number(value))) return "No prior window";
+  const number = Number(value);
+  return `${number > 0 ? "+" : ""}${number.toFixed(0)}%`;
+}
+
+function niceMax(value) {
+  if (value <= 0) return 1;
+  const power = 10 ** Math.floor(Math.log10(value));
+  return [1, 2, 2.5, 5, 10].map((step) => step * power).find((candidate) => candidate >= value);
+}
+
+function tipAttr(lines) {
+  return `data-tip="${escapeHTML(JSON.stringify(lines))}" tabindex="0"`;
+}
+
+function rankedClusters() {
+  return asArray(state.sectorView?.clusters).filter((cluster) => cluster?.ranked);
+}
+
+function renderSectors() {
+  const view = state.sectorView;
+  const ranked = rankedClusters();
+  $("sectors-count").textContent = view ? formatNumber(ranked.length) : "—";
+  if (state.view !== "sectors") return;
+  if (!view) {
+    $("sectors-lead").textContent = state.catalogLoading ? "Loading sector signals…" : "Sector signals are not available in this catalog snapshot.";
+    ["sector-table", "cluster-chart", "region-map", "trend-chart", "trend-table", "sector-method"].forEach((id) => { $(id).innerHTML = ""; });
+    return;
+  }
+  const leader = ranked[0];
+  $("sectors-lead").innerHTML = `<strong>${formatNumber(view.startup_like_companies)}</strong> startup-like companies grouped into <strong>${formatNumber(ranked.length)}</strong> ranked sector clusters, using SEC Form D filings through <strong>${escapeHTML(formatDate(view.window_end))}</strong>.${leader ? ` <strong>${escapeHTML(leader.label)}</strong> currently shows the strongest combined signal.` : ""}`;
+  renderSectorTable();
+  renderClusterChart();
+  renderRegionMap();
+  renderTrendChart();
+  $("sector-method").innerHTML = asArray(view.method).map((line) => `<li>${escapeHTML(line)}</li>`).join("");
+}
+
+function renderSectorTable() {
+  const clusters = asArray(state.sectorView?.clusters);
+  const body = clusters.map((cluster) => {
+    const score = asObject(cluster.score);
+    const open = state.selectedSector === cluster.key;
+    const top = asArray(cluster.top).slice(0, 3).map((company) => `<button type="button" class="link-button" data-open-company="${escapeHTML(company.id)}">${escapeHTML(company.name)} <b>${finiteNumber(company.score)}</b></button>`).join("");
+    const components = asArray(score.components).map((item) => {
+      const width = Math.max(0, Math.min(100, (finiteNumber(item.points) / finiteNumber(item.max, 1)) * 100));
+      return `<div class="score-row"><div class="score-row-head"><span>${escapeHTML(item.label)}</span><strong>${formatNumber(item.points)} / ${escapeHTML(item.max)}</strong></div><div class="score-track" aria-hidden="true"><span style="width:${width}%"></span></div><small>${escapeHTML(item.detail)}</small></div>`;
+    }).join("");
+    const momentumClass = cluster.momentum_pct == null ? "" : cluster.momentum_pct >= 0 ? "is-up" : "is-down";
+    return `
+      <tr class="${open ? "is-open" : ""}">
+        <td class="num">${cluster.rank ?? "—"}</td>
+        <td><button type="button" class="sector-name" data-sector-row="${escapeHTML(cluster.key)}" aria-expanded="${open}"><i style="background:${clusterColor(cluster.key)}"></i>${escapeHTML(cluster.label)}${icon("chevron")}</button>${cluster.ranked ? "" : '<small class="unranked-note">Not ranked: mixed SEC “Other” industry</small>'}</td>
+        <td><span class="score-inline tier-${escapeHTML(score.tier || "low")}"><strong>${finiteNumber(score.total)}</strong><span class="score-track" aria-hidden="true"><span style="width:${finiteNumber(score.total)}%"></span></span></span></td>
+        <td class="num">${formatNumber(cluster.companies)}</td>
+        <td class="num">${formatNumber(cluster.elevated_companies)}</td>
+        <td class="num">${formatNumber(cluster.rounds_recent)}</td>
+        <td class="num momentum ${momentumClass}">${escapeHTML(formatPct(cluster.momentum_pct))}</td>
+        <td class="top-companies">${top || "—"}</td>
+        <td><button type="button" class="button button-quiet small" data-view-cluster="${escapeHTML(cluster.key)}">Companies ${icon("arrow")}</button></td>
+      </tr>
+      ${open ? `<tr class="sector-detail"><td></td><td colspan="8"><div class="score-breakdown">${components}</div><p class="score-note">Includes SEC industries: ${escapeHTML(asArray(cluster.sectors).join(", "))}.</p></td></tr>` : ""}`;
+  }).join("");
+  $("sector-table").innerHTML = `<thead><tr><th class="num">Rank</th><th>Cluster</th><th>Sector score</th><th class="num">Companies</th><th class="num">Score 35+</th><th class="num">Rounds, 24 mo</th><th class="num">Momentum</th><th>Top companies</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody>${body}</tbody>`;
+}
+
+function renderClusterChart() {
+  const clusters = rankedClusters();
+  const container = $("cluster-chart");
+  if (!clusters.length) {
+    container.innerHTML = '<p class="viz-empty">No ranked clusters.</p>';
+    return;
+  }
+  const width = 560;
+  const height = 380;
+  const margin = { top: 24, right: 28, bottom: 52, left: 52 };
+  const plotW = width - margin.left - margin.right;
+  const plotH = height - margin.top - margin.bottom;
+  const extent = Math.max(50, ...clusters.map((cluster) => Math.abs(finiteNumber(cluster.momentum_pct))));
+  const xMax = Math.ceil(extent / 25) * 25;
+  const yMax = Math.min(100, Math.ceil((Math.max(...clusters.map((cluster) => finiteNumber(cluster.score?.total))) + 10) / 20) * 20);
+  const maxCompanies = Math.max(...clusters.map((cluster) => finiteNumber(cluster.companies, 1)));
+  const x = (value) => margin.left + ((value + xMax) / (2 * xMax)) * plotW;
+  const y = (value) => margin.top + plotH - (value / yMax) * plotH;
+  const radius = (count) => 7 + 21 * Math.sqrt(finiteNumber(count) / maxCompanies);
+
+  const yTicks = Array.from({ length: yMax / 20 + 1 }, (_, index) => index * 20);
+  const xTicks = [-xMax, -xMax / 2, 0, xMax / 2, xMax];
+  const grid = yTicks.map((tick) => `<line class="grid" x1="${margin.left}" x2="${margin.left + plotW}" y1="${y(tick)}" y2="${y(tick)}"/><text class="tick" x="${margin.left - 10}" y="${y(tick) + 4}" text-anchor="end">${tick}</text>`).join("")
+    + xTicks.map((tick) => `<text class="tick" x="${x(tick)}" y="${margin.top + plotH + 20}" text-anchor="middle">${tick > 0 ? "+" : ""}${tick}%</text>`).join("");
+  const sorted = [...clusters].sort((a, b) => finiteNumber(b.companies) - finiteNumber(a.companies));
+  const bubbles = sorted.map((cluster) => {
+    const cx = x(Math.max(-xMax, Math.min(xMax, finiteNumber(cluster.momentum_pct))));
+    const cy = y(finiteNumber(cluster.score?.total));
+    const r = radius(cluster.companies);
+    const labelRight = cx < margin.left + plotW * 0.7;
+    const tip = [cluster.label, `Sector score ${finiteNumber(cluster.score?.total)}/100 (rank ${cluster.rank})`, `Momentum ${formatPct(cluster.momentum_pct)} · ${formatNumber(cluster.rounds_recent)} rounds in 24 mo`, `${formatNumber(cluster.companies)} companies · ${formatNumber(cluster.elevated_companies)} score 35+`];
+    return `<g class="bubble" ${tipAttr(tip)} data-view-cluster="${escapeHTML(cluster.key)}" role="button" aria-label="${escapeHTML(tip.join(". "))}"><circle cx="${cx}" cy="${cy}" r="${r + 10}" fill="transparent"/><circle class="bubble-mark" cx="${cx}" cy="${cy}" r="${r}" fill="${clusterColor(cluster.key)}"/><text class="bubble-label" x="${labelRight ? cx + r + 6 : cx - r - 6}" y="${cy + 4}" text-anchor="${labelRight ? "start" : "end"}">${escapeHTML(cluster.label)}</text></g>`;
+  }).join("");
+  container.innerHTML = `
+    <svg class="chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="Sector clusters plotted by funding momentum and sector score">
+      ${grid}
+      <line class="baseline" x1="${x(0)}" x2="${x(0)}" y1="${margin.top}" y2="${margin.top + plotH}"/>
+      <line class="baseline" x1="${margin.left}" x2="${margin.left + plotW}" y1="${margin.top + plotH}" y2="${margin.top + plotH}"/>
+      <text class="quadrant" x="${margin.left + plotW - 4}" y="${margin.top + 12}" text-anchor="end">Accelerating ↗</text>
+      <text class="quadrant" x="${margin.left + 4}" y="${margin.top + 12}">↖ Cooling</text>
+      ${bubbles}
+      <text class="axis-title" x="${margin.left + plotW / 2}" y="${height - 8}" text-anchor="middle">Funding momentum: rounds in latest 24 months vs prior 24</text>
+      <text class="axis-title" transform="translate(14 ${margin.top + plotH / 2}) rotate(-90)" text-anchor="middle">Sector score</text>
+    </svg>`;
+}
+
+function renderRegionMap() {
+  const view = state.sectorView;
+  const regions = asArray(view?.regions);
+  const clusterKey = state.regionCluster;
+  const clusterLabel = clusterKey === "all" ? "all clusters" : asArray(view?.clusters).find((cluster) => cluster.key === clusterKey)?.label || clusterKey;
+  const value = (region) => finiteNumber(clusterKey === "all" ? region.companies : asObject(region.by_cluster)[clusterKey]);
+  const max = Math.max(1, ...regions.map(value));
+  $("region-caption").textContent = `Startup-like companies with a NJ Form D address · ${clusterLabel}`;
+  const tiles = regions.map((region) => {
+    const count = value(region);
+    const step = count ? Math.min(SEQUENTIAL.length - 1, Math.floor((count / max) * (SEQUENTIAL.length - 1) + 0.0001)) : -1;
+    const fill = step >= 0 ? SEQUENTIAL[step] : "var(--paper)";
+    const dark = step >= 3;
+    const [col, row, span] = asArray(region.grid);
+    const share = clusterKey === "all" ? `${formatNumber(region.elevated_companies)} score 35+` : `${Math.round((count / Math.max(1, finiteNumber(region.companies))) * 100)}% of region`;
+    const tip = [region.label, `${formatNumber(count)} companies (${clusterLabel})`, `${formatNumber(region.elevated_companies)} score 35+ across all clusters`, `${formatUsdShort(region.raised_recent)} raised in latest 24 months`, `ZIP areas ${asArray(region.zip3).join(", ")}`];
+    return `<div class="region-tile${dark ? " is-dark" : ""}" style="grid-column:${col};grid-row:${row} / span ${span};background:${fill}" ${tipAttr(tip)} aria-label="${escapeHTML(tip.join(". "))}"><span>${escapeHTML(region.label)}</span><strong>${formatNumber(count)}</strong><small>${escapeHTML(share)}</small></div>`;
+  }).join("");
+  const legend = SEQUENTIAL.map((color) => `<i style="background:${color}"></i>`).join("");
+  $("region-map").innerHTML = `<div class="region-grid">${tiles}</div><div class="region-legend"><span>Fewer</span><span class="ramp">${legend}</span><span>More (max ${formatNumber(max)})</span></div><p class="viz-footnote">Schematic layout of USPS ZIP regions, north at top. Not to scale.</p>`;
+}
+
+function renderTrendChart() {
+  const view = state.sectorView;
+  const clusters = rankedClusters();
+  const partial = view?.partial_year || "";
+  const allYears = asArray(view?.years);
+  const years = allYears.filter((year) => year !== partial);
+  const metric = state.trendMetric;
+  const field = metric === "amount" ? "amount_by_year" : "rounds_by_year";
+  const fmt = metric === "amount" ? formatUsdShort : formatNumber;
+  document.querySelectorAll("[data-trend-metric]").forEach((button) => button.classList.toggle("is-active", button.dataset.trendMetric === metric));
+  $("trend-caption").textContent = `SEC Form D ${metric === "amount" ? "amount sold" : "rounds filed"} per year, startup-like companies${partial ? ` · ${partial} is partial (through ${formatDate(view.window_end)}) and shown only in the table` : ""}`;
+  const container = $("trend-chart");
+  if (years.length < 2 || !clusters.length) {
+    container.innerHTML = '<p class="viz-empty">Not enough dated filings for a trend.</p>';
+    $("trend-table").innerHTML = "";
+    return;
+  }
+  const width = 1000;
+  const height = 300;
+  const margin = { top: 20, right: 24, bottom: 36, left: 64 };
+  const plotW = width - margin.left - margin.right;
+  const plotH = height - margin.top - margin.bottom;
+  const valueOf = (cluster, year) => finiteNumber(asObject(cluster[field])[year]);
+  const yMax = niceMax(Math.max(...clusters.flatMap((cluster) => years.map((year) => valueOf(cluster, year)))));
+  const x = (index) => margin.left + (index / (years.length - 1)) * plotW;
+  const y = (value) => margin.top + plotH - (value / yMax) * plotH;
+  const ticks = Array.from({ length: 5 }, (_, index) => (yMax / 4) * index);
+  const grid = ticks.map((tick) => `<line class="grid" x1="${margin.left}" x2="${margin.left + plotW}" y1="${y(tick)}" y2="${y(tick)}"/><text class="tick" x="${margin.left - 10}" y="${y(tick) + 4}" text-anchor="end">${escapeHTML(fmt(tick))}</text>`).join("")
+    + years.map((year, index) => `<text class="tick" x="${x(index)}" y="${margin.top + plotH + 22}" text-anchor="middle">${escapeHTML(year)}</text>`).join("");
+  const lines = clusters.map((cluster) => {
+    const points = years.map((year, index) => [x(index), y(valueOf(cluster, year))]);
+    const path = points.map(([px, py], index) => `${index ? "L" : "M"}${px.toFixed(1)} ${py.toFixed(1)}`).join(" ");
+    const markers = points.map(([px, py]) => `<circle class="line-marker" cx="${px}" cy="${py}" r="4" fill="${clusterColor(cluster.key)}"/>`).join("");
+    return `<g><path class="line" d="${path}" stroke="${clusterColor(cluster.key)}"/>${markers}</g>`;
+  }).join("");
+  const columnWidth = plotW / (years.length - 1);
+  const hover = years.map((year, index) => {
+    const rows = [...clusters].sort((a, b) => valueOf(b, year) - valueOf(a, year)).map((cluster) => `${cluster.label}: ${fmt(valueOf(cluster, year))}`);
+    return `<g class="crosshair-zone" ${tipAttr([year, ...rows])} aria-label="${escapeHTML([year, ...rows].join(". "))}"><rect x="${x(index) - columnWidth / 2}" y="${margin.top}" width="${columnWidth}" height="${plotH}" fill="transparent"/><line class="crosshair" x1="${x(index)}" x2="${x(index)}" y1="${margin.top}" y2="${margin.top + plotH}"/></g>`;
+  }).join("");
+  const legend = clusters.map((cluster) => `<span><i style="background:${clusterColor(cluster.key)}"></i>${escapeHTML(cluster.label)}</span>`).join("");
+  container.innerHTML = `<div class="chart-legend">${legend}</div><svg class="chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="Form D ${metric} per year by sector cluster">${grid}<line class="baseline" x1="${margin.left}" x2="${margin.left + plotW}" y1="${y(0)}" y2="${y(0)}"/>${lines}${hover}</svg>`;
+
+  const head = allYears.map((year) => `<th class="num">${escapeHTML(year)}${year === partial ? "*" : ""}</th>`).join("");
+  const rows = asArray(view?.clusters).map((cluster) => `<tr><td><i class="dot" style="background:${clusterColor(cluster.key)}"></i>${escapeHTML(cluster.label)}</td>${allYears.map((year) => `<td class="num">${escapeHTML(fmt(valueOf(cluster, year)))}</td>`).join("")}</tr>`).join("");
+  $("trend-table").innerHTML = `<table class="sector-table compact"><thead><tr><th>Cluster</th>${head}</tr></thead><tbody>${rows}</tbody></table>${partial ? `<p class="viz-footnote">* ${escapeHTML(partial)} covers filings through ${escapeHTML(formatDate(view.window_end))} only.</p>` : ""}`;
+}
+
+function renderScoring() {
+  if (state.view !== "scoring") return;
+  $("weight-bar").innerHTML = SIGNAL_GUIDE.map((signal) => `<span style="flex:${signal.max}" title="${escapeHTML(signal.label)}: ${signal.max} points"><b>${signal.max}</b><small>${escapeHTML(signal.label)}</small></span>`).join("");
+  $("signal-table").innerHTML = `<thead><tr><th>Signal</th><th class="num">Max points</th><th>What earns full points</th><th>Where the data comes from</th></tr></thead><tbody>${SIGNAL_GUIDE.map((signal) => `<tr><td><strong>${escapeHTML(signal.label)}</strong></td><td class="num">${signal.max}</td><td>${escapeHTML(signal.full)}</td><td>${escapeHTML(signal.source)}</td></tr>`).join("")}<tr class="total-row"><td><strong>Total</strong></td><td class="num"><strong>100</strong></td><td colspan="2">Partial evidence earns partial points on a sliding scale.</td></tr></tbody>`;
+
+  const companies = state.catalog.filter((company) => !isLikelyNonStartup(company));
+  const counts = Object.fromEntries(TIER_GUIDE.map((tier) => [tier.key, 0]));
+  companies.forEach((company) => { const tier = signalScore(company).tier || "low"; if (tier in counts) counts[tier] += 1; });
+  $("tier-list").innerHTML = TIER_GUIDE.map((tier) => `<div class="tier-item"><span class="score-badge tier-${tier.key}"><strong>${tier.range}</strong><small>${escapeHTML(tier.label)}</small></span><p>${escapeHTML(tier.text)}</p><span class="tier-count">${formatNumber(counts[tier.key])} companies</span></div>`).join("");
+
+  const top = [...companies].sort((a, b) => signalScore(b).total - signalScore(a).total)[0];
+  const open = $("example-open");
+  if (top) {
+    $("example-caption").textContent = `${top.name} scores ${signalScore(top).total}/100. Here is every point, and why.`;
+    $("scoring-example").innerHTML = scoreBreakdown(top);
+    open.hidden = false;
+    open.dataset.openCompany = String(top.id);
+  } else {
+    $("example-caption").textContent = state.catalogLoading ? "Loading…" : "No companies loaded.";
+    $("scoring-example").innerHTML = "";
+    open.hidden = true;
+  }
+
+  const leader = rankedClusters()[0];
+  const parts = asArray(leader?.score?.components);
+  $("sector-example").textContent = leader
+    ? `Right now ${leader.label} ranks #1 with ${finiteNumber(leader.score.total)}/100: ${parts.map((part) => `${part.label.toLowerCase()} ${formatNumber(part.points)}/${part.max}`).join(", ")}. See the full ranking on the Sectors & map tab.`
+    : "";
+}
+
+function showTip(target) {
+  const tooltip = $("viz-tooltip");
+  let lines;
+  try {
+    lines = JSON.parse(target.dataset.tip || "[]");
+  } catch {
+    return;
+  }
+  tooltip.innerHTML = lines.map((line, index) => index ? `<span>${escapeHTML(line)}</span>` : `<strong>${escapeHTML(line)}</strong>`).join("");
+  tooltip.hidden = false;
+  const box = target.getBoundingClientRect();
+  const tipBox = tooltip.getBoundingClientRect();
+  let left = box.left + box.width / 2 - tipBox.width / 2;
+  left = Math.max(8, Math.min(window.innerWidth - tipBox.width - 8, left));
+  let top = box.top - tipBox.height - 10;
+  if (top < 8) top = box.bottom + 10;
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
+}
+
+function hideTip() {
+  $("viz-tooltip").hidden = true;
+}
+
+function viewCluster(key) {
+  state.filters.cluster = key;
+  state.filters.sort = "signal";
+  $("sort-filter").value = "signal";
+  if (!state.shownFilters.includes("cluster")) state.shownFilters = [...state.shownFilters, "cluster"];
+  populateSectorFilters();
+  renderFilterSlots();
+  setView("directory");
 }
 
 function downloadBlob(contents, type, filename) {
@@ -953,7 +1370,7 @@ function exportEvidence(format) {
         view: state.view,
         company_count: companies.length,
         filters: { ...state.filters, perPage: undefined },
-        note: "Evidence coverage is not a prediction of success or an investment score.",
+        note: "Signal scores rank observed public signals with a visible breakdown. Neither the score nor evidence coverage predicts success or constitutes investment advice.",
       },
       companies: companies.map((company) => ({
         ...company,
@@ -963,15 +1380,17 @@ function exportEvidence(format) {
     };
     downloadBlob(JSON.stringify(payload, null, 2), "application/json;charset=utf-8", `garden-state-evidence-${today}.json`);
   } else {
-    const headers = ["company_id", "company_name", "sector", "location", "nj_status", "record_type", "pillar", "source_title", "source_url", "quote", "published_at", "observed_at", "source_type"];
+    const headers = ["company_id", "company_name", "sector", "cluster", "location", "nj_status", "record_type", "signal_score", "signal_tier", "signals_detected", "pillar", "source_title", "source_url", "quote", "published_at", "observed_at", "source_type"];
     const rows = [headers];
     companies.forEach((company) => {
+      const score = signalScore(company);
+      const base = [company.id, company.name, company.sector, company.cluster, company.location, company.nj_status, company.record_type, score.total, score.tier_label, score.signals.join("; ")];
       const evidence = asArray(company.evidence);
       if (!evidence.length) {
-        rows.push([company.id, company.name, company.sector, company.location, company.nj_status, company.record_type, "", "", "", "", "", "", ""]);
+        rows.push([...base, "", "", "", "", "", "", ""]);
         return;
       }
-      evidence.forEach((source) => rows.push([company.id, company.name, company.sector, company.location, company.nj_status, company.record_type, source?.pillar, source?.title, source?.url, source?.quote, source?.published_at, source?.observed_at, source?.source_type]));
+      evidence.forEach((source) => rows.push([...base, source?.pillar, source?.title, source?.url, source?.quote, source?.published_at, source?.observed_at, source?.source_type]));
     });
     const csv = `\uFEFF${rows.map((row) => row.map(csvCell).join(",")).join("\r\n")}`;
     downloadBlob(csv, "text/csv;charset=utf-8", `garden-state-evidence-${today}.csv`);
@@ -1444,9 +1863,55 @@ function bindEvents() {
       return;
     }
 
+    const addFilterButton = event.target.closest("[data-add-filter]");
+    if (addFilterButton) {
+      addFilter(addFilterButton.dataset.addFilter);
+      return;
+    }
+
+    const removeFilterButton = event.target.closest("[data-remove-filter]");
+    if (removeFilterButton) {
+      removeFilter(removeFilterButton.dataset.removeFilter);
+      return;
+    }
+
+    const signalChip = event.target.closest("[data-signal-chip]");
+    if (signalChip) {
+      const key = signalChip.dataset.signalChip;
+      const signals = state.filters.signals;
+      state.filters.signals = signals.includes(key) ? signals.filter((item) => item !== key) : [...signals, key];
+      state.page = 1;
+      populateSectorFilters();
+      renderDirectory();
+      return;
+    }
+
+    const clusterLink = event.target.closest("[data-view-cluster]");
+    if (clusterLink) {
+      hideTip();
+      viewCluster(clusterLink.dataset.viewCluster);
+      return;
+    }
+
+    const sectorRow = event.target.closest("[data-sector-row]");
+    if (sectorRow) {
+      const key = sectorRow.dataset.sectorRow;
+      state.selectedSector = state.selectedSector === key ? "" : key;
+      renderSectorTable();
+      return;
+    }
+
+    const trendButton = event.target.closest("[data-trend-metric]");
+    if (trendButton) {
+      state.trendMetric = trendButton.dataset.trendMetric;
+      renderTrendChart();
+      return;
+    }
+
     const action = event.target.closest("[data-action]")?.dataset.action;
     if (!action) {
       if (!event.target.closest("#export-menu")) $("export-menu").open = false;
+      if (!event.target.closest("#add-filter")) $("add-filter").open = false;
       return;
     }
     const actions = {
@@ -1454,11 +1919,6 @@ function bindEvents() {
       "browse-directory": () => { closeLayer({ restoreFocus: false }); setView("directory"); },
       "open-sidebar": openSidebar,
       "close-sidebar": closeSidebar,
-      "toggle-filters": () => {
-        const panel = $("filter-panel");
-        const open = panel.classList.toggle("is-open");
-        document.querySelector("[data-action='toggle-filters']")?.setAttribute("aria-expanded", String(open));
-      },
       "clear-filters": clearFilters,
       "retry-catalog": () => loadCatalog(),
       "open-research": () => openResearch(event.target.closest("button") || document.activeElement),
@@ -1483,6 +1943,16 @@ function bindEvents() {
   $("sector-filter").addEventListener("change", (event) => { state.filters.sector = event.target.value; state.page = 1; renderDirectory(); });
   $("record-filter").addEventListener("change", (event) => { state.filters.recordType = event.target.value; state.page = 1; renderDirectory(); });
   $("sort-filter").addEventListener("change", (event) => { state.filters.sort = event.target.value; state.page = 1; renderDirectory(); });
+  $("cluster-filter").addEventListener("change", (event) => { state.filters.cluster = event.target.value; state.page = 1; renderDirectory(); });
+  $("score-filter").addEventListener("change", (event) => { state.filters.minScore = Number(event.target.value) || 0; state.page = 1; renderDirectory(); });
+  $("young-filter").addEventListener("change", (event) => { state.filters.youngOnly = event.target.checked; state.page = 1; renderDirectory(); });
+  $("region-cluster").addEventListener("change", (event) => { state.regionCluster = event.target.value; renderRegionMap(); });
+
+  const tipTarget = (event) => event.target instanceof Element ? event.target.closest("[data-tip]") : null;
+  document.addEventListener("mouseover", (event) => { const target = tipTarget(event); if (target) showTip(target); });
+  document.addEventListener("mouseout", (event) => { if (tipTarget(event) && !tipTarget({ target: event.relatedTarget })) hideTip(); });
+  document.addEventListener("focusin", (event) => { const target = tipTarget(event); if (target) showTip(target); else hideTip(); });
+  document.addEventListener("scroll", hideTip, { passive: true });
   $("per-page").addEventListener("change", (event) => { state.filters.perPage = Number(event.target.value); state.page = 1; renderDirectory(); });
 
   $("unlock-form").addEventListener("submit", (event) => {
@@ -1511,6 +1981,12 @@ function bindEvents() {
     }
     trapLayerFocus(event);
     const target = event.target;
+    if ((event.key === "Enter" || event.key === " ") && target instanceof Element && target.matches("g[data-view-cluster]")) {
+      event.preventDefault();
+      hideTip();
+      viewCluster(target.dataset.viewCluster);
+      return;
+    }
     const typing = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target instanceof HTMLSelectElement || target?.isContentEditable;
     if (!activeLayer && ((event.key.toLowerCase() === "k" && (event.metaKey || event.ctrlKey)) || (event.key === "/" && !typing))) {
       event.preventDefault();
@@ -1529,11 +2005,14 @@ function bindEvents() {
 
 async function initialize() {
   bindEvents();
+  renderFilterSlots();
   renderDirectory();
   renderAuthState();
   renderResearchStatus();
   await loadHealth();
   if (state.auth.required && !state.auth.token) return;
+  const initialView = location.hash.slice(1);
+  if (["sectors", "scoring", "shortlist"].includes(initialView)) setView(initialView, { scroll: false });
   await Promise.allSettled([loadCatalog(), loadShortlist(), loadResearchStatus()]);
 }
 

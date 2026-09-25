@@ -19,6 +19,8 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlsplit
 
+from .signals import build_sector_view, cluster_for, region_for, score_company
+
 
 _LEGAL_SUFFIXES = {"inc", "incorporated", "llc", "corp", "corporation"}
 _PILLARS = ("founders", "business", "funding", "reputation")
@@ -236,6 +238,9 @@ class _Company:
     has_team: bool = False
     has_reputation: bool = False
     has_founder_profile: bool = False
+    raw: dict[str, Any] = field(default_factory=dict)
+    signal_types: set[str] = field(default_factory=set)
+    postal: str = ""
 
     def set_description(self, value: Any, priority: int) -> None:
         text = _clean_text(value)
@@ -589,6 +594,13 @@ def _ingest_form_d_company(resolver: _Resolver, row: dict[str, Any]) -> None:
         location = f"{location} {postal}".strip()
     company.set_location(location or "New Jersey Form D business address", 20)
     company.nj_status = "supported"
+    company.postal = postal
+    for key in ("total_raised", "raised_last_24mo", "months_since_last_raise"):
+        company.raw[key] = _as_float(row.get(key))
+    for key in ("num_offerings", "total_investors"):
+        company.raw[key] = _as_int(row.get(key))
+    if _bool_text(row.get("young_company")) == "Yes":
+        company.tags.add("young company")
     company.set_why(
         "A New Jersey business address appears in SEC Form D filings; startup status remains unverified.",
         10,
@@ -920,6 +932,7 @@ def _ingest_headcount(resolver: _Resolver, row: dict[str, Any]) -> None:
     if founding_year is not None:
         _add_metric(company, "business", "Reported founding year", founding_year)
     growth_rate = _as_float(row.get("growth_rate"))
+    company.raw["growth_rate"] = growth_rate
     if growth_rate is not None:
         _add_metric(
             company,
@@ -1105,6 +1118,10 @@ def _ingest_reputation_card(
         if not isinstance(signal, dict):
             continue
         _add_finding(company, "reputation", signal.get("statement"))
+        if _clean_text(signal.get("status")).casefold() in {"", "current", "historical"}:
+            signal_type = _clean_text(signal.get("type"))
+            if signal_type:
+                company.signal_types.add(signal_type)
 
     for evidence in _iter_card_evidence(card):
         _add_evidence(
@@ -1313,6 +1330,7 @@ def _ingest_founder_profiles(
                 _add_pillar_limitation(company, "founders", limitation)
 
         grants = list(unique_grants.values())
+        company.raw["grant_count"] = len(grants)
         if grants:
             _mark_pillar(
                 company,
@@ -1406,6 +1424,9 @@ def _finalize_company(company: _Company) -> dict[str, Any]:
             1 for name in _PILLARS if company.pillars[name]["status"] != "missing"
         ),
         "tags": sorted(company.tags, key=str.casefold),
+        "cluster": cluster_for(company.sector),
+        "region": region_for(company.postal) if company.nj_status == "supported" else None,
+        "signal_score": score_company(company.raw, company.signal_types),
         "why_surfaced": company.why_surfaced,
         "pillars": company.pillars,
         "people": people,
@@ -1497,8 +1518,16 @@ def build_catalog(
     ]
     snapshot_date = max(known_dates) if known_dates else "unknown"
 
+    offerings = []
+    for row in offering_rows:
+        owner = resolver.by_cik.get(_normalized_cik(row.get("cik")))
+        if owner is not None:
+            offerings.append((owner.id, _clean_text(row.get("filing_date")), _as_float(row.get("amount_sold"))))
+    sector_view = build_sector_view(companies, offerings)
+
     notices = [
         "Evidence coverage describes available sources; it is not a prediction, recommendation or investment score.",
+        "The signal score ranks the strength of observed public signals with a visible point breakdown. Missing signals earn no points; it is not a success prediction.",
         "The directory includes Form D issuers and team/research leads. A filing does not by itself establish active startup status.",
         "Form D amounts are reported private-offering fundraising, not revenue, valuation, profitability or cash runway.",
         "Form D coverage begins in 2021 and New Jersey support reflects the issuer business address reported in the filing.",
@@ -1527,6 +1556,7 @@ def build_catalog(
         },
         "snapshot_date": snapshot_date,
         "notices": notices,
+        "sector_view": sector_view,
     }
 
 

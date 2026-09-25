@@ -87,11 +87,16 @@ def create_app(*, root=ROOT, runtime_dir=None, settings=None, service=None, foun
         if service is None:
             # ResearchService coordination is process-local. Prevent a second host
             # from recovering or racing active jobs in the same runtime directory.
-            import fcntl
             lock_file = (runtime / 'server.lock').open('a')
             try:
-                fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-            except BlockingIOError:
+                if sys.platform == 'win32':
+                    import msvcrt
+                    lock_file.seek(0)
+                    msvcrt.locking(lock_file.fileno(), msvcrt.LK_NBLCK, 1)
+                else:
+                    import fcntl
+                    fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError:
                 lock_file.close()
                 raise RuntimeError('Garden State is already running with this runtime directory. Use one server process.') from None
         app.state.workspace = Workspace(runtime / 'workspace.sqlite3')

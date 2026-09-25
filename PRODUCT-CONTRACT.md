@@ -4,7 +4,7 @@ The unified app lives in `unified/`, reuses the four responsibility folders, and
 
 ## API
 
-- `GET /api/catalog` → `{companies: Company[], sectors: string[], stats: {companies, nj_supported, with_reputation, team_reviewed, sources}, snapshot_date: string, notices: string[]}`. All company records can be included; the browser paginates the directory.
+- `GET /api/catalog` → `{companies: Company[], sectors: string[], stats: {companies, nj_supported, with_reputation, team_reviewed, sources}, snapshot_date: string, notices: string[], sector_view: SectorView}`. All company records can be included; the browser paginates the directory.
 - `GET /api/companies/{id}` → one Company, or 404.
 - `GET /api/shortlist` → `{ids: string[], notes: {[company_id]: string}}`.
 - `PUT /api/shortlist/{id}` with `{saved: boolean, note?: string}` → current shortlist payload. Notes and membership persist locally on the server.
@@ -38,6 +38,10 @@ Pillar = {
   findings: string[], limitations: string[]
 }
 ```
+
+Company also carries `cluster` (sector cluster key), `region` (NJ ZIP region key or null) and `signal_score: {total 0–100, tier, tier_label, signals: string[], signal_count, components: [{key, label, points, max, detected, detail}], version}`. Components and weights: capital raised 20, recent raise 20, repeat raises 10, investor breadth 10, hiring 15, accelerator/program 10, IP & research partnerships 10, public grants 5. Undetected signals earn 0 and stay labeled; nothing is imputed. Implementation: `unified/signals.py`.
+
+`SectorView = {clusters: [{key, label, rank, ranked, companies, elevated_companies, rounds_by_year, amount_by_year, rounds_recent, rounds_prior, momentum_pct, top, score: {total, components}}], regions: [{key, label, zip3, grid, companies, by_cluster}], years, partial_year, window_end, method: string[]}`. Sector score = signal depth 50 + funding momentum 30 + breadth 20. Likely non-startup records are excluded from sector and region totals.
 
 `source_count` counts unique external URLs, `coverage_count` counts pillars with at least partial data. Preserve role distinctions: CEOs, founders, advisors, SEC related people are not interchangeable. Company IDs must be deterministic and survive catalog reloads. Match CIK/domain/explicit aliases conservatively; do not merge merely similar names. Unsupported NJ status stays unverified. Form D issuer location does not prove current startup status; fundraising is not revenue, cash runway, profitability, or company quality. Headcount divided by years since founding is not observed hiring growth. Analyst scores are labeled judgments. Source publication and observation dates remain separate.
 
