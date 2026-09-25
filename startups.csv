@@ -1,13 +1,13 @@
-id,company,person,relationship,source_url,additional_source_url
-L01,Vulcan Elements,Dan Borok,works_with,https://nvpcap.com/nvp-capital-team/,
-L02,HomeVision,Dan Borok,works_with,https://nvpcap.com/nvp-capital-team/,
-L03,Compyl,Dan Borok,works_with,https://nvpcap.com/nvp-capital-team/,
-L04,Upscale.ai,Dan Borok,works_with,https://nvpcap.com/nvp-capital-team/,
-L05,Toothio,Vaughn Crowe,board_member,https://nvpcap.com/nvp-capital-team/,https://simonquickadvisors.com/advisory-board/vaughn-crowe/
-L06,Handspring Health,Vaughn Crowe,board_member,https://nvpcap.com/nvp-capital-team/,https://simonquickadvisors.com/advisory-board/vaughn-crowe/
-L07,Ryse Marketplace,Vaughn Crowe,board_member,https://nvpcap.com/nvp-capital-team/,https://simonquickadvisors.com/advisory-board/vaughn-crowe/
-L08,Workgrounds,Vaughn Crowe,board_member,https://nvpcap.com/nvp-capital-team/,https://simonquickadvisors.com/advisory-board/vaughn-crowe/
-L09,SunRay Scientific,Stephen Socolof,director,https://transcendap.com/stephen-socolof/,https://www.sec.gov/Archives/edgar/data/924168/000092416823000048/a2023efoiproxystatementdef.htm
-L10,Kintra Fibers,Stephen Socolof,board_member_or_observer_conflict,https://techcouncilventures.com/team-members/steve-socolof/,https://transcendap.com/stephen-socolof/
-L11,Adrich,Stephen Socolof,board_member_or_observer_conflict,https://techcouncilventures.com/team-members/steve-socolof/,https://transcendap.com/stephen-socolof/
-L12,Regenosine,Stephen Socolof,board_observer,https://transcendap.com/stephen-socolof/,
+id,company,ceo_name,ceo_source_url,source_checked_on
+L01,Vulcan Elements,John Maslin,https://vulcanelements.com/,2026-09-25
+L02,HomeVision,Jeff Foster,https://www.newrez.com/press-news/strategic-ai-investment-in-homevision/,2026-09-25
+L03,Compyl,Stas Bojoukha,https://compyl.com/about-us/,2026-09-25
+L04,Upscale.ai,Herman Yang,https://m12.vc/news/founders-feature-upscale-ai/,2026-09-25
+L05,Toothio,Ian Prendergast,https://www.toothio.com/blog/toothio-expands-to-new-markets,2026-09-25
+L06,Handspring Health,Sahil Choudhry,https://www.handspringhealth.com/about,2026-09-25
+L07,Ryse Marketplace,Sean Mitchell,https://www.rysemarket.com/about,2026-09-25
+L08,Workgrounds,Nikhil Sethi,https://workgrounds.com/about,2026-09-25
+L09,SunRay Scientific,Madhu Stemmermann,https://www.sunrayscientific.com/about/,2026-09-25
+L10,Kintra Fibers,Billy McCall,https://www.oceaninnovatorsplatform.org/en/speakers/billy-mccall,2026-09-25
+L11,Adrich,Adhithi Aji,https://www.adrich.io/news,2026-09-25
+L12,Regenosine,Siddhesh Angle,https://regenosine.com/team,2026-09-25
